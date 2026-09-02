@@ -1,0 +1,1075 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Going to the Farm 2026 — Big Cedar Lodge, October 1-4.">
+<meta name="robots" content="noindex,nofollow">
+<title>Going to the Farm 2026 (Year 5)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700;800&family=Public+Sans:wght@400;500;600;700&family=Roboto+Mono:wght@500;700&display=swap">
+<style>
+:root{
+  color-scheme:light;
+  --ground:#E9EAE4; --surface:#FDFDFB; --surface-2:#F2F3ED; --line:#D3D6CC;
+  --ink:#1B211C; --ink-2:#4A5249; --ink-3:#767E74;
+  --brass:#9C6520; --brass-soft:#F0E3D0;
+  --cleveland:#9E4E33; --world:#25646F; --fairway:#4A7540;
+  --cleveland-soft:#F3E4DE; --world-soft:#DDEAEC;
+  --shadow:0 1px 2px rgba(27,33,28,.07),0 4px 14px rgba(27,33,28,.055);
+  --r:11px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  color-scheme:dark;
+  --ground:#12170F; --surface:#1B2119; --surface-2:#232A20; --line:#333B2F;
+  --ink:#EDEFE7; --ink-2:#B3BAAE; --ink-3:#8A927F;
+  --brass:#D2953F; --brass-soft:#33291A;
+  --cleveland:#D08055; --world:#63AEBA; --fairway:#8CBB7A;
+  --cleveland-soft:#3A2318; --world-soft:#14302F;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 4px 16px rgba(0,0,0,.3);
+}}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --ground:#12170F; --surface:#1B2119; --surface-2:#232A20; --line:#333B2F;
+  --ink:#EDEFE7; --ink-2:#B3BAAE; --ink-3:#8A927F;
+  --brass:#D2953F; --brass-soft:#33291A;
+  --cleveland:#D08055; --world:#63AEBA; --fairway:#8CBB7A;
+  --cleveland-soft:#3A2318; --world-soft:#14302F;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 4px 16px rgba(0,0,0,.3);
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font-family:"Public Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:15px; line-height:1.5; -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:760px;margin:0 auto;padding:0 14px 72px}
+
+/* ---------- header ---------- */
+header{
+  position:relative; overflow:hidden;
+  background:linear-gradient(168deg,#1E2A1B 0%,#16200f 62%,#2A2114 100%);
+  color:#EFEDE3; border-bottom:3px solid var(--brass);
+}
+header .topo{position:absolute;inset:0;opacity:.11;pointer-events:none}
+header .inner{position:relative;max-width:760px;margin:0 auto;padding:22px 16px 18px}
+.eyebrow{
+  font-family:"Roboto Mono",ui-monospace,monospace; font-size:10.5px; font-weight:700;
+  letter-spacing:.19em; text-transform:uppercase; color:var(--brass); margin:0 0 7px;
+}
+h1{
+  font-family:"Bitter",Georgia,serif; font-weight:800; font-size:clamp(28px,7.4vw,40px);
+  line-height:1.02; letter-spacing:-.017em; margin:0; text-wrap:balance;
+}
+.sub{margin:8px 0 0;font-size:13.5px;color:#B9C0AC;letter-spacing:.005em}
+.yr{display:inline-block;font-size:.62em;font-weight:700;color:var(--brass);letter-spacing:.01em;vertical-align:.22em;white-space:nowrap}
+.countdown{
+  margin-top:14px; display:inline-flex; align-items:baseline; gap:8px;
+  background:rgba(255,255,255,.07); border:1px solid rgba(210,149,63,.34);
+  padding:7px 13px; border-radius:99px;
+}
+.countdown b{font-family:"Roboto Mono",monospace;font-size:17px;font-weight:700;color:#F0D9AF}
+.countdown span{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:#A8B09B}
+
+/* ---------- nav ---------- */
+nav{
+  position:sticky; top:0; z-index:30; background:var(--surface);
+  border-bottom:1px solid var(--line); box-shadow:0 1px 8px rgba(0,0,0,.05);
+}
+.tabs{max-width:760px;margin:0 auto;display:flex;overflow-x:auto;scrollbar-width:none;padding:0 8px}
+.tabs::-webkit-scrollbar{display:none}
+.tab{
+  flex:0 0 auto; appearance:none; background:none; border:none; cursor:pointer;
+  font-family:"Public Sans",sans-serif; font-size:12px; font-weight:700;
+  letter-spacing:.09em; text-transform:uppercase; color:var(--ink-3);
+  padding:14px 12px 11px; border-bottom:3px solid transparent; white-space:nowrap;
+}
+.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--brass)}
+.tab:focus-visible{outline:2px solid var(--brass);outline-offset:-3px;border-radius:4px}
+
+.daychips{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:0 0 16px}
+.daychip{appearance:none;cursor:pointer;font-family:"Public Sans",sans-serif;padding:8px 4px;min-height:46px;
+  border-radius:9px;border:1px solid var(--line);background:var(--surface);color:var(--ink-2);box-shadow:var(--shadow)}
+.daychip b{display:block;font-size:13px;font-weight:700;color:var(--ink);line-height:1.15}
+.daychip i{display:block;font-style:normal;font-family:"Roboto Mono",monospace;font-size:10px;color:var(--ink-3);margin-top:2px}
+.daychip[aria-selected="true"]{border-color:var(--brass);border-width:2px;background:var(--brass-soft)}
+.daychip[aria-selected="true"] i{color:var(--brass)}
+.daychip:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+.dayblock{display:none}
+.dayblock.on{display:block}
+.dayblock h2:first-child{margin-top:4px}
+
+/* ---------- panels ---------- */
+.panel{display:none;padding-top:20px;animation:fade .22s ease}
+.panel.on{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.panel{animation:none}}
+
+h2{
+  font-family:"Bitter",Georgia,serif; font-size:12px; font-weight:700;
+  letter-spacing:.15em; text-transform:uppercase; color:var(--brass);
+  margin:30px 0 12px; display:flex; align-items:center; gap:10px;
+}
+h2::after{content:"";flex:1;height:1px;background:var(--line)}
+h2:first-child{margin-top:4px}
+
+/* ---------- next-up ---------- */
+.nextup{
+  background:var(--surface); border:1px solid var(--line); border-left:4px solid var(--brass);
+  border-radius:var(--r); padding:14px 16px; margin-bottom:20px; box-shadow:var(--shadow);
+}
+.nextup .lbl{
+  font-family:"Roboto Mono",monospace;font-size:10px;font-weight:700;letter-spacing:.17em;
+  text-transform:uppercase;color:var(--brass);margin-bottom:5px;
+}
+.nextup .ttl{font-family:"Bitter",serif;font-weight:700;font-size:19px;line-height:1.2;margin-bottom:3px}
+.nextup .meta{font-size:13px;color:var(--ink-2)}
+
+/* ---------- timeline ---------- */
+.day{position:relative;padding-left:20px}
+.day::before{content:"";position:absolute;left:4px;top:10px;bottom:10px;width:2px;background:var(--line)}
+.ev{position:relative;margin-bottom:9px}
+.ev::before{
+  content:"";position:absolute;left:-20px;top:17px;width:10px;height:10px;border-radius:50%;
+  background:var(--surface);border:2px solid var(--line);
+}
+.ev.golf::before{background:var(--fairway);border-color:var(--fairway)}
+.ev.key::before{background:var(--brass);border-color:var(--brass)}
+.card{
+  width:100%;text-align:left;appearance:none;cursor:pointer;
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--r);
+  padding:12px 14px;box-shadow:var(--shadow);font-family:inherit;color:inherit;
+  display:block;transition:border-color .15s;
+}
+.card:hover{border-color:var(--brass)}
+.card:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+.ev.golf .card{border-left:3px solid var(--fairway)}
+.ev.key  .card{border-left:3px solid var(--brass)}
+.chead{display:flex;gap:11px;align-items:flex-start}
+.time{
+  font-family:"Roboto Mono",monospace;font-size:13px;font-weight:700;
+  color:var(--ink);flex:0 0 66px;padding-top:1px;font-variant-numeric:tabular-nums;
+}
+.cbody{flex:1;min-width:0}
+.what{font-weight:700;font-size:15px;line-height:1.28;letter-spacing:-.006em}
+.where{font-size:12.5px;color:var(--ink-2);margin-top:2px}
+.caret{flex:0 0 auto;color:var(--ink-3);font-size:11px;padding-top:4px;transition:transform .2s}
+.card[aria-expanded="true"] .caret{transform:rotate(90deg)}
+.detail{display:none;margin-top:11px;padding-top:11px;border-top:1px solid var(--line);font-size:13.5px;color:var(--ink-2);line-height:1.55}
+.card[aria-expanded="true"] + .detail{display:block}
+.detail p{margin:0 0 8px}
+.detail p:last-child{margin-bottom:0}
+.detail a{color:var(--brass);font-weight:600}
+/* inline links are thumb targets on a phone: give them real height without breaking the line */
+.detail a:not(.maplink),.row .v a,.row .k a,.note a,.fmt-r a,.fmt-ex a,.crs-note a,.flag a{
+  display:inline-block;min-height:34px;line-height:34px;padding:0 4px;margin:0 -4px;
+  border-radius:5px;text-decoration:none;border-bottom:1px solid currentColor;
+}
+.detail a:not(.maplink):active,.row .v a:active,.note a:active{background:var(--brass-soft)}
+a[href^="tel:"]::before{content:"\260E\FE0E";margin-right:5px;font-size:.85em;opacity:.75}
+.maplink{
+  display:flex;align-items:center;gap:10px;margin:0 0 11px;padding:9px 11px;
+  border:1px solid var(--brass);border-radius:9px;background:var(--brass-soft);
+  text-decoration:none;color:var(--ink);
+}
+.maplink:hover{background:var(--surface-2);border-color:var(--brass)}
+.maplink:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+.maplink .pin{color:var(--brass);font-size:12px;line-height:1;flex:0 0 auto}
+.maplink .mtxt{flex:1;min-width:0;display:flex;flex-direction:column;gap:1px}
+.maplink .mtxt b{font-size:13.5px;font-weight:700;color:var(--ink)}
+.maplink .mtxt i{font-size:11px;font-style:normal;color:var(--ink-3)}
+.maplink .mgo{color:var(--brass);font-size:20px;line-height:1;flex:0 0 auto}
+
+.pill{
+  display:inline-block;font-family:"Roboto Mono",monospace;font-size:9.5px;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border-radius:4px;
+  margin:0 5px 5px 0;vertical-align:middle;
+}
+.p-golf{background:var(--brass-soft);color:var(--brass)}
+.p-flag{background:var(--cleveland-soft);color:var(--cleveland)}
+.p-all {background:var(--surface-2);color:var(--ink-2)}
+
+.flag{
+  background:var(--cleveland-soft);border:1px solid var(--cleveland);border-radius:var(--r);
+  padding:11px 14px;margin:0 0 12px;font-size:13.5px;color:var(--ink);line-height:1.5;
+}
+.flag > b:first-child{color:var(--cleveland);display:block;margin-bottom:4px;font-size:11px;letter-spacing:.11em;text-transform:uppercase;font-family:"Roboto Mono",monospace}
+.flag b{font-weight:700;color:var(--ink)}
+
+/* ---------- generic blocks ---------- */
+.box{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+.row{display:flex;gap:12px;padding:11px 14px;border-bottom:1px solid var(--line);align-items:center}
+.row:last-child{border-bottom:none}
+.row .k{flex:0 0 40%;font-size:12.5px;color:var(--ink-2);font-weight:600}
+.row .v{flex:1;font-size:13.5px;font-weight:600;min-width:0}
+.row .v a{color:var(--brass)}
+.mono{font-family:"Roboto Mono",monospace;font-variant-numeric:tabular-nums}
+
+/* contacts */
+.contact{display:flex;align-items:center;gap:12px;padding:11px 14px;border-bottom:1px solid var(--line);text-decoration:none;color:inherit}
+.contact:last-child{border-bottom:none}
+.contact:hover{background:var(--surface-2)}
+.av{
+  flex:0 0 36px;height:36px;border-radius:50%;display:grid;place-items:center;
+  font-family:"Bitter",serif;font-weight:700;font-size:13px;color:#fff;
+}
+.cinfo{flex:1;min-width:0}
+.cname{font-weight:700;font-size:14px}
+.cfull{font-weight:400;font-size:11.5px;color:var(--ink-3);margin-left:5px}
+.cmeta{font-size:12px;color:var(--ink-2)}
+.chcp{font-family:"Roboto Mono",monospace;font-weight:700;font-size:13px;color:var(--ink-2);flex:0 0 auto}
+
+/* teams */
+.teams{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.team{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:var(--surface);box-shadow:var(--shadow)}
+.thead{padding:9px 12px;color:#fff;font-family:"Bitter",serif;font-weight:700;font-size:14px;letter-spacing:-.01em}
+.thead small{display:block;font-family:"Roboto Mono",monospace;font-size:9.5px;font-weight:500;letter-spacing:.1em;opacity:.82;margin-top:1px}
+.tmem{padding:8px 12px;border-bottom:1px solid var(--line);font-size:13px;display:flex;justify-content:space-between;gap:6px}
+.tmem:last-child{border-bottom:none}
+.tmem span:last-child{font-family:"Roboto Mono",monospace;color:var(--ink-3);font-size:12px}
+
+/* scoreboard */
+.score{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px;padding:18px 16px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
+.sside{text-align:center}
+.sname{font-family:"Roboto Mono",monospace;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px}
+.spts{font-family:"Bitter",serif;font-size:38px;font-weight:800;line-height:1;font-variant-numeric:tabular-nums}
+.sdash{color:var(--ink-3);font-size:15px;font-family:"Roboto Mono",monospace}
+.sstat{text-align:center;font-size:12.5px;color:var(--ink-2);margin-top:12px}
+.sstat b{color:var(--brass)}
+
+.match{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:11px 13px;margin-bottom:8px;box-shadow:var(--shadow)}
+.mtop{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px}
+.mses{font-family:"Roboto Mono",monospace;font-size:9.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3)}
+.mvs{display:grid;grid-template-columns:1fr auto 1fr;gap:9px;align-items:center;font-size:13px}
+.mvs .a{font-weight:600;color:var(--cleveland);text-align:right}
+.mvs .b{font-weight:600;color:var(--world)}
+.mvs .v{font-family:"Roboto Mono",monospace;font-size:10px;color:var(--ink-3)}
+.mbtns{display:flex;gap:6px;margin-top:9px}
+.mbtn{
+  flex:1;appearance:none;cursor:pointer;font-family:"Public Sans",sans-serif;font-size:11px;font-weight:700;
+  letter-spacing:.05em;padding:10px 4px;min-height:38px;border-radius:6px;border:1px solid var(--line);
+  background:var(--surface-2);color:var(--ink-2);transition:all .13s;
+}
+.mbtn:hover{border-color:var(--brass);color:var(--ink)}
+.mbtn:focus-visible{outline:2px solid var(--brass);outline-offset:1px}
+.mbtn.on[data-w="Cleveland"]{background:var(--cleveland);border-color:var(--cleveland);color:#fff}
+.mbtn.on[data-w="World"]{background:var(--world);border-color:var(--world);color:#fff}
+.mbtn.on[data-w="Halved"]{background:var(--ink-2);border-color:var(--ink-2);color:var(--surface)}
+.livenote{font-size:11.5px;color:var(--ink-3);text-align:center;margin-top:10px;font-style:italic}
+
+/* money */
+.mtable{width:100%;border-collapse:collapse;font-size:12.5px}
+.mtable th{
+  text-align:left;font-family:"Roboto Mono",monospace;font-size:9.5px;font-weight:700;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);padding:9px 7px;
+  border-bottom:1px solid var(--line);
+}
+.mtable td{padding:9px 7px;border-bottom:1px solid var(--line)}
+.mtable td:first-child,.mtable th:first-child{padding-left:12px}
+.mtable td:last-child,.mtable th:last-child{padding-right:12px}
+.mtable tr:last-child td{border-bottom:none}
+.mtable .num{text-align:right;font-family:"Roboto Mono",monospace;font-variant-numeric:tabular-nums;font-weight:600}
+.mtable tfoot td{font-weight:700;background:var(--surface-2)}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+.note{font-size:12.5px;color:var(--ink-3);line-height:1.55;margin:10px 2px 0}
+.note strong{color:var(--ink-2)}
+.vlink{color:inherit;text-decoration:none;border-bottom:1px solid var(--brass)}
+.vlink:hover{color:var(--brass)}
+
+footer{text-align:center;padding:34px 14px 10px;color:var(--ink-3);font-size:11.5px;line-height:1.7}
+footer .m{font-family:"Roboto Mono",monospace;letter-spacing:.09em;text-transform:uppercase;font-size:10px}
+
+/* ---------- format blocks (The Games) ---------- */
+.fmt{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:14px 15px;margin-bottom:12px}
+.fmt-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.fmt-n{font-family:"Bitter",Georgia,serif;font-weight:800;font-size:19px;letter-spacing:-.015em}
+.fmt-w{font-family:"Roboto Mono",monospace;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--brass);white-space:nowrap}
+.fmt-one{margin:0 0 11px;font-size:14.5px;font-weight:600;line-height:1.42;color:var(--fairway);text-wrap:balance}
+.fmt-r{margin:0;padding:0 0 0 17px;font-size:13.5px;line-height:1.58;color:var(--ink-2)}
+.fmt-r li{margin-bottom:7px}
+.fmt-r li::marker{color:var(--brass)}
+.fmt-ex{margin-top:12px;padding:11px 13px;background:var(--surface-2);border-left:3px solid var(--brass);border-radius:0 7px 7px 0;font-size:13px;line-height:1.55;color:var(--ink-2)}
+.fmt-ex > b:first-child{display:block;font-family:"Roboto Mono",monospace;font-size:9.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--brass);margin-bottom:5px}
+.fmt-ex b{font-weight:700;color:var(--ink)}
+
+/* worked example */
+.wex{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:14px 15px;margin-top:12px;font-size:13px;color:var(--ink-2);line-height:1.55}
+.wex > b:first-child{display:block;font-family:"Roboto Mono",monospace;font-size:9.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--brass);margin-bottom:9px}
+.wex .mtable{margin-bottom:0}
+.wex b{font-weight:700;color:var(--ink)}
+
+/* the creed */
+.creed{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+.creed-l{display:flex;gap:12px;align-items:flex-start;padding:11px 14px;border-bottom:1px solid var(--line);font-size:14px;font-weight:600;line-height:1.4}
+.creed-l:last-child{border-bottom:none}
+.creed-l span{flex:0 0 21px;height:21px;border-radius:50%;background:var(--brass);color:var(--surface);display:grid;place-items:center;font-family:"Roboto Mono",monospace;font-size:11px;font-weight:700;margin-top:1px}
+
+/* course cards */
+.crs{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:14px 15px;margin-bottom:12px}
+.crs-h{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:9px}
+.crs-n{font-family:"Bitter",Georgia,serif;font-weight:800;font-size:18px;letter-spacing:-.015em;line-height:1.15}
+.crs-a{font-size:12px;color:var(--ink-3);margin-top:2px}
+.crs-m{display:flex;gap:9px;flex-wrap:wrap;font-size:10.5px;font-weight:700;letter-spacing:.06em;color:var(--ink-2);padding-top:3px}
+.crs-note{margin:0 0 11px;font-size:13px;line-height:1.55;color:var(--ink-2)}
+.tees{font-size:12.5px}
+.tees tr.rec td{background:var(--brass-soft);font-weight:700;color:var(--ink)}
+.tees tr.rec td:first-child{color:var(--brass)}
+
+</style>
+</head>
+<body>
+<header>
+  <svg class="topo" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 400 200" aria-hidden="true">
+    <g fill="none" stroke="#D2953F" stroke-width="1">
+      <path d="M-20 172 C 60 150, 120 176, 190 154 S 330 128, 420 150"/>
+      <path d="M-20 152 C 60 130, 122 156, 192 133 S 332 107, 420 129"/>
+      <path d="M-20 132 C 62 111, 124 136, 194 112 S 334 86, 420 108"/>
+      <path d="M-20 112 C 64 92, 126 116, 196 91 S 336 65, 420 87"/>
+      <path d="M-20 92 C 66 73, 128 96, 198 70 S 338 44, 420 66"/>
+      <path d="M-20 72 C 68 54, 130 76, 200 49 S 340 23, 420 45"/>
+      <path d="M-20 52 C 70 35, 132 56, 202 28 S 342 2, 420 24"/>
+    </g>
+  </svg>
+  <div class="inner">
+    <p class="eyebrow">Big Cedar Lodge &middot; Ridgedale, Missouri</p>
+    <h1>Going to the Farm 2026 <span class="yr">(Year 5)</span></h1>
+    <p class="sub">October 1&ndash;4 &middot; Eight men &middot; Six courses</p>
+    <div class="countdown"><b id="cd">&mdash;</b><span id="cdl">loading</span></div>
+  </div>
+</header>
+
+<nav><div class="tabs" role="tablist" id="tabs"></div></nav>
+<div class="wrap" id="panels"></div>
+
+<footer>
+  <div class="m">Going to the Farm &middot; MMXXVI</div>
+  <div style="margin-top:6px">Anything not answered here goes to Ryan.</div>
+</footer>
+
+<script>
+/* ============================ DATA ============================ */
+const MAP = a => "https://maps.google.com/?q=" + encodeURIComponent(a);
+/* Google Maps place search — resolves to the business listing, so restaurants
+   come up with photos, menu, hours and reviews rather than just a dropped pin. */
+const G = q => "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(q);
+const PLACE = {
+  ozarks:   ["Ozarks National",        "Ozarks National Golf Course, 1250 Golf Club Dr, Hollister, MO 65672"],
+  cliff:    ["Cliffhangers",           "Cliffhangers Golf Course, 1250 Golf Club Dr, Hollister, MO 65672"],
+  buffalo:  ["Buffalo Ridge Springs",  "Buffalo Ridge Springs Golf Course, 1001 Buffalo Ridge Blvd, Hollister, MO 65672"],
+  mtntop:   ["Mountain Top",           "Mountain Top Golf Course, 1250 Golf Club Dr, Hollister, MO 65672"],
+  paynes:   ["Payne's Valley",         "Payne's Valley Golf Course, 1250 Golf Club Dr, Hollister, MO 65672"],
+  torgolf:  ["Top of the Rock course", "Top of the Rock Golf Course, 150 Top of the Rock Rd, Ridgedale, MO 65739"],
+  lodge:    ["Big Cedar Lodge",        "Big Cedar Lodge, 612 Devil's Pool Rd, Ridgedale, MO 65739"],
+  thunder:  ["Thunder Ridge",          "Thunder Ridge Nature Arena, 1901 State Hwy 86, Ridgedale, MO 65739"],
+  marina:   ["Bent Hook Marina",       "Bent Hook Marina, Big Cedar Lodge, Ridgedale, MO 65739"],
+  funmtn:   ["Fun Mountain",           "Fun Mountain, Big Cedar Lodge, Ridgedale, MO 65739"],
+  unclebuck:["Uncle Buck's",           "Uncle Buck's Fish Bowl and Grill, Ridgedale, MO 65739"],
+  buffbar:  ["Buffalo Bar",            "Buffalo Bar, Top of the Rock, Ridgedale, MO 65739"],
+  cellar:   ["End of the Trail Wine Cellar","End of the Trail All-American Wine Cellar, Top of the Rock, Ridgedale, MO 65739"],
+  truman:   ["Truman Cafe",            "Truman Cafe and Custard, Big Cedar Lodge, Ridgedale, MO 65739"],
+  mtgrill:  ["Mountain Top Grill",     "Mountain Top Grill, 1250 Golf Club Dr, Hollister, MO 65672"],
+  buzzard:  ["Buzzard Bar",            "Buzzard Bar, Top of the Rock, Ridgedale, MO 65739"],
+  osage:    ["Osage Restaurant",       "Osage Restaurant, Top of the Rock, Ridgedale, MO 65739"],
+  sgf:      ["Springfield airport",    "Springfield-Branson National Airport, 2300 N Airport Blvd, Springfield, MO 65802"],
+  bkg:      ["Branson airport",        "Branson Airport, 4000 Branson Airport Blvd, Hollister, MO 65672"]
+};
+function mapBtn(key){
+  const pl = PLACE[key]; if(!pl) return "";
+  return '<a class="maplink" href="'+G(pl[1])+'" target="_blank" rel="noopener">'
+    + '<span class="pin">&#9679;</span><span class="mtxt"><b>'+pl[0]+'</b><i>Tap for directions, photos &amp; hours</i></span>'
+    + '<span class="mgo">&rsaquo;</span></a>';
+}
+const PVC = "1250 Golf Club Drive, Hollister, MO 65672";
+const BRA = "1001 Buffalo Ridge Blvd, Hollister, MO 65672";
+const TOR = "150 Top of the Rock Rd, Ridgedale, MO 65739";
+const BCL = "612 Devil's Pool Road, Ridgedale, MO 65739";
+
+const ROSTER = [
+  {k:"Heis", h:3.3, t:"World", sat:"Mountain Top", note:"Low man"},
+  {k:"Kepps", h:8.2, t:"Cleveland", sat:"Mountain Top", note:""},
+  {k:"Jehls", h:11.2, t:"World", sat:"Mountain Top", note:""},
+  {k:"Joyce", h:17.6, t:"Cleveland", sat:"Fishing", note:""},
+  {k:"Schmidty", h:17.6, t:"Cleveland", sat:"Fishing", note:"Organizer · flies from Branson"},
+  {k:"Trev", h:19.6, t:"World", sat:"Fishing", note:"Out 3:41 PM Sun"},
+  {k:"Kurtz", h:23.3, t:"Cleveland", sat:"Mountain Top", note:""},
+  {k:"Ski", h:31.3, t:"World", sat:"Fishing", note:"Own car · out 6:08 AM Sun"}
+];
+const TEAMS = {
+  Cleveland:{name:"Cleveland", men:[["Kepps",8.2],["Joyce",17.6],["Schmidty",17.6],["Kurtz",23.3]]},
+  World:    {name:"The World", men:[["Heis",3.3],["Jehls",11.2],["Trev",19.6],["Ski",31.3]]}
+};
+const MATCHES = [
+  {id:"s1a", s:"S1 · Thu · Ozarks National",  f:"Best Ball", t:"12:30", a:"Kepps + Kurtz", b:"Heis + Ski"},
+  {id:"s1b", s:"S1 · Thu · Ozarks National",  f:"Best Ball", t:"12:40", a:"Joyce + Schmidty", b:"Jehls + Trev"},
+  {id:"s2a", s:"S2 · Fri AM · Cliffhangers",  f:"Pins &amp; Points", t:"9:00",  a:"Kepps + Schmidty", b:"Heis + Trev"},
+  {id:"s2b", s:"S2 · Fri AM · Cliffhangers",  f:"Pins &amp; Points", t:"9:15",  a:"Joyce + Kurtz", b:"Jehls + Ski"},
+  {id:"s3a", s:"S3 · Fri PM · Buffalo Ridge", f:"Best Ball", t:"1:40",  a:"Kepps + Joyce", b:"Heis + Jehls"},
+  {id:"s3b", s:"S3 · Fri PM · Buffalo Ridge", f:"Best Ball", t:"1:50",  a:"Schmidty + Kurtz", b:"Trev + Ski"},
+  {id:"s4",  s:"S4 · Sat AM · Mountain Top",  f:"Best Ball · 13 holes", t:"9:00", a:"Kepps + Kurtz", b:"Heis + Jehls"},
+  {id:"f1",  s:"S5 · Sat AM · Table Rock Lake", f:"Most Fish", t:"7:00", a:"Joyce + Schmidty", b:"Ski + Trev"},
+  {id:"f2",  s:"S5 · Sat AM · Table Rock Lake", f:"Big Bass",  t:"7:00", a:"Joyce + Schmidty", b:"Ski + Trev"},
+  {id:"f3",  s:"S5 · Sat AM · Table Rock Lake", f:"The Slam",  t:"7:00", a:"Joyce + Schmidty", b:"Ski + Trev"},
+  {id:"s5a", s:"S6 · Sat PM · Payne's Valley",f:"Singles",   t:"12:10", a:"Kepps", b:"Heis"},
+  {id:"s5c", s:"S6 · Sat PM · Payne's Valley",f:"Singles",   t:"12:10", a:"Schmidty", b:"Trev"},
+  {id:"s5b", s:"S6 · Sat PM · Payne's Valley",f:"Singles",   t:"12:20", a:"Joyce", b:"Jehls"},
+  {id:"s5d", s:"S6 · Sat PM · Payne's Valley",f:"Singles",   t:"12:20", a:"Kurtz", b:"Ski"}
+];
+
+const COURSES = [
+  {n:"Ozarks National", loc:"ozarks", arch:"Coore & Crenshaw", par:71, pace:"4:30", when:"Thu 12:30",
+   tees:[["Ozarks (tips)","7,036","73.9","131"],["Blue","6,510","71.3","126"],["Blue/White","6,264","70.0","122"],
+         ["White","5,903","68.6","118"],["White/Red","5,407","66.6","115"],["Red","5,025","64.6","112"]],
+   rec:"Blue/White", caddie:"yes",
+   note:"Wide off the tee, but the greens have false fronts and run away from you. <b>Putt from off the surface</b> &mdash; the ground game is real here."},
+  {n:"Cliffhangers", loc:"cliff", arch:"Johnny &amp; John Paul Morris", par:54, pace:"3:30", when:"Fri 9:00",
+   tees:[["Back","1,910","52.6","89"],["Front","1,560","51.3","88"]],
+   rec:"Back", caddie:"no",
+   note:"18 par-3s, 60 to 170 yards, cut into limestone cliffs. Hole 3 tees from inside a cave behind a waterfall and the cart path runs through a cave on 18. <b>Take less club than feels right downhill.</b>"},
+  {n:"Buffalo Ridge Springs", loc:"buffalo", arch:"Tom Fazio", par:71, pace:"4:30", when:"Fri 1:40",
+   tees:[["Black / Buffalo","7,036","73.4","130"],["Gold / Blue","6,628","71.4","127"],["Bronze","6,232","69.3","125"],
+         ["Silver / White","5,883","67.5","123"],["White/Red","5,367","65.7","118"],["Red","5,032","63.8","113"]],
+   rec:"Bronze", caddie:"yes",
+   note:"Native fescue swallows anything offline, and there are free-ranging bison. Your second 18 of the day &mdash; <b>legs go by 14, so club up.</b>"},
+  {n:"Mountain Top", loc:"mtntop", arch:"Gary Player &amp; Johnny Morris", par:39, pace:"2:00", when:"Sat 9:00",
+   tees:[["Back","1,927","&mdash;","&mdash;"],["Forward","1,091","&mdash;","&mdash;"]],
+   rec:"Back", caddie:"no",
+   note:"13 par-3s along a ridgeline. <b>Walking only, no carts</b> &mdash; under 2 miles, longest hole 95 yards. Unrated, so no slope and no course handicap. Only four of you play it."},
+  {n:"Top of the Rock", loc:"torgolf", arch:"Jack Nicklaus", par:27, pace:"1:45", when:"Sun 9:30",
+   tees:[["Black","1,420","27.7","&mdash;"],["Bronze","1,284","&mdash;","&mdash;"],["Red","945","&mdash;","&mdash;"]],
+   rec:"Black", caddie:"no",
+   note:"<b>Sunday morning &mdash; Schmidty and Trev only.</b> A 9-hole par-3 by Jack Nicklaus, and one of only two par-3 courses ever used in official PGA competition. Dramatic elevation, water and bunkers with Table Rock Lake underneath; a few holes stretch past 200 yards. Carts with GPS. No slope is published. Pro shop <a href='tel:+14173395344'>(417) 339-5344</a>."},
+  {n:"Payne's Valley", loc:"paynes", arch:"Tiger Woods / TGR Design", par:72, pace:"5:00", when:"Sat 12:10",
+   tees:[["Tiger","7,370","75.6","132"],["Blue","6,876","73.2","125"],["Blue/White","6,505","71.3","122"],
+         ["White","6,133","69.4","119"],["White/Red","5,414","66.7","111"],["Red","4,957","64.0","102"]],
+   rec:"Blue/White", caddie:"yes",
+   note:"Tiger&rsquo;s only public design. <b>450 feet of elevation change</b> and greens running 9.5&ndash;11. The bonus 19th at The Big Rock is 99 yards from the White and doesn&rsquo;t count toward par. Longest pace of the week at 5:00."}
+];
+
+const D = (m,d,h,mi)=>new Date(2026,m-1,d,h,mi);
+const DAYS = [
+  {id:"thu", label:"Thu 10/1", title:"Thursday, October 1", sub:"Ozarks National &middot; then Thunder Ridge", events:[
+    {t:"10:08 AM", at:D(10,1,10,8), w:"Land at Springfield", p:"SGF", loc:"sgf", tags:["6 on AA 3584"],
+     d:"<p>Clubs stay in the car &mdash; we go straight to the course.</p>"},
+    {t:"10:42 AM", at:D(10,1,10,42), w:"Ski lands", p:"SGF &middot; Delta via Atlanta", loc:"sgf", tags:["Ski"],
+     d:"<p>He has his <b>own rental car</b> &mdash; he'll drive himself straight to the course. Don't wait at the airport.</p>"},
+    {t:"10:45 AM", at:D(10,1,10,45), w:"Drive to Ozarks National", p:"SGF &rarr; the golf complex", loc:"ozarks", tags:["All 8","~55 min"],
+     d:"<p><a href='"+MAP(PVC)+"' target='_blank' rel='noopener'>"+PVC+"</a></p>"},
+    {t:"11:40 AM", at:D(10,1,11,40), w:"Check in for golf &amp; warm up", p:"Ozarks National pro shop", loc:"ozarks", key:1, tags:["All 8"],
+     d:"<p><b>Fifty minutes before the tee</b>, which is what we want on day one. Get your course handicap sorted, hit balls, eat something.</p><p>The practice facility has two putting greens, a three-green short-game area with bunkers, and a range with zoysia and artificial surfaces. The Tom Watson Putting Course is here too.</p><p>Pro shop <a href='tel:+14173395420'>(417) 339-5420</a></p>"},
+    {t:"12:30 PM", at:D(10,1,12,30), w:"TEE &mdash; Ozarks National", p:"Group 1", loc:"ozarks", golf:1, tags:["Best Ball","Session 1"],
+     d:"<p>Coore &amp; Crenshaw, par 71. <b>Heis + Ski vs Kepps + Kurtz.</b></p><p><b>Forecaddie with each group.</b> $50 plus a $30 tip, cash at the end.</p>"},
+    {t:"12:40 PM", at:D(10,1,12,40), w:"TEE &mdash; Ozarks National", p:"Group 2", loc:"ozarks", golf:1, tags:["Best Ball","Session 1"],
+     d:"<p><b>Jehls + Trev vs Joyce + Schmidty.</b></p>"},
+    {t:"5:15 PM", at:D(10,1,17,15), w:"Finish", p:"4:30 pace", tags:[],
+     d:"<p>Second group in around 5:15, then about 20 minutes to the lodge.</p>"},
+    {t:"5:45 PM", at:D(10,1,17,45), w:"Check in, drop bags", p:"Registration Building, Big Cedar", loc:"lodge", key:1, tags:["All 8"],
+     d:"<p>Ryan has the reservation number. Use <b>express check-in and the digital key</b> in the Big Cedar app so nobody queues at a desk.</p><p>Right at the roundabout on Highway 86, through the grand entrance, then the scenic road down to registration.</p><p>The cottage has a covered porch, gas grills and a wood-burning fireplace, and it&rsquo;s walking distance to the infinity pool. Four bedrooms, eight men &mdash; sort it out among yourselves.</p><p><a href='" + MAP(BCL) + "' target='_blank' rel='noopener'>" + BCL + "</a> &middot; <a href='tel:+14173395039'>(417) 339-5039</a></p>"},
+    {t:"6:00 PM", at:D(10,1,18,0), w:"Show starts at Thunder Ridge", p:"We won&rsquo;t make this one", loc:"thunder", tags:["FYI"],
+     d:"<p>Gates and the first band. Golf finishes around 5:15, so realistically we catch the back half of the openers. No great loss &mdash; the good stuff is later.</p>"},
+    {t:"6:30 PM", at:D(10,1,18,30), w:"Shuttle to Thunder Ridge", p:"Less than a mile from the lodge", loc:"thunder", key:1, tags:["Concert crew"],
+     d:"<p>Big Cedar runs a <b>complimentary shuttle to Thunder Ridge</b>. Nobody drives, nobody parks, nobody is counting drinks.</p><p>Dispatch <a href='tel:+14173395104'>(417) 339-5104</a> or the Big Cedar Shuttle app. They run until midnight.</p>"},
+    {t:"6:45 PM", at:D(10,1,18,45), w:"VIP &mdash; buffet and drinks", p:"Thunder Ridge Nature Arena", loc:"thunder", key:1, tags:["Concert crew","THIS IS DINNER"],
+     d:"<p>VIP access through Ryan&rsquo;s contact at the venue: <b>buffet, drinks, private bar service and lounge seating</b>, plus the underground tunnel entrance that premium ticket holders get.</p><p>1901 State Hwy 86, Ridgedale &middot; <a href='" + MAP("1901 State Hwy 86, Ridgedale, MO 65739") + "' target='_blank' rel='noopener'>map</a></p>"},
+    {t:"~7:00 PM", at:D(10,1,19,0), w:"Staind &middot; Seether &middot; Hoobastank &middot; Hinder", p:"Thunder Ridge Nature Arena", loc:"thunder", golf:0, key:1, tags:["Concert crew"],
+     d:"<p><b>Staind&rsquo;s &lsquo;Break the Cycle&rsquo; 25th Anniversary Tour.</b> Seether is direct support; Hoobastank and Hinder open.</p><p><i>Break the Cycle</i> came out in 2001 and went five-times platinum. &ldquo;It&rsquo;s Been Awhile&rdquo; owned rock radio for what felt like a decade, and &ldquo;Outside&rdquo;, &ldquo;Fade&rdquo; and &ldquo;For You&rdquo; came off the same record. Aaron Lewis on the tour: <i>&ldquo;25 years later to be touring, celebrating this album&hellip; it&rsquo;s like one big family reunion.&rdquo;</i></p><p>Four bands, all of them peak 2001&ndash;2006. Set times aren&rsquo;t published, but billing order puts <b>Staind on around 9:00&ndash;9:15</b>.</p><p><b>The venue:</b> Johnny Morris spent a decade building Thunder Ridge as &ldquo;a gift to the people and heritage of the Ozarks&rdquo; &mdash; 18,000 seats terraced into the hillside with Table Rock Lake and the Ozarks behind the stage.</p><p><b>Bring a layer.</b> Outdoor amphitheatre, October, after dark. The quarter-zip you packed for golf.</p>"},
+    {t:"7:15 PM", at:D(10,1,19,15), w:"Pizza at the cottage", p:"For anyone skipping the show", loc:"lodge", tags:["Everyone else"],
+     d:"<p><b>Big Cedar in-room dining</b> &mdash; <a href='tel:+14173352777'>(417) 335-2777</a>, or ext. 7666 from the cottage. All-day menu 11 AM to 10 PM and they deliver to the cottages. <b>Ask whether pizza is on the menu</b>; Big Cedar doesn&rsquo;t publish it.</p><p>Backup: <b>Uncle Buck&rsquo;s carry-out</b>, same number, pizza definitely on the menu, kitchen shuts at 8 PM. Or <b>Domino&rsquo;s Hollister</b> <a href='tel:+14173377788'>(417) 337-7788</a> &mdash; carry-out only, they don&rsquo;t deliver here.</p>"},
+    {t:"9:00 PM", at:D(10,1,21,0), w:"Porch and fire", p:"The cottage", loc:"lodge", tags:["Everyone else"],
+     d:"<p>Wood-burning fireplace, covered porch, gas grills.</p>"},
+    {t:"~11:00 PM", at:D(10,1,23,0), w:"Shuttle back", p:"Thunder Ridge &rarr; Big Cedar", loc:"lodge", tags:["Concert crew"],
+     d:"<p>Shuttles run until midnight.</p><p>Friday is <b>36 holes off a 9:00 tee</b>. The buffet is free and so are the drinks. Govern yourselves accordingly.</p>"}
+  ]},
+  {id:"fri", label:"Fri 10/2", title:"Friday, October 2", sub:"36 holes &middot; Cliffhangers &amp; Buffalo Ridge", events:[
+    {t:"7:15 AM", at:D(10,2,7,15), w:"Breakfast", p:"Truman Cafe &amp; Custard, or the cottage", loc:"truman", tags:["All 8"],
+     d:"<p>Eat properly. Longest day of the trip.</p>"},
+    {t:"7:45 AM", at:D(10,2,7,45), w:"Head to Cliffhangers", p:"~20 min to the golf complex", loc:"cliff", tags:["All 8"],
+     d:"<p>On the ground at Cliffhangers by 8:10 for a 9:00 tee. Driving ourselves, or the resort shuttle &mdash; <b>book it 90 minutes before the tee time</b>. Dispatch <a href='tel:+14173395104'>(417) 339-5104</a> or the Big Cedar Shuttle app.</p>"},
+    {t:"9:00 AM", at:D(10,2,9,0), w:"TEE &mdash; Cliffhangers", p:"Group 1", loc:"cliff", golf:1, tags:["Pins &amp; Points","Session 2"],
+     d:"<p>18 par-3s, par 54, 60&ndash;170 yards. <b>Heis + Trev vs Kepps + Schmidty.</b></p><p>Hole 3, the &lsquo;Lion&rsquo;s Den&rsquo;, tees from inside a cave behind a waterfall. The cart path drives through a cave on 18.</p><p><b>Pins &amp; Points.</b> Two points a hole &mdash; one for the closest tee shot on the green (gross, no strokes), one for the better net score. Everyone plays their own ball.</p>"},
+    {t:"9:15 AM", at:D(10,2,9,15), w:"TEE &mdash; Cliffhangers", p:"Group 2", loc:"cliff", golf:1, tags:["Pins &amp; Points","Session 2"],
+     d:"<p><b>Jehls + Ski vs Joyce + Kurtz.</b></p>"},
+    {t:"12:45 PM", at:D(10,2,12,45), w:"Finish &mdash; and move", p:"Cliffhangers", loc:"buffalo", key:1, tags:["All 8","TIGHT"],
+     d:"<p><b>This is the squeeze.</b> Published pace here is 3:30, so the 9:15 group finishes about 12:45. Buffalo Ridge tees at 1:40 at a different clubhouse twenty minutes away.</p><p>That&rsquo;s roughly 55 minutes to drive, eat and warm up, and we want to be at Buffalo Ridge by <b>1:10</b>. <b>Eat at the turn on Cliffhangers, not after.</b> Do not plan a sit-down lunch.</p>"},
+    {t:"1:40 PM", at:D(10,2,13,40), w:"TEE &mdash; Buffalo Ridge Springs", p:"Group 1", loc:"buffalo", golf:1, tags:["Best Ball","Session 3"],
+     d:"<p>Tom Fazio, par 71. <b>Heis + Jehls vs Kepps + Joyce.</b></p><p><b>Forecaddie with each group.</b> The fescue here eats anything offline &mdash; this is where a spotter pays for itself.</p><p><b>Different clubhouse</b> &mdash; Buffalo Ridge Blvd, not Golf Club Drive. <a href='"+MAP(BRA)+"' target='_blank' rel='noopener'>Directions</a></p><p>Native grasses and free-ranging bison. Second 18 of the day, so club up.</p>"},
+    {t:"1:50 PM", at:D(10,2,13,50), w:"TEE &mdash; Buffalo Ridge Springs", p:"Group 2", loc:"buffalo", golf:1, tags:["Best Ball","Session 3"],
+     d:"<p><b>Trev + Ski vs Schmidty + Kurtz.</b></p>"},
+    {t:"6:20 PM", at:D(10,2,18,20), w:"Finish", p:"4:30 pace", tags:[], d:"<p>Back to the lodge, about 20 minutes.</p>"},
+    {t:"7:00 PM", at:D(10,2,19,0), w:"Dinner &mdash; Uncle Buck's", p:"Fun Mountain", loc:"unclebuck", key:1, tags:["All 8","CLOSES 8 PM"],
+     d:"<p>Fish Bowl &amp; Grill. Burgers, pizza, salads, shakes. The Bunker Bar and Blue Fin Lounge are right there.</p><p><b>The kitchen closes at 8:00 PM.</b></p>"},
+    {t:"8:00 PM", at:D(10,2,20,0), w:"Fun Mountain", p:"Big Cedar Lodge", loc:"funmtn", tags:["All 8"],
+     d:"<p>50,000 square feet: underwater-themed bowling, laser tag, bumper cars, arcade, golf simulators, Krazy Darts, indoor putt-putt and a rock wall.</p><p>Square up any presses and hammers from the day here, while both cards are still in someone&rsquo;s pocket.</p>"}
+  ]},
+  {id:"sat", label:"Sat 10/3", title:"Saturday, October 3", sub:"Split morning &middot; Payne&rsquo;s Valley &middot; sunset", events:[
+    {t:"6:30 AM", at:D(10,3,6,30), w:"Anglers up", p:"The cottage", loc:"lodge", tags:["Fishing 4"],
+     d:"<p>Cold on the lake in October. <b>Bring your golf clothes on the boat</b> &mdash; there is no time to come back and change.</p>"},
+    {t:"7:00 AM", at:D(10,3,7,0), w:"Guided bass fishing", p:"Bent Hook Marina", loc:"marina", key:1, tags:["Ski","Trev","Joyce","Schmidty","3 CUP POINTS"],
+     d:"<p>Four hours on Table Rock Lake with professional guides.</p><p><b>THREE CUP POINTS ARE ON THIS.</b> Most Fish, Big Bass and The Slam &mdash; see the Games tab for how each is won.</p><p><b>Mixed boats:</b> Ski with Joyce, Trev with Schmidty. Same water, same guide, so it&rsquo;s the anglers being tested and not the guides.</p><p>$200 a man for the boat, plus about <b>$40 cash</b> for the guide at the dock.</p>"},
+    {t:"8:00 AM", at:D(10,3,8,0), w:"Golfers depart", p:"~20 min to Mountain Top", loc:"mtntop", tags:["Golf 4"], d:"<p>Kurtz, Jehls, Heis and Kepps.</p><p><b>Leaving at 8:00, not 8:15.</b> On the ground by 8:20 for a 9:00 tee &mdash; thirty minutes minimum before you hit.</p>"},
+    {t:"9:00 AM", at:D(10,3,9,0), w:"TEE &mdash; Mountain Top", p:"Kurtz, Jehls, Heis, Kepps", loc:"mtntop", golf:1, tags:["Best Ball","Session 4"],
+     d:"<p>Gary Player, 13 par-3s, par 39. <b>Walking only &mdash; no carts.</b> About two hours, under two miles.</p><p><b>Heis + Jehls vs Kepps + Kurtz.</b> One point.</p><p>Rangefinders free at the shop.</p>"},
+    {t:"11:00 AM", at:D(10,3,11,0), w:"Both groups free", p:"Marina / Mountain Top", loc:"marina", tags:[],
+     d:"<p>Fishing ends at 11:00 and Mountain Top finishes about the same time.</p><p><b>Anglers:</b> get the guide to confirm the final tally before you step off the boat. Three points ride on it.</p>"},
+    {t:"11:45 AM", at:D(10,3,11,45), w:"Regroup and eat fast", p:"Payne&rsquo;s Valley clubhouse", loc:"mtgrill", key:1, tags:["All 8"],
+     d:"<p>Mountain Top and Payne&rsquo;s Valley share a clubhouse, so the golf four are already here. Grab-and-go at Mountain Top Grill.</p><p><b>Report the water match here</b> &mdash; three cup points change hands before anyone tees off.</p><p>Seventy minutes from the boat to the first tee. Enough, but not for a shower.</p>"},
+    {t:"12:10 PM", at:D(10,3,12,10), w:"TEE &mdash; Payne's Valley", p:"Group 1", loc:"paynes", golf:1, tags:["SINGLES","4 points"],
+     d:"<p>Tiger Woods / TGR Design, par 72. <b>The session that decides the cup.</b></p><p><b>Heis v Kepps &middot; Trev v Schmidty.</b></p><p><b>Forecaddie with each group.</b> 450+ feet of elevation change. Singles strokes are the full difference in course handicap, straight off GHIN.</p>"},
+    {t:"12:20 PM", at:D(10,3,12,20), w:"TEE &mdash; Payne's Valley", p:"Group 2", loc:"paynes", golf:1, tags:["SINGLES","4 points"],
+     d:"<p><b>Jehls v Joyce &middot; Ski v Kurtz.</b></p>"},
+    {t:"5:20 PM", at:D(10,3,17,20), w:"Finish &mdash; then play the 19th", p:"The Big Rock", loc:"paynes", key:1, tags:["All 8"],
+     d:"<p>A bonus par-3 into a canyon with a waterfall. 99 yards from the White tee, and it doesn&rsquo;t count toward par.</p><p><b>But the carried skins pot rides on it.</b> One ball each, closest to the pin takes whatever is still riding after 18. And if the Cup is 7&ndash;7, this settles that too.</p>"},
+    {t:"6:00 PM", at:D(10,3,18,0), w:"Cocktails &amp; the Cup", p:"End of the Trail Wine Cellar", loc:"cellar", key:1, tags:["All 8"],
+     d:"<p>Down the stone stairwell at Top of the Rock. Wine by the glass, a whiskey room and a cigar humidor.</p><p><b>Farm Cup presentation.</b></p>"},
+    {t:"6:30 PM", at:D(10,3,18,30), w:"Dinner &mdash; Buffalo Bar", p:"Top of the Rock", loc:"buffbar", key:1, tags:["All 8"],
+     d:"<p>Lower level of the Osage Restaurant. Stone patio over Table Rock Lake.</p><p><a href='"+MAP(TOR)+"' target='_blank' rel='noopener'>"+TOR+"</a></p>"},
+    {t:"6:43 PM", at:D(10,3,18,43), w:"Sunset Ceremony", p:"Buffalo Bar patio", loc:"buffbar", key:1, tags:["Don't miss it"],
+     d:"<p>A bagpiper plays as the sun sets over Table Rock Lake. As the last light goes an authentic Civil War cannon fires and you raise your glass.</p><p><b>Be on the patio by 6:35.</b></p>"},
+    {t:"8:30 PM", at:D(10,3,20,30), w:"Nightcap", p:"Buzzard Bar, or the cottage", loc:"buzzard", tags:["Optional"],
+     d:"<p>Buzzard Bar has live music from the resort&rsquo;s singing cowboy.</p>"}
+  ]},
+  {id:"sun", label:"Sun 10/4", title:"Sunday, October 4", sub:"Top of the Rock, then out", events:[
+    {t:"4:15 AM", at:D(10,4,4,15), w:"Ski rolls out", p:"Big Cedar &rarr; SGF", loc:"sgf", tags:["Ski"],
+     d:"<p>DL 1680 leaves Springfield at 6:08 AM for Atlanta, then DL 1240 into Detroit at 12:55 PM. He has his own car.</p><p><b>Say your goodbyes Saturday night</b> &mdash; nobody is seeing him off at 4 AM.</p>"},
+    {t:"8:00 AM", at:D(10,4,8,0), w:"The five depart", p:"Big Cedar &rarr; SGF", loc:"sgf", tags:["Heis","Kepps","Jehls","Joyce","Kurtz"],
+     d:"<p>AA 3584 at 10:38 AM, into O&rsquo;Hare at 12:29 PM.</p>"},
+    {t:"9:00 AM", at:D(10,4,9,0), w:"Arrive Top of the Rock", p:"Thirty minutes before the tee", tags:["Schmidty + Trev"], loc:"torgolf", d:"<p>Load the car before you come &mdash; cottage checkout lands mid-round.</p>"},
+    {t:"9:30 AM", at:D(10,4,9,30), w:"TEE &mdash; Top of the Rock", p:"Schmidty + Trev", loc:"torgolf", golf:1, key:1, tags:["Just for fun"],
+     d:"<p><b>Jack Nicklaus, 9 holes, par 27.</b> One of only two par-3 courses ever used in official PGA competition.</p><p>Dramatic elevation, water and bunkers with Table Rock Lake below you. Carts with GPS. Pace is 1:45, so you&rsquo;re done by 11:15.</p><p>150 Top of the Rock Rd, Ridgedale &middot; pro shop <a href='tel:+14173395344'>(417) 339-5344</a></p><p><b>Load the car before you tee off</b> &mdash; cottage checkout will land in the middle of the round.</p>"},
+    {t:"11:15 AM", at:D(10,4,11,15), w:"Finish, then lunch", p:"Osage or Arnie&rsquo;s Barn", loc:"osage", tags:["Schmidty + Trev"],
+     d:"<p>Both are right there at Top of the Rock. Last meal of the trip.</p>"},
+    {t:"1:15 PM", at:D(10,4,13,15), w:"Trev heads for the airport", p:"&rarr; SGF", loc:"sgf", tags:["Trev"],
+     d:"<p>AA 3544 at 3:41 PM, into O&rsquo;Hare at 5:39 PM.</p><p>He&rsquo;s ticketed under his legal first name rather than Trev, worth knowing if anyone&rsquo;s helping him at a counter.</p>"},
+    {t:"&mdash;", at:D(10,4,14,0), w:"Schmidty out of Branson", p:"KBBG", loc:"bkg", tags:["Schmidty"], d:"<p>Own plane, own schedule.</p>"}
+  ]}
+];
+
+/* ============================ RENDER ============================ */
+const $ = s => document.querySelector(s);
+const fmtTel = p => "("+p.slice(0,3)+") "+p.slice(3,6)+"-"+p.slice(6);
+const money = n => "$"+n.toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});
+const m0 = n => "$"+Math.round(n).toLocaleString("en-US");
+
+const TABS = [{id:"itin",label:"Itinerary"},
+  {id:"cup",label:"The Cup"},{id:"games",label:"The Games"},{id:"golf",label:"Courses"},
+  {id:"money",label:"Money"},{id:"bank",label:"The Bank"},{id:"resort",label:"Resort"}];
+
+function evHTML(e){
+  const cls = "ev"+(e.golf?" golf":"")+(e.key?" key":"");
+  const tags = (e.tags||[]).map(t=>{
+    let c="p-all";
+    if(/BOOK|CLOSES|TIGHT|Don't miss/i.test(t)) c="p-flag";
+    else if(/Best Ball|Pins|SINGLES|Session|points/i.test(t)) c="p-golf";
+    return '<span class="pill '+c+'">'+t+'</span>';
+  }).join("");
+  return '<div class="'+cls+'"><button class="card" aria-expanded="false" data-acc>'
+    + '<div class="chead"><div class="time">'+e.t+'</div><div class="cbody">'
+    + '<div class="what">'+e.w+'</div><div class="where">'+e.p+'</div>'
+    + (tags?'<div style="margin-top:6px">'+tags+'</div>':'')
+    + '</div><div class="caret">&#9654;</div></div></button>'
+    + '<div class="detail">'+(e.loc?mapBtn(e.loc):'')+e.d+'</div></div>';
+}
+function itinPanel(){
+  return '<div class="panel" id="p-itin" role="tabpanel">'
+  + '<div class="daychips" id="daychips" role="tablist" aria-label="Day">'
+  + DAYS.map(d=>'<button type="button" class="daychip" role="tab" data-day="'+d.id+'" aria-selected="false">'
+      + '<b>'+d.label.split(" ")[0]+'</b><i>'+d.label.split(" ")[1]+'</i></button>').join("")
+  + '</div>'
+  + '<div id="nextup"></div>'
+  + DAYS.map(d=>'<section class="dayblock" data-dayblock="'+d.id+'">'
+      + '<h2>'+d.title+'</h2>'
+      + '<p class="note" style="margin:-6px 2px 14px">'+d.sub+'</p>'
+      + '<div class="day">'+d.events.map(evHTML).join("")+'</div></section>').join("")
+  + '</div>';
+}
+
+const rowsHTML = arr => arr.map(r=>'<div class="row"><div class="k" style="flex:0 0 '+(r[2]||"40%")+'">'+r[0]
+  +'</div><div class="v" style="font-weight:400;font-size:12.5px;color:var(--ink-2)">'+r[1]+'</div></div>').join("");
+
+/* ---------- The Cup ---------- */
+function cupPanel(){
+  const teamCard = k => {
+    const T=TEAMS[k], tot=T.men.reduce((s,m)=>s+m[1],0);
+    return '<div class="team"><div class="thead" style="background:var(--'+k.toLowerCase()+')">'+T.name
+      +'<small>'+tot.toFixed(1)+' combined</small></div>'
+      + T.men.map(m=>'<div class="tmem"><span>'+m[0]+'</span><span>'+m[1].toFixed(1)+'</span></div>').join("")+'</div>';
+  };
+  return '<div class="panel" id="p-cup" role="tabpanel">'
+  + '<h2>The Farm Cup</h2>'
+  + '<div class="score"><div class="sside"><div class="sname" style="color:var(--cleveland)">Cleveland</div>'
+    + '<div class="spts" id="ptsA" style="color:var(--cleveland)">0</div></div><div class="sdash">v</div>'
+    + '<div class="sside"><div class="sname" style="color:var(--world)">The World</div>'
+    + '<div class="spts" id="ptsB" style="color:var(--world)">0</div></div></div>'
+  + '<div class="sstat" id="sstat">14 points on the table. <b>First to 7&frac12; wins it.</b></div>'
+  + '<h2>Teams</h2><div class="teams">'+teamCard("Cleveland")+teamCard("World")+'</div>'
+  + '<p class="note">Snake-drafted by handicap then adjusted &mdash; the two sides are within <strong>1.3 strokes</strong>. Partners rotate across the first three sessions, so by Saturday every man has played alongside each of his teammates exactly once. The Saturday tee split is deliberate too &mdash; it&rsquo;s the only arrangement that gets <b>every man a round with every other man across the three full-length courses</b>.</p>'
+  + '<h2>The matches</h2><div id="matches"></div>'
+  + '<div class="livenote" id="livenote">Tap a winner as each match finishes. This saves on your own phone, so pick one scorekeeper and let him run it.</div>'
+  + '<h2>Scoring</h2><div class="box">'
+  + rowsHTML([["Each match","Worth 1 point. Win it 1, halve it &frac12; each, lose it 0.","38%"],
+              ["14 points","Eleven on the golf course, three on Table Rock Lake.","38%"],
+              ["To win the cup","First team to <b>7&frac12;</b>. Get there and it&rsquo;s over.","38%"],
+              ["A tie","7&ndash;7 and the cup is shared &mdash; or settle it on the 19th, closest to the pin.","38%"],
+              ["The shape","Saturday carries 8 of the 14 &mdash; three on the water, one at Mountain Top, four in the singles. Nobody is out of it until Saturday evening.","38%"]])
+  + '</div>'
+  + '<p class="note">New to these formats? The <strong>Games</strong> tab explains all of it in plain English. Read it before Thursday.</p>'
+  + '</div>';
+}
+
+/* ---------- The Games ---------- */
+function gamesPanel(){
+  const fmtBlock = (name,when,one,rules,ex) =>
+    '<div class="fmt"><div class="fmt-h"><div class="fmt-n">'+name+'</div><div class="fmt-w">'+when+'</div></div>'
+    + '<p class="fmt-one">'+one+'</p><ul class="fmt-r">'+rules.map(r=>'<li>'+r+'</li>').join("")+'</ul>'
+    + '<div class="fmt-ex"><b>For example</b>'+ex+'</div></div>';
+  return '<div class="panel" id="p-games" role="tabpanel">'
+  + '<h2>How the games work</h2>'
+  + '<p class="note" style="margin:-4px 2px 16px">Read this once before Thursday.</p>'
+
+  + '<h2>1 &middot; Forget stroke play</h2>'
+  + '<div class="box">'+rowsHTML([
+      ["What we&rsquo;re not doing","Adding up every shot over 18 holes and comparing totals.","36%"],
+      ["What we are doing","<b>Match play.</b> Each hole is its own little contest. Win it and you go &lsquo;1 up&rsquo;. Lose it and you&rsquo;re &lsquo;1 down&rsquo;. Tie it and nothing changes &mdash; that&rsquo;s a &lsquo;halve&rsquo;.","36%"],
+      ["Why it&rsquo;s better","A blow-up hole costs you <b>one hole, not seven strokes</b>. Make a 9 on the 4th, lose that hole, walk to the 5th level with the world. This is why it works for a group running 3 to 31.","36%"],
+      ["If you&rsquo;re beaten","<b>Pick up.</b> You&rsquo;ve lost the hole either way, and it keeps us moving.","36%"],
+      ["How a match ends","As soon as you&rsquo;re further ahead than there are holes left. 3 up with 2 to play wins &mdash; that&rsquo;s what &ldquo;3 and 2&rdquo; means. All square after 18 and the match is halved.","36%"]])
+  + '</div>'
+
+  + '<h2>2 &middot; How you get shots</h2>'
+  + '<div class="box">'+rowsHTML([
+      ["Open GHIN","Pick the course and the tee we&rsquo;re playing and it gives you your <b>course handicap</b> for the day. That&rsquo;s your number &mdash; it already accounts for how hard the course is. Do it each morning; it changes course to course.","34%"],
+      ["Nobody plays off it raw","The <b>lowest man in the match drops to zero</b> and everyone else gets the <b>difference</b>. He&rsquo;s a 6 and you&rsquo;re a 20? You get 14 shots, he gets none.","34%"],
+      ["Where the shots fall","The scorecard has a row marked <b>Handicap</b> or <b>Stroke Index</b> ranking the holes 1 (hardest) to 18 (easiest). Fourteen shots means one on each of the holes marked 1 to 14.","34%"],
+      ["What a shot does","Subtract 1 from your score on that hole. A 6 becomes a <b>net 5</b>. The net score is what counts.","34%"],
+      ["More than 18 shots","One on every hole, then a second on the hardest ones until you run out.","34%"],
+      ["For the rules lawyers","Formal events apply a 90% allowance in best ball. <b>We play full course handicap</b> &mdash; it&rsquo;s what GHIN hands you and it&rsquo;s a shot or two a match.","34%"]])
+  + '</div>'
+  + '<p class="note">Example: Heis is a 4, you&rsquo;re a 20. He drops to 0 and you get <b>16 shots</b>, on the holes indexed 1 to 16. <i>Pull your real number each morning.</i></p>'
+  + '<h2>3 &middot; The three formats</h2>'
+  + fmtBlock("Best Ball","Thu &middot; Fri PM &middot; Sat AM",
+      "Two of you against two of them. Everyone plays their own ball, and your team&rsquo;s better score counts.",
+      ["You and your partner each play your own ball all the way to the hole. So do both opponents, and your side keeps whichever of your two scores is better &mdash; your best ball.",
+       "At the end of the hole your team bins the worse of your two net scores and keeps the better one. So do they. Those two numbers decide the hole.",
+       "Partner having a nightmare? Doesn&rsquo;t matter, his score gets thrown away. Partner safe on the green in two? Then <b>you</b> take on the flag. That&rsquo;s the whole strategy.",
+       "Strokes: full GHIN course handicap, low man in the match down to zero."],
+      "Par 4, stroke index 3. Heis (no shots) makes 4. Ski gets a shot here and makes 6, so his net is 5 &mdash; The World keeps Heis&rsquo;s 4. Kepps gets a shot and makes 5, net 4. Kurtz gets a shot and makes 7, net 6 &mdash; Cleveland keeps Kepps&rsquo;s net 4. Four against four: <b>halved</b>, nobody moves.")
+  + fmtBlock("Pins &amp; Points","Friday morning at Cliffhangers",
+      "Everyone plays their own ball. Two points every hole &mdash; one for the best tee shot, one for the best score.",
+      ["<b>The Pin (1 point):</b> closest tee shot that finishes <b>on the green</b>. If nobody hits it, closest ball anywhere takes it. This point is <b>gross</b> &mdash; no strokes. A good swing is a good swing whoever hits it.",
+       "<b>The Hole (1 point):</b> better net score of the pair, exactly like best ball. Full course handicap, low man in the match to zero.",
+       "Tie either point and it splits &mdash; half a point each. Most points after 18 wins the match. There are 36 on the table.",
+       "<b>Why this one here:</b> 18 par-3s means the tee shot <i>is</i> the hole. No driving advantage, no second shot &mdash; the field is closer at Cliffhangers than anywhere else on the trip, and everyone gets 18 cracks at a point with one swing.",
+       "And you still write down your own score on every hole."],
+      "Hole 7, 135 yards over a ravine. Heis is 18 feet; Ski hits it to 9 feet &mdash; <b>Ski takes the pin point</b>, no strokes involved. Ski two-putts for a 3, net 2 with his shot. Heis rolls in the 18-footer for a 2. <b>Heis takes the scoring point.</b> Hole halved, 1&ndash;1.")
+  + fmtBlock("Singles","Saturday afternoon at Payne&rsquo;s Valley",
+      "Just you against one other man. No partner to hide behind.",
+      ["One against one, hole by hole, same match play rules.",
+       "Strokes: the full difference between the two course handicaps, same as every other format. If he&rsquo;s 9 lower than you, you get 9 shots on the holes indexed 1 to 9.",
+       "Four matches at once, worth <b>four of the eleven points</b>. This is what decides the cup, which is why it&rsquo;s last and on the best course.",
+       "Finish early? Walk back and support whoever&rsquo;s still out there. That&rsquo;s the tradition and it&rsquo;s half the fun."],
+      "Ski&rsquo;s course handicap is 34, Kurtz&rsquo;s is 25 &mdash; a difference of 9. Ski gets a shot on the nine hardest holes; Kurtz gets none. On the 2nd (index 4) Ski makes 6 for a net 5, Kurtz makes 5. <b>Halved.</b>")
+
+  + '<h2>4 &middot; The water match</h2>'
+  + '<div class="flag"><b>Three cup points on Table Rock Lake</b>The Saturday fishing split falls two-and-two across the teams entirely by accident, so it works as a straight team match. <b>Cleveland:</b> Joyce and Schmidty. <b>The World:</b> Ski and Trev.</div>'
+  + '<div class="box">'
+  + rowsHTML([["Most Fish","Highest total count. <b>Everything</b> that comes over the gunwale counts &mdash; bass, crappie, white bass, walleye, bluegill. Zero equipment, zero argument: the guide keeps the tally.","30%"],
+              ["Big Bass","Longest single black bass, measured in <b>inches</b> on the guide&rsquo;s board. Photograph it next to the tape. Length rather than weight, because juggling a scale in a moving boat is a nuisance and every guide has a bump board.","30%"],
+              ["The Slam","Most black bass <b>species</b> boated. Table Rock holds largemouth, smallmouth <i>and</i> spotted, and all three in one morning is a genuine <b>Table Rock Slam</b>. No measuring at all &mdash; you just name the fish. Ties go to whoever got there first.","30%"]])
+  + '</div>'
+  + '<div class="box" style="margin-top:12px">'
+  + rowsHTML([["Mixed boats","<b>Ski with Joyce, Trev with Schmidty.</b> Put each team in its own boat and you&rsquo;re testing the guides, not the anglers.","30%"],
+              ["The guide referees","He keeps the count and works the tape, and his call is final. Tell him at the dock there&rsquo;s a competition on.","30%"],
+              ["Species rule","Everything counts for Most Fish. <b>Big Bass and The Slam are black bass only</b> &mdash; largemouth, smallmouth, spotted. Ties are halved.","30%"],
+              ["Report it","Payne&rsquo;s Valley clubhouse, 11:45. Three points change hands before anyone tees off.","30%"]])
+  + '</div>'
+
+  + '<h2>5 &middot; The skins pot</h2>'
+  + '<div class="flag"><b>$25 a man per round, one pot, all eight</b>Scored <b>net</b>, so this is where the high handicaps make theirs. Eight men is <b>$200 a round</b>, which is $100 a man and <b>$800 in the pot</b> across the four rounds where all eight play. Mountain Top is only four of you, so it sits out. All collected Thursday; nobody hands money over on a tee box.</div>'
+  + '<div class="box">'
+  + rowsHTML([["You find out in the clubhouse","Nobody is comparing eight net scores on the 7th tee. Both cards go <b>side by side over a beer afterwards</b> and Ryan reads out the winners. That&rsquo;s how the men&rsquo;s league runs it and walking in not knowing is half the fun.","32%"],
+              ["Every hole is worth the same","$200 a round over 18 holes is <b>$11.11 a hole</b>, every round, all weekend. Tie one and the next is worth $22. Tie again and it&rsquo;s $33. Call it eleven dollars and let the ledger do the cents.","32%"],
+              ["Winning a hole","All eight net scores compared, <b>across both groups</b>. The single lowest net takes it. Everyone plays off their own full GHIN course handicap &mdash; nobody drops to zero here, that&rsquo;s only for the Cup matches.","32%"],
+              ["Ties kill the hole","Two or more men tie for low net and <b>nobody wins</b>. This is the rule everyone forgets. With eight players and strokes flying about, expect roughly half the holes to tie.","32%"],
+              ["How it accumulates","A tied hole isn&rsquo;t lost, it <b>carries onto the next one</b>. Tie the 2nd and the 3rd is worth $22. Tie that too and the 4th is worth $33. <b>Carries run right through the weekend</b>, so a dead Thursday means Friday morning starts fat and a hole late on Saturday can be worth $60 or $70.","32%"],
+              ["What usually wins one","A real birdie. But watch the men taking <b>two strokes on the same hole</b> &mdash; Ski bogeying a stroke-index-1 par 4 is a net 3, exactly as good as Heis making a real birdie. Those two tying each other is what builds the fat carries.","32%"],
+              ["The 19th settles the rest","Anything still riding after Payne&rsquo;s Valley goes to the bonus <b>19th at The Big Rock</b>. One ball each into the canyon, closest to the pin takes the whole carried pot. That&rsquo;s what the 19th is for.","32%"],
+              ["You&rsquo;ll find out that evening","Ryan works the eight net scores off the photographed cards and posts the winners and the running total to the group chat. Walking in not knowing is half the fun.","32%"]])
+  + '</div>'
+  + '<div class="wex" style="margin-top:12px"><b>Worked example</b>'
+  + '<p style="margin:0">Thursday at Ozarks National. <b>Hole 1:</b> Kepps alone on net 3, everyone else 4 or worse &mdash; he takes <b>$11.11</b>. <b>Hole 2:</b> Heis makes a real birdie for net 3; Ski takes two strokes on the hole and bogeys for net 3 as well. <b>Tied &mdash; nobody wins, it carries.</b> <b>Hole 3:</b> three men tie on net 4, carries again &mdash; the 4th is now worth <b>$33</b>. <b>Hole 4:</b> Jehls alone on net 3 and he collects the lot.</p>'
+  + '<p style="margin:8px 0 0">Nobody knows any of this until both cards come together in the clubhouse.</p></div>'
+  + '<div class="box" style="margin-top:12px">'
+  + rowsHTML([["Use your own full number","Skins is net and <b>everyone plays off their own full GHIN course handicap</b>. That&rsquo;s different from the Cup matches, where the low man drops to zero. Skins is an individual game across the whole field &mdash; nobody drops to zero.","32%"],
+              ["Cliffhangers looks odd","It&rsquo;s an 18-hole par-3 course with a slope of 89, so GHIN will hand a 31 index something like a <b>23</b> and a 3 index something like a <b>1</b>. That&rsquo;s correct. Pull it from the app and don&rsquo;t argue with it.","32%"],
+              ["The appeal","Nobody can lose more than the $100 they put in, and one carried hole late on Saturday can hand most of it back in a single swing.","32%"]])
+  + '</div>'
+
+  + '<h2>6 &middot; Keeping track</h2>'
+  + '<div class="flag"><b>Photograph both cards. That&rsquo;s the whole job.</b>One scribe per group, same man all weekend. At the end of every round both cards get photographed into the group chat, and <b>Ryan runs the numbers that evening</b> and posts the result. Nobody is comparing eight net scores on the 7th tee.</div>'
+  + '<div class="box">'
+  + rowsHTML([["What the card needs","Every man&rsquo;s <b>gross score on every hole</b>, legibly, plus the tee you played. That&rsquo;s it &mdash; no net maths on the course, no dots, no running tallies.","32%"],
+              ["Course handicaps","Pull yours from GHIN <b>each morning</b> for the course and tee, and write it on the card. It changes course to course.","32%"],
+              ["The Cup","Whoever wins a match says so at the end of it. Ryan taps it into <b>The Cup</b> tab and the running score is live for everyone.","32%"],
+              ["Skins","Settled from the cards, not on the course. Winners and running totals go into the group chat the same evening &mdash; disputes die when the numbers are public that day.","32%"]])
+  + '</div>'
+  + '<h2>7 &middot; Pressing and hammering</h2>'
+  + '<div class="flag"><b>Side money only</b>A Cup match is worth <b>one point</b> however the bet goes &mdash; you cannot press your way to two. Cup on the card, cash in Splitwise, two separate things.</div>'
+  + '<div class="box">'
+  + rowsHTML([["The press","You&rsquo;re <b>2 down</b>, so you open a second match over the holes that are left, same stake. Now two bets run at once. Lose the original, win the press, you walk off square.","30%"],
+              ["The hammer","<b>Double the stake, between shots.</b> Your opponent either accepts and plays on for double, or concedes the hole right there. It can be thrown back at you in the same hole.","30%"],
+              ["When to throw it","His ball is in the water and he hasn&rsquo;t played three yet. Never while a man is over the ball or into his routine &mdash; once the shot is struck the window is gone.","30%"]])
+  + '</div>'
+  + '<h2>House rules &mdash; agree these on the first tee</h2><div class="box">'
+  + rowsHTML([["Base stake","Set one number per match and use it all trip. $20 is plenty.","32%"],
+              ["Presses","Only when 2 down. <b>Optional, not automatic</b>, and one per nine.","32%"],
+              ["Hammers","Two per side per round, thrown between shots.","32%"],
+              ["The Cup","Untouched. Every match is worth one point however the money lands.","32%"],
+              ["Settling","Splitwise at the end. Nobody chases cash on the 14th tee.","32%"]])
+  + '</div>'
+
+  + '<h2>If you remember nothing else</h2><div class="creed">'
+  + ["Each hole is its own contest. Win, lose or halve, then move on.",
+     "Your shots come on the hardest holes &mdash; check the stroke index row on the card.",
+     "Best ball: play your own ball, your team keeps the better score.",
+     "Pins &amp; Points: closest tee shot wins a point, better score wins a point.",
+     "Singles: just you and him.",
+     "If you can&rsquo;t win the hole, pick up."].map((l,i)=>'<div class="creed-l"><span>'+(i+1)+'</span>'+l+'</div>').join("")
+  + '</div></div>';
+}
+
+/* ---------- Courses ---------- */
+function golfPanel(){
+  const cc = c => {
+    const badge = c.caddie==="yes" ? '<span class="pill p-golf" style="margin:0">Forecaddie booked</span>' : '';
+    return '<div class="crs"><div class="crs-h"><div><div class="crs-n">'+c.n+'</div>'
+      + '<div class="crs-a">'+c.arch+'</div></div>'
+      + '<div class="crs-m"><span class="mono">Par '+c.par+'</span><span class="mono">'+c.pace+'</span>'
+      + '<span class="mono" style="color:var(--brass)">'+c.when+'</span></div></div>'
+      + '<p class="crs-note">'+c.note+'</p>'
+      + '<div class="scroll"><table class="mtable tees"><thead><tr><th>Tee</th><th class="num">Yards</th><th class="num">Rating</th><th class="num">Slope</th></tr></thead><tbody>'
+      + c.tees.map(t=>{const on=t[0]===c.rec;
+          return '<tr'+(on?' class="rec"':'')+'><td>'+t[0]+(on?' &#9664; play this':'')+'</td><td class="num">'+t[1]+'</td><td class="num">'+t[2]+'</td><td class="num">'+t[3]+'</td></tr>';}).join("")
+      + '</tbody></table></div>'
+      + '<div style="margin-top:10px">'+(c.loc?mapBtn(c.loc):'')+'</div>'
+      + (badge?'<div>'+badge+'</div>':'') + '</div>';
+  };
+  return '<div class="panel" id="p-golf" role="tabpanel">'
+  + '<h2>The six courses</h2>'
+  + '<p class="note" style="margin:-4px 2px 14px">The highlighted tee is the one to play. Want to go back? <strong>The tee plan</strong> below has the next set up and the handicap adjustment.</p>'
+  + COURSES.map(cc).join("")
+  + '<h2>The tee plan</h2>'
+  + '<div class="flag"><b>One set, everyone plays it</b>The three full-length courses land between <b>6,232 and 6,505</b> &mdash; enough course to feel like you played it, short enough that a 36-hole Friday doesn&rsquo;t finish in the dark. <b>The back set on every par-3 course</b>, which is the Back tee at Cliffhangers and Mountain Top and the Black at Top of the Rock.</div>'
+  + '<div class="box scroll"><table class="mtable"><thead><tr><th>Round</th><th>Play this</th><th class="num">Yds</th><th>Want to go back?</th><th class="num">Add</th></tr></thead><tbody>'
+  + [["Ozarks National","Thu","Blue/White","6,264","Blue &mdash; 6,510","+1"],
+     ["Cliffhangers","Fri AM","Back","1,910","&ndash;","&ndash;"],
+     ["Buffalo Ridge","Fri PM","Bronze","6,232","Gold/Blue &mdash; 6,628","+2"],
+     ["Payne&rsquo;s Valley","Sat PM","Blue/White","6,505","Blue &mdash; 6,876","+2"],
+     ["Mountain Top","Sat AM","Back","1,927","&ndash;","&ndash;"],
+     ["Top of the Rock","Sun","Black","1,420","&ndash;","&ndash;"]]
+    .map(r=>'<tr><td style="font-size:12px;line-height:1.25">'+r[0]+'<br><span style="color:var(--ink-3);font-size:10.5px">'+r[1]+'</span></td>'
+      +'<td style="font-weight:700;color:var(--brass)">'+r[2]+'</td><td class="num">'+r[3]+'</td>'
+      +'<td style="font-size:11.5px;color:var(--ink-3)">'+r[4]+'</td><td class="num">'+r[5]+'</td></tr>').join("")
+  + '</tbody></table></div>'
+  + '<div class="box" style="margin-top:12px">'
+  + rowsHTML([["Going back is fine","If <b>Heis, Kepps and Jehls</b> end up together they&rsquo;ll probably want a set back, and that&rsquo;s fine. The last two columns give you the tee and the adjustment. Call it on the first tee, not the fourth.","32%"],
+              ["The adjustment","When players in the same match are on different tees, whoever is on the <b>higher-rated set adds the course-rating difference</b> to his course handicap, rounded to the nearest stroke. USGA rule, GHIN does the maths. Never more than two shots here.","32%"],
+              ["Pull the right number","Get your course handicap from GHIN for the set you <i>actually</i> play, not the one you meant to play.","32%"],
+              ])
+  + '</div>'
+
+  + '<h2>Caddies &mdash; booked</h2>'
+  + '<div class="flag"><b>Six forecaddies, two a round</b>One per foursome at all three full-length courses &mdash; <b>Ozarks National</b> Thursday, <b>Buffalo Ridge</b> Friday afternoon, <b>Payne&rsquo;s Valley</b> Saturday afternoon. Forecaddies, not bag carriers, so we keep the carts, the coolers and the music.</div>'
+  + '<div class="box scroll"><table class="mtable"><thead><tr><th>Round</th><th class="num">Rate</th><th class="num">Tip</th><th class="num">Per man</th></tr></thead><tbody>'
+  + [["Ozarks National &middot; Thu","$50/bag","$30/bag","$80"],
+     ["Buffalo Ridge &middot; Fri PM","$50/bag","$30/bag","$80"],
+     ["Payne&rsquo;s Valley &middot; Sat PM","$50/bag","$30/bag","$80"]]
+     .map(r=>'<tr><td style="font-size:12px">'+r[0]+'</td><td class="num">'+r[1]+'</td><td class="num">'+r[2]+'</td><td class="num" style="color:var(--brass)">'+r[3]+'</td></tr>').join("")
+  + '<tr><td style="font-size:12px">Cliffhangers &middot; Mountain Top</td><td class="num" colspan="2" style="color:var(--ink-3);font-family:inherit;font-weight:400">none &mdash; par-3 courses</td><td class="num">&ndash;</td></tr>'
+  + '</tbody><tfoot><tr><td>Trip total</td><td class="num" colspan="2"></td><td class="num">$240</td></tr></tfoot></table></div>'
+  + '<div class="box" style="margin-top:12px">'
+  + rowsHTML([["Bring cash","<b>$240 each, in cash.</b> $80 a man at the end of each of the three rounds. Some caddies take Venmo; don&rsquo;t count on it.","32%"],
+              ["Booking","<b>caddiereservations@big-cedar.com</b>, or Keith Spaulding on <a href='tel:+14179732576' style='color:var(--brass);font-weight:600'>(417) 973-2576</a>. All six at once, when the tee times are confirmed.","32%"],
+              ["What they do","Run ahead, spot every ball, give you the line and the yardage, read greens, rake bunkers, keep the group moving. On Buffalo Ridge the ball-spotting alone earns it &mdash; the native fescue swallows anything offline.","32%"],
+              ["Not doing","Bag carriers ($100/bag). That means walking, and Buffalo Ridge doesn&rsquo;t permit it anyway.","32%"]])
+  + '</div>'
+
+  + '<h2>The thirty-minute rule</h2>'
+  + '<div class="flag"><b>On the property half an hour before every tee time</b>Thirty minutes <i>standing at the course</i>, not thirty minutes of driving still to do. Bag drop, pro shop, cart, a few balls and finding the first tee eats twenty minutes on its own. Turning up at ten to is how you make a double on the opening hole.</div>'
+  + '<div class="box">'
+  + rowsHTML([["Thu &middot; Ozarks National","Arrive <b>11:40</b> for 12:30. Fifty minutes &mdash; first round of the trip and everyone needs a course handicap sorted.","36%"],
+              ["Fri &middot; Cliffhangers","Leave Big Cedar <b>7:45</b>, on the ground <b>8:10</b> for 9:00.","36%"],
+              ["Fri &middot; Buffalo Ridge","There by <b>1:10</b> for 1:40. This is the tight one &mdash; Cliffhangers doesn&rsquo;t finish until 12:45 and it&rsquo;s a different clubhouse twenty minutes away.","36%"],
+              ["Sat &middot; Mountain Top","Leave Big Cedar <b>8:00</b>, on the ground <b>8:20</b> for 9:00.","36%"],
+              ["Sat &middot; Payne&rsquo;s Valley","Regroup at the clubhouse by <b>11:45</b> for 12:10.","36%"],
+              ["Sun &middot; Top of the Rock","There by <b>9:00</b> for 9:30.","36%"]])
+  + '</div>'
+
+  + '<h2>Practice &amp; warm-up</h2><div class="box">'
+  + rowsHTML([["Ozarks National Practice Facility","Two putting greens, a three-green short-game area with bunkers, and a range with zoysia and artificial surfaces. Serves Ozarks National, Cliffhangers, Mountain Top and Payne&rsquo;s Valley. <b>Get there for 11:40 on Thursday</b>, fifty minutes before the tee.","36%"],
+              ["Tom Watson Putting Course","A 9-hole putting course at the same complex. Worth a beer and a bet.","36%"],
+              ["Buffalo Ridge","Its own practice area &mdash; zoysia and rye tees, bunkers, pitching area, two putting greens.","36%"],
+              ["Rentals","Clubs $60 a set (TaylorMade). Digital rangefinders free at every pro shop.","36%"]])
+  + '</div>'
+
+  + '<h2>Dress code</h2><div class="box">'
+  + rowsHTML([["Collared shirts","Required for men at every Big Cedar course. No exceptions.","36%"],
+              ["Soft spikes only","Metal is banned property-wide.","36%"],
+              ["No denim, no gym shorts","Proper golf attire.","36%"],
+              ["Saturday dinner","Top of the Rock is a step up. Bring a collar that isn&rsquo;t a golf shirt.","36%"]])
+  + '</div></div>';
+}
+
+/* ---------- Crew ---------- */
+/* ---------- Money ---------- */
+function moneyPanel(){
+  const LODGING_TOTAL=18715.27;
+  const L=2339.41, OZ=75, CL=60, BR=75, PV=75, MT=60, TR=60, FI=240, CAD=240;
+  const TORPLAYERS=["Schmidty","Trev"];
+  const rows = ROSTER.map(m=>{
+    const golf = OZ+CL+BR+PV + (m.sat==="Mountain Top"?MT:0) + (TORPLAYERS.includes(m.k)?TR:0);
+    const fish = (m.sat==="Fishing"?FI:0);
+    return {n:m.k, golf, cad:CAD, fish, tot:L+golf+CAD+fish};
+  });
+  const golfTot=rows.reduce((s,r)=>s+r.golf,0), fishTot=rows.reduce((s,r)=>s+r.fish,0);
+  const grand = LODGING_TOTAL + golfTot + CAD*8 + fishTot;
+  const RATES=[["Payne&rsquo;s Valley",75,400,"All 8"],["Ozarks National",75,250,"All 8"],["Buffalo Ridge",75,250,"All 8"],
+               ["Cliffhangers",60,200,"All 8"],["Mountain Top",60,135,"Golf 4"],["Top of the Rock",60,135,"2 guys"]];
+  return '<div class="panel" id="p-money" role="tabpanel">'
+  + '<h2>What you owe</h2>'
+  + '<div class="flag"><b>Three places money goes</b><b>Lodging and golf</b> are billed to each of us individually by Courtney. <b>Forecaddies are cash on the day</b> &mdash; bring $240. <b>Fishing, meals and bar</b> go in Splitwise. Bets are separate and go to Ryan &mdash; see The Bank.</div>'
+  + '<p class="note" style="margin:0 2px 10px">Lodging is <strong>'+money(L)+'</strong> for everyone, so it sits outside the table but inside each total. <strong>Rental cars are not in here</strong> &mdash; we&rsquo;ll square those up afterwards.</p>'
+  + '<div class="box scroll"><table class="mtable"><thead><tr><th>Player</th><th class="num">Golf</th><th class="num">Caddie</th><th class="num">Fishing</th><th class="num">Total</th></tr></thead><tbody>'
+  + rows.map(r=>'<tr><td style="white-space:nowrap">'+r.n+'</td><td class="num">'+m0(r.golf)
+      +'</td><td class="num">'+m0(r.cad)+'</td><td class="num">'+(r.fish?m0(r.fish):"&mdash;")
+      +'</td><td class="num" style="color:var(--brass)">'+m0(r.tot)+'</td></tr>').join("")
+  + '</tbody><tfoot><tr><td>Group</td><td class="num">'+m0(golfTot)+'</td><td class="num">'+m0(CAD*8)
+  + '</td><td class="num">'+m0(fishTot)+'</td><td class="num">'+m0(grand)+'</td></tr></tfoot></table></div>'
+
+  + '<h2>The golf, and what it would have cost</h2>'
+  + '<div class="flag"><b>The media rate saves you about $890</b>Rack for the same five rounds is <b>$1,235</b>. You&rsquo;re paying <b>$345</b> &mdash; 28% of it. Joyce and Ski play four rounds rather than five, so they save $815.</div>'
+  + '<div class="box scroll"><table class="mtable"><thead><tr><th>Round</th><th class="num">Ours</th><th class="num">Rack</th><th class="num">Saved</th><th>Who</th></tr></thead><tbody>'
+  + RATES.map(r=>'<tr><td>'+r[0]+'</td><td class="num">'+m0(r[1])+'</td><td class="num" style="color:var(--ink-3)">'+m0(r[2])
+      +'</td><td class="num" style="color:var(--fairway);font-weight:700">'+m0(r[2]-r[1])
+      +'</td><td style="font-size:11.5px;color:var(--ink-2)">'+r[3]+'</td></tr>').join("")
+  + '</tbody><tfoot><tr><td>Five rounds</td><td class="num">$345</td><td class="num">$1,235</td><td class="num">$890</td><td></td></tr></tfoot></table></div>'
+  + '<p class="note">Payne&rsquo;s Valley alone is <strong>$325</strong> of that. And Ozarks National is <strong>not</strong> in Big Cedar&rsquo;s headline &ldquo;$2,609.41 per person&rdquo; figure &mdash; that covers lodging plus the other four rounds. Thursday is an add-on.</p>'
+  + '<h2>Lodging</h2><div class="box">'
+  + '<div class="row"><div class="k">Your share</div><div class="v mono">'+money(L)+'</div></div>'
+  + '<div class="row"><div class="k">Deposit paid 14 July</div><div class="v mono" style="color:var(--fairway)">&minus;'+money(1467.74)+'</div></div>'
+  + '<div class="row"><div class="k" style="font-weight:700;color:var(--ink)">Balance at check-in</div><div class="v mono" style="color:var(--brass);font-size:15px">'+money(871.67)+'</div></div>'
+  + '</div><p class="note">Tax and the resort fee aren&rsquo;t quoted yet, so the balance will move a little.</p>'
+  + '<h2>Still to come</h2><div class="box">'
+  + rowsHTML([["Rental cars","<b>Left open on purpose.</b> Two SUVs, and we&rsquo;ll work out the split afterwards. Nothing to do now.","34%"],
+              ["Meals and bar tabs","Splitwise. Whoever fronts it puts it in.","34%"],
+              ["Rental clubs","$60 a set, if you&rsquo;re not bringing your own.","34%"],
+              ["Bring cash for","<b>$240</b> cash for forecaddies over three rounds, <b>~$40</b> for the fishing guide, plus bag drop, shuttle drivers and bartenders.","34%"]])
+  + '</div></div>';
+}
+
+/* ---------- The Bank ---------- */
+function bankPanel(){
+  return '<div class="panel" id="p-bank" role="tabpanel">'
+  + '<h2>The Bank</h2>'
+  + '<div class="flag"><b>$250 a man, paid Thursday morning</b>All of it, before anyone hits a shot, at Ozarks National at <b>11:40 AM</b>. Cash, Venmo or Zelle to Ryan. <b>No IOUs.</b> You can&rsquo;t welch on money you&rsquo;ve already handed over &mdash; which is the entire point.</div>'
+  + '<div class="box scroll"><table class="mtable"><thead><tr><th>Pot</th><th>Buy-in</th><th class="num">Total</th><th>Scored</th></tr></thead><tbody>'
+  + [["The Cup","$150 a man","$1,200","Team, 14 points"],
+     ["Skins","$25 &times; 4 rounds","$800","<b>Net</b>, all eight"]]
+    .map(r=>'<tr><td style="font-weight:700;color:var(--brass)">'+r[0]+'</td><td style="font-size:12px">'+r[1]+'</td><td class="num">'+r[2]+'</td><td style="font-size:11.5px;color:var(--ink-2)">'+r[3]+'</td></tr>').join("")
+  + '</tbody><tfoot><tr><td>All in</td><td style="font-size:12px">$250 a man</td><td class="num">$2,000</td><td></td></tr></tfoot></table></div>'
+  + '<p class="note">That&rsquo;s the most anyone can lose across four days &mdash; around a tenth of what the trip already costs you. Ryan can change any of these in the spreadsheet and every number recalculates.</p>'
+
+  + '<h2>Why it&rsquo;s sized this way</h2>'
+  + '<div class="box">'
+  + rowsHTML([["The Cup &mdash; dead even","You win if <b>your team</b> wins, and the teams are balanced to within <b>1.3 strokes</b>. Ski&rsquo;s odds are identical to Heis&rsquo;s. That&rsquo;s exactly why nearly two thirds of all the money sits here &mdash; it&rsquo;s the one bet where the worst golfer and the best golfer have the same expected return. Winning four split $1,200, so <b>$300 each</b>.","32%"],
+              ["Skins &mdash; leans high","Net skins reward <b>one brilliant hole</b>, and high handicaps have far more variance than low ones. Ski will make a net eagle somewhere this weekend and take a fat carried pot with it. Heis is more consistent, which means his good holes get tied more often. Every hole is worth <b>$11.11</b> and carries run all weekend, so a hole tied five times pays <b>$66</b> to whoever finally wins it.","32%"],
+              ["Two pots, and that&rsquo;s the lot","<b>The Cup is the game</b> and everything else is a side bet that mustn&rsquo;t get in the way of the match in front of you. Neither pot is scored gross, which is exactly why Ski can go home in front. Nothing to track on the course beyond your own score.","32%"]])
+  + '</div>'
+  + '<p class="note"><strong>The structure is deliberate.</strong> $1,200 in the Cup, where handicap is irrelevant because you win with your team, and $800 in skins, which is net and leans toward the back of the field. <strong>Neither pot is scored gross</strong>, which is the whole reason Ski can go home in front.</p>'
+  + '<div class="flag" style="margin-top:12px"><b>Why a win only doubles your money</b>Four against four with everyone in for the same amount means the losing four fund the winning four <b>exactly</b> &mdash; so a winner can only ever collect one buy-in. No structure beats that in an even team bet; the only lever is the size of the buy-in. At $150 a man the swing between winning and losing is <b>$300</b>.</div>'
+
+  + '<h2>When the money moves</h2>'
+  + '<div class="box">'
+  + rowsHTML([["Thu 11:40 AM","<b>Pay Ryan $250.</b> At Ozarks National, before the first tee shot.","26%"],
+              ["Live, each round","Presses and hammers go <b>on the scorecard as they happen</b>, initialled by both sides.","26%"],
+              ["After each round","Both cards side by side in the clubhouse. Ryan works the skins off the two cards and posts the winners. <b>Photograph the cards into the group chat.</b>","26%"],
+              ["Sat ~6:00 PM","<b>Everything settles</b> at the wine cellar. Cup presented, skins paid out, presses and hammers squared. <b>The losing four buy the first round.</b>","26%"],
+              ["Sunday","Nothing. Ski&rsquo;s on the road at 4:15 AM and two of you are on the first tee. Sunday is far too late to chase anyone.","26%"]])
+  + '</div>'
+
+  + '<h2>House rules</h2>'
+  + '<div class="box">'
+  + rowsHTML([["Money up front","Before the first tee shot Thursday. No IOUs, no &ldquo;I&rsquo;ll get you later&rdquo;. This one rule stops the whole problem.","30%"],
+              ["Not on the card, didn&rsquo;t happen","A press nobody wrote down is not a press. A hammer nobody initialled was never thrown. Everyone agrees to this Thursday so nobody argues Saturday.","30%"],
+              ["One banker","Ryan holds the money and the ledger. Nobody keeps a competing tally in their head.","30%"],
+              ["Publish every round","Cards into the group chat, running totals posted. Disputes die when the numbers are public the same day.","30%"],
+              ["Capped downside","<b>Nobody can lose more than $250</b> across the two pots. Presses and hammers are the only open-ended money, which is why they&rsquo;re capped on the Games tab.","30%"]])
+  + '</div>'
+  + '<p class="note">Ryan settles skins from the photographed cards after each round and posts the totals to the group chat. The spreadsheet takes eight final numbers at the end, one per man, and checks the whole thing balances to zero.</p>'
+  + '</div>';
+}
+
+/* ---------- Resort ---------- */
+function resortPanel(){
+  return '<div class="panel" id="p-resort" role="tabpanel">'
+  + '<h2>Thursday night &mdash; Thunder Ridge</h2>'
+  + '<div class="flag"><b>Tell Ryan if you want a VIP pass</b>Staind, Seether, Hoobastank and Hinder, under a mile from the lodge. VIP is buffet, drinks and lounge seating through Ryan&rsquo;s contact at the venue, and <b>it counts as dinner</b>. Full detail on the Thu 10/1 tab.</div>'
+
+  + '<h2>Eating &amp; drinking</h2><div class="box">'
+  + rowsHTML([["On the schedule already","Thursday pizza at the cottage, Friday <a href=\'"+G(PLACE.unclebuck[1])+"\' target=\"_blank\" rel=\"noopener\" class=\"vlink\">Uncle Buck&rsquo;s</a> (kitchen shuts 8 PM), Saturday <a href=\'"+G(PLACE.cellar[1])+"\' target=\"_blank\" rel=\"noopener\" class=\"vlink\">the wine cellar</a> then <a href=\'"+G(PLACE.buffbar[1])+"\' target=\"_blank\" rel=\"noopener\" class=\"vlink\">Buffalo Bar</a>. Times are on the day tabs.","34%"],
+              ["Between rounds","<a href=\'"+G(PLACE.mtgrill[1])+"\' target=\"_blank\" rel=\"noopener\" class=\"vlink\">Mountain Top Grill</a> at the clubhouse, and <a href=\'"+G(PLACE.truman[1])+"\' target=\"_blank\" rel=\"noopener\" class=\"vlink\">Truman Cafe</a> for a fast breakfast.","34%"],
+              ["If you want a proper meal","<b>The Worman House</b>, fine dining in a restored 1920s mansion, Tue&ndash;Sat 5&ndash;9 PM. <b>Arnie&rsquo;s Barn</b> is Mexican in a barn moved here from Arnold Palmer&rsquo;s own property.","34%"],
+              ["Late","<a href=\'"+G(PLACE.buzzard[1])+"\' target=\"_blank\" rel=\"noopener\" class=\"vlink\">Buzzard Bar</a> has the resort&rsquo;s singing cowboy. Blue Fin and the Bunker Bar overlook the bowling at Fun Mountain.","34%"]])
+  + '</div>'
+
+  + '<h2>The Bat Bar</h2>'
+  + '<div class="flag"><b>A drive-through bar inside a cave</b>Rent a cart at the Top of the Rock Welcome Center and drive a 2.5-mile loop past nine waterfalls, a skybridge over the lake and a sabre-tooth tiger fossil. Partway round the trail goes into a four-storey cave with a bar built against the rock.</div>'
+  + '<div class="box">'
+  + rowsHTML([["When we could do it","<b>Sunday, and only Schmidty and Trev.</b> They finish Top of the Rock at 11:15 already standing at the Welcome Center. Saturday is a squeeze against the 6:43 sunset ceremony and Thu/Fri are gone.","30%"],
+              ["Book ahead","<b>Fri, Sat and Sun are timed-slot only.</b> Pricing rises as the date approaches, so buy online early. Plus $10 per vehicle to enter Top of the Rock, card only.","30%"],
+              ["Practical","Last cart leaves <b>6:30 PM</b> and the bar shuts about <b>5:58 PM</b> on the 3rd. Carts hold four, drivers 18+. Allow 90 minutes with stops. <b>Bring cash</b> &mdash; older reviews say the bar is cash only, and don&rsquo;t count on a free drink being included.","30%"],
+              ["Free with the ticket","The <b>Ancient Ozarks Museum</b> underneath Top of the Rock. 35,000 sq ft of fossils, Native American artifacts, a Civil War gallery and a serious firearms collection. Daily 9 AM&ndash;7 PM, no booking.","30%"]])
+  + '</div>'
+
+  + '<h2>If you get a spare hour</h2><div class="box">'
+  + rowsHTML([["On your route anyway","The <b>Chapel of the Ozarks</b> on the bluff, the <b>infinity edge</b> where the sunset ceremony happens, and two putting courses &mdash; Tom Watson at the Payne&rsquo;s clubhouse and one at Top of the Rock. All free, all ten minutes.","34%"],
+              ["Cedar Creek Spa","Open until 8 PM Wed&ndash;Sat, so Friday after 36 holes is the only window. Ask for the <b>Therapeutic</b> massage, not the relaxation one. No prices published &mdash; call <a href=\'tel:+18002256343\'>(800) 225-6343</a> ext. 3 and book weeks ahead.","34%"],
+              ["The pools","Heated saltwater, so October is fine. The Swimmin&rsquo; Hole has an adults-only section and bookable cabanas. Brushy Creek indoor runs 8 AM&ndash;10 PM.","34%"],
+              ["Off property","<b>The Summit</b> in downtown Branson, ~25 min, is the best single stop &mdash; nightclub, country bar, sports bar and arcade under one roof. Most Branson bars only get going Thu&ndash;Sat.","34%"]])
+  + '</div>'
+
+  + '<h2>Numbers worth having</h2><div class="box">'
+  + [["Big Cedar Lodge","Front desk","4173395039"],
+     ["Shuttle dispatch","On demand, 6 AM &ndash; midnight","4173395104"],
+     ["Golf pro shop","Ozarks National / Cliffhangers / Mountain Top / Payne&rsquo;s Valley","4173395420"],
+     ["Top of the Rock pro shop","Sunday tee time","4173395344"],
+     ["In-room dining","Delivers to the cottage, 11 AM &ndash; 10 PM","4173352777"],
+     ["Courtney Munday","Big Cedar group coordinator &mdash; lodging and golf billing","4172300258"],
+     ["Keith Spaulding","Caddie manager &middot; caddiereservations@big-cedar.com","4179732576"],
+     ["Domino&rsquo;s Hollister","Carry-out only, 5.6 miles","4173377788"]
+    ].map(c=>'<a class="contact" href="tel:+1'+c[2]+'"><div class="cinfo"><div class="cname">'+c[0]+'</div>'
+      +'<div class="cmeta">'+c[1]+'</div></div><div class="chcp" style="font-size:12px;color:var(--brass);white-space:nowrap">'+fmtTel(c[2])+'</div></a>').join("")
+  + '</div><p class="note">Each other&rsquo;s numbers are in your phone and the group chat. These are the ones that aren&rsquo;t.</p>'
+  + '<h2>Getting around</h2><div class="box">' 
+  + rowsHTML([["Resort shuttle","On demand, 6 AM to midnight. <a href='tel:+14173395104' style='color:var(--brass);font-weight:600'>(417) 339-5104</a> or the Shuttle app.","38%"],
+              ["For golf","Book the shuttle <b>90 minutes before</b> your tee time.","38%"],
+              ["To the golf complex","~20 min. Ozarks National, Cliffhangers, Mountain Top and Payne&rsquo;s Valley all share it.","38%"],
+              ["To Buffalo Ridge","~20 min &mdash; a <b>different</b> clubhouse on Buffalo Ridge Blvd.","38%"],
+              ["To Top of the Rock","~5 min.","38%"],
+              ["Apps","Big Cedar app for the digital key and directory; Big Cedar Shuttle app for rides.","38%"]])
+  + '</div>'
+  + '<h2>Pack this</h2><div class="box">'
+  + rowsHTML([["Soft-spike shoes","Metal is banned everywhere","50%"],["5 collared shirts","One per round","50%"],
+              ["Rain gear","October in Missouri","50%"],["Quarter-zip","Mornings around 50&deg;F","50%"],
+              ["Walking shoes","Mountain Top has no carts","50%"],["Warm layer for the boat","7 AM on the lake is cold","50%"],
+              ["Golf clothes in your boat bag","No time to change before Payne&rsquo;s Valley","50%"],
+              ["<b>$240 cash for forecaddies</b>","$80 a man at the end of each of the three rounds","50%"],
+              ["Polarized sunglasses","Water and course","50%"],["Collar for Top of the Rock","Saturday dinner is a step up","50%"],
+              ["Battery pack","Friday is ten hours outdoors","50%"],["Advil","36 holes, then a 7 AM start","50%"]])
+  + '</div>'
+  + '<h2>Two things we need from you</h2><div class="box">'
+  + rowsHTML([["Thunder Ridge","Tell Ryan if you want a <b>VIP pass</b> so he can pull the right number.","36%"],
+              ["Splitwise","Get in before Thursday.","36%"]])
+  + '</div><p class="note">Everything else &mdash; caddies, fishing guides, tee times, tickets &mdash; Ryan has. Don&rsquo;t chase him.</p></div>';
+}
+
+/* ============================ BUILD ============================ */
+$("#tabs").innerHTML = TABS.map((t,i)=>'<button class="tab" role="tab" data-t="'+t.id+'" aria-selected="'+(i===0)+'" aria-controls="p-'+t.id+'">'+t.label+'</button>').join("");
+$("#panels").innerHTML = itinPanel() + cupPanel() + gamesPanel() + golfPanel() + moneyPanel() + bankPanel() + resortPanel();
+
+function show(id){
+  document.querySelectorAll(".panel").forEach(p=>p.classList.toggle("on", p.id==="p-"+id));
+  document.querySelectorAll(".tab").forEach(b=>{
+    const on = b.dataset.t===id;
+    b.setAttribute("aria-selected", String(on));
+    if(on) b.scrollIntoView({block:"nearest",inline:"nearest"});
+  });
+  window.scrollTo({top:0,behavior:"instant"});
+}
+$("#tabs").addEventListener("click", e=>{ const b=e.target.closest(".tab"); if(b) show(b.dataset.t); });
+document.addEventListener("click", e=>{
+  const b = e.target.closest("[data-acc]"); if(!b) return;
+  b.setAttribute("aria-expanded", b.getAttribute("aria-expanded")==="true" ? "false" : "true");
+});
+
+const NOW = () => new Date();
+const ALL = DAYS.flatMap(d => d.events.map(e => ({...e, day:d.id})));
+function pickDay(){
+  const n=NOW();
+  const d=DAYS.find(day=>day.events.some(e=>e.at.toDateString()===n.toDateString()));
+  return d ? d.id : DAYS[0].id;
+}
+let curDay = pickDay();
+function showDay(id, scroll){
+  curDay = id;
+  document.querySelectorAll("[data-dayblock]").forEach(b=>b.classList.toggle("on", b.dataset.dayblock===id));
+  document.querySelectorAll(".daychip").forEach(c=>c.setAttribute("aria-selected", String(c.dataset.day===id)));
+  renderNext();
+  if(scroll) window.scrollTo({top:0,behavior:"instant"});
+}
+$("#daychips").addEventListener("click", e=>{ const c=e.target.closest(".daychip"); if(c) showDay(c.dataset.day, true); });
+
+function renderNext(){
+  const host=$("#nextup"); if(!host) return;
+  const n=NOW(), up=ALL.find(e=>e.at>n);
+  host.innerHTML = (up && up.day===curDay)
+    ? '<div class="nextup"><div class="lbl">Next up</div><div class="ttl">'+up.w+'</div><div class="meta">'+up.t+' &middot; '+up.p+'</div></div>'
+    : "";
+}
+showDay(curDay, false);
+show("itin");
+
+function tickCD(){
+  const start=D(10,1,8,15), end=D(10,4,12,29), n=NOW(), cd=$("#cd"), lbl=$("#cdl");
+  if(n<start){ const days=Math.ceil((start-n)/864e5); cd.textContent=days; lbl.textContent=days===1?"day out":"days out"; }
+  else if(n<=end){ cd.textContent="LIVE"; lbl.textContent="we're there"; }
+  else { cd.textContent="—"; lbl.textContent="that's a wrap"; }
+}
+tickCD(); setInterval(()=>{tickCD();renderNext();},60000);
+
+/* ---------- the Cup leaderboard ---------- */
+let results={};
+try{ const raw=localStorage.getItem("farmcup2"); if(raw) results=JSON.parse(raw)||{}; }catch(_){}
+
+/* built once, then only the button state changes — so a tap never rebuilds the list,
+   never drops focus, and never moves the page under your thumb */
+function buildMatches(){
+  const host=$("#matches"); if(!host) return;
+  host.innerHTML = MATCHES.map(m=>
+      '<div class="match"><div class="mtop"><span class="mses">'+m.s+'</span>'
+    + '<span class="pill p-golf" style="margin:0">'+m.f+'</span></div>'
+    + '<div class="mvs"><span class="a">'+m.a+'</span><span class="v">v</span><span class="b">'+m.b+'</span></div>'
+    + '<div class="mbtns" role="group" aria-label="'+m.a.replace(/&amp;/g,"and")+' versus '+m.b.replace(/&amp;/g,"and")+'">'
+    + [['Cleveland','Cleveland'],['Halved','Halved'],['World','The World']].map(x=>'<button type="button" class="mbtn" aria-pressed="false" data-w="'+x[0]+'" data-m="'+m.id+'">'+x[1]+'</button>').join("")
+    + '</div></div>').join("");
+  paintCup();
+}
+function paintCup(){
+  document.querySelectorAll(".mbtn").forEach(b=>{
+    const on = results[b.dataset.m]===b.dataset.w;
+    b.classList.toggle("on", on);
+    b.setAttribute("aria-pressed", String(on));
+  });
+  let A=0,B=0;
+  Object.values(results).forEach(v=>{ if(v==="Cleveland")A++; else if(v==="World")B++; else if(v==="Halved"){A+=.5;B+=.5;} });
+  const f = x => x===0 ? "0" : String(x).replace(/\.5$/,"½").replace(/^0½$/,"½");
+  $("#ptsA").textContent=f(A); $("#ptsB").textContent=f(B);
+  const played=Object.keys(results).length, st=$("#sstat");
+  if(A>=7.5) st.innerHTML='<b>Cleveland wins the Farm Cup.</b>';
+  else if(B>=7.5) st.innerHTML='<b>The World wins the Farm Cup.</b>';
+  else if(played===14) st.innerHTML='<b>7&ndash;7. Shared &mdash; or settle it on the 19th.</b>';
+  else st.innerHTML=(14-played)+' match'+(14-played===1?'':'es')+' left. <b>First to 7&frac12; wins it.</b>';
+}
+buildMatches();
+document.addEventListener("click", e=>{
+  const b=e.target.closest(".mbtn"); if(!b) return;
+  const id=b.dataset.m, w=b.dataset.w;
+  if(results[id]===w) delete results[id]; else results[id]=w;
+  paintCup();
+  try{ localStorage.setItem("farmcup2", JSON.stringify(results)); }catch(_){}
+});
+
+</script>
+</body>
+</html>
