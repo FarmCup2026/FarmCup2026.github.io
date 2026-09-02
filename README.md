@@ -2,15 +2,22 @@
 
 Trip reference for eight men at Big Cedar Lodge, Ridgedale MO, October 1–4 2026.
 
+**Live site:** https://4schmidtyonline-ux.github.io/TheFarmCup2026/
+
 `index.html` is the whole site. No build step, no dependencies, nothing to install.
 Fonts load from Google Fonts; everything else is inline.
 
-## Hosting it on GitHub Pages
+## Updating it
 
-1. Create a new repository.
-2. Upload `index.html` to the root.
-3. Settings → Pages → Source: **Deploy from a branch**, Branch: **main**, folder: **/ (root)**.
-4. Wait a minute. The URL is `https://<your-username>.github.io/<repo-name>/`.
+Edit `index.html` in the repo (pencil icon), commit to `main`. Pages redeploys in
+about a minute. Hard-refresh your phone if you still see the old version.
+
+## Pages settings
+
+Settings → Pages → Source: **Deploy from a branch**, Branch: **main**, folder: **/ (root)**.
+If a deployment gets stuck or fails with a 500, that is GitHub's side, not the repo.
+Push any trivial commit to enqueue a fresh run, or switch Source to **GitHub Actions**,
+which uses a different deployment path.
 
 ## Note on visibility
 
