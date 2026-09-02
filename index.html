@@ -4,7 +4,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<meta name="description" content="Going to the Farm 2026 — Big Cedar Lodge, October 1-4.">
 <meta name="robots" content="noindex,nofollow">
 <title>Going to the Farm 2026 (Year 5)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,7 +11,6 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@600;700;800&family=Public+Sans:wght@400;500;600;700&family=Roboto+Mono:wght@500;700&display=swap">
 <style>
 :root{
-  color-scheme:light;
   --ground:#E9EAE4; --surface:#FDFDFB; --surface-2:#F2F3ED; --line:#D3D6CC;
   --ink:#1B211C; --ink-2:#4A5249; --ink-3:#767E74;
   --brass:#9C6520; --brass-soft:#F0E3D0;
@@ -22,7 +20,6 @@
   --r:11px;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  color-scheme:dark;
   --ground:#12170F; --surface:#1B2119; --surface-2:#232A20; --line:#333B2F;
   --ink:#EDEFE7; --ink-2:#B3BAAE; --ink-3:#8A927F;
   --brass:#D2953F; --brass-soft:#33291A;
@@ -31,7 +28,6 @@
   --shadow:0 1px 2px rgba(0,0,0,.4),0 4px 16px rgba(0,0,0,.3);
 }}
 :root[data-theme="dark"]{
-  color-scheme:dark;
   --ground:#12170F; --surface:#1B2119; --surface-2:#232A20; --line:#333B2F;
   --ink:#EDEFE7; --ink-2:#B3BAAE; --ink-3:#8A927F;
   --brass:#D2953F; --brass-soft:#33291A;
@@ -257,6 +253,20 @@ a[href^="tel:"]::before{content:"\260E\FE0E";margin-right:5px;font-size:.85em;op
 .mbtn.on[data-w="Cleveland"]{background:var(--cleveland);border-color:var(--cleveland);color:#fff}
 .mbtn.on[data-w="World"]{background:var(--world);border-color:var(--world);color:#fff}
 .mbtn.on[data-w="Halved"]{background:var(--ink-2);border-color:var(--ink-2);color:var(--surface)}
+.live{border:1px solid var(--brass);border-radius:var(--r);background:var(--surface);padding:12px 14px;margin:0 0 18px;box-shadow:var(--shadow)}
+.live .lh{display:flex;align-items:center;gap:8px;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);font-weight:800}
+.live .dot{width:8px;height:8px;border-radius:50%;background:var(--brass);flex:0 0 8px}
+.live .lu{font-size:11.5px;color:var(--ink-3);margin-top:5px}
+.live .lmsg{font-size:13.5px;color:var(--ink);margin-top:9px;line-height:1.5}
+.sk{border-top:1px solid var(--line);padding:12px 14px}
+.sk:first-child{border-top:0}
+.skh{display:flex;justify-content:space-between;gap:10px;align-items:baseline;margin-bottom:6px}
+.skr{font-weight:700;color:var(--brass);font-size:13px}
+.skp{font-size:11.5px;color:var(--ink-3);text-align:right}
+.skw{display:flex;justify-content:space-between;gap:10px;font-size:13px;padding:5px 0;border-bottom:1px dashed var(--line)}
+.skw:last-child{border-bottom:0}
+.skw b{font-variant-numeric:tabular-nums;color:var(--ink)}
+.skn{font-size:11.5px;color:var(--ink-3);font-style:italic;margin-top:7px;line-height:1.45}
 .livenote{font-size:11.5px;color:var(--ink-3);text-align:center;margin-top:10px;font-style:italic}
 
 /* money */
@@ -597,6 +607,7 @@ function cupPanel(){
       + T.men.map(m=>'<div class="tmem"><span>'+m[0]+'</span><span>'+m[1].toFixed(1)+'</span></div>').join("")+'</div>';
   };
   return '<div class="panel" id="p-cup" role="tabpanel">'
+  + '<div id="liveband"></div>'
   + '<h2>The Farm Cup</h2>'
   + '<div class="score"><div class="sside"><div class="sname" style="color:var(--cleveland)">Cleveland</div>'
     + '<div class="spts" id="ptsA" style="color:var(--cleveland)">0</div></div><div class="sdash">v</div>'
@@ -872,6 +883,7 @@ function moneyPanel(){
 function bankPanel(){
   return '<div class="panel" id="p-bank" role="tabpanel">'
   + '<h2>The Bank</h2>'
+  + '<div id="liveskins"></div>'
   + '<div class="flag"><b>$250 a man, paid Thursday morning</b>All of it, before anyone hits a shot, at Ozarks National at <b>11:40 AM</b>. Cash, Venmo or Zelle to Ryan. <b>No IOUs.</b> You can&rsquo;t welch on money you&rsquo;ve already handed over &mdash; which is the entire point.</div>'
   + '<div class="box scroll"><table class="mtable"><thead><tr><th>Pot</th><th>Buy-in</th><th class="num">Total</th><th>Scored</th></tr></thead><tbody>'
   + [["The Cup","$150 a man","$1,200","Team, 14 points"],
@@ -1069,6 +1081,54 @@ document.addEventListener("click", e=>{
   paintCup();
   try{ localStorage.setItem("farmcup2", JSON.stringify(results)); }catch(_){}
 });
+
+
+/* ---------- live results feed ----------
+   results.json is the published source of truth. Anything it names overrides a
+   local tap; anything it doesn't name still falls back to this phone's taps.
+   Missing, empty or broken file = the page renders exactly as it does today. */
+const esc = t => String(t==null?"":t).replace(/[&<>]/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+const mo  = n => { const v=Number(n); return isFinite(v) ? "$"+v.toFixed(2).replace(/\.00$/,"") : ""; };
+
+function paintLive(d){
+  if(d.matches && typeof d.matches==="object"){
+    const ok=new Set(MATCHES.map(m=>m.id)), val=["Cleveland","World","Halved"];
+    let n=0;
+    Object.keys(d.matches).forEach(k=>{
+      if(ok.has(k) && val.indexOf(d.matches[k])>-1){ results[k]=d.matches[k]; n++; }
+    });
+    if(n){ paintCup(); const ln=$("#livenote"); if(ln) ln.textContent="Results published by Ryan. Your own taps only show for matches he hasn't posted yet."; }
+  }
+  const band=$("#liveband");
+  if(band && (d.updated || d.headline)){
+    band.innerHTML='<div class="live"><div class="lh"><span class="dot"></span>Live</div>'
+      + (d.updated  ? '<div class="lu">Updated '+esc(d.updated)+'</div>' : '')
+      + (d.headline ? '<div class="lmsg">'+esc(d.headline)+'</div>' : '')
+      + '</div>';
+  }
+  const host=$("#liveskins");
+  if(host && Object.prototype.toString.call(d.skins)==="[object Array]" && d.skins.length){
+    host.innerHTML='<h2>Skins so far</h2><div class="box">'
+    + d.skins.map(function(s){
+        const ws=(s.winners&&s.winners.length?s.winners:[]).map(function(x){
+          const h=Number(x.holes)||0;
+          return '<div class="skw"><span>'+esc(x.who)+(h?' &middot; '+h+' hole'+(h===1?'':'s'):'')
+               + '</span><b>'+mo(x.amt)+'</b></div>';
+        }).join("") || '<div class="skw"><span>No skins won</span><b>all carried</b></div>';
+        const meta=[ s.pot!=null?mo(s.pot)+' pot':'', s.carried?mo(s.carried)+' carried in':'' ].filter(Boolean).join(' &middot; ');
+        return '<div class="sk"><div class="skh"><span class="skr">'+esc(s.round)+'</span>'
+             + (meta?'<span class="skp">'+meta+'</span>':'') + '</div>' + ws
+             + (s.note?'<div class="skn">'+esc(s.note)+'</div>':'') + '</div>';
+      }).join("")
+    + '</div>';
+  }
+}
+try{
+  fetch("results.json?t="+Date.now(), {cache:"no-store"})
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(d){ if(d && typeof d==="object") paintLive(d); })
+    .catch(function(){});
+}catch(_){}
 
 </script>
 </body>
