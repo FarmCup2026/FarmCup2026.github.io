@@ -2,7 +2,7 @@
 
 Trip reference for eight men at Big Cedar Lodge, Ridgedale MO, October 1–4 2026.
 
-**Live site:** https://4schmidtyonline-ux.github.io/TheFarmCup2026/
+**Live site:** https://farmcup2026.github.io
 
 `index.html` is the whole site. No build step, no dependencies, nothing to install.
 Fonts load from Google Fonts; everything else is inline.
