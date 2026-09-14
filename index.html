@@ -882,7 +882,6 @@ function golfPanel(){
   + '<div class="flag"><b>Thirteen holes, and the course has no rating</b>So there is no course handicap to look up. Ryan priced it off a rated par-3 course of the same character and scaled it to 13 holes. <b>These are your strokes</b> &mdash; nothing to work out on the walk to the first tee.</div>'
   + mtTable()
   + '<p class="note">Best Ball, one Cup point. Holes come straight off the <b>handicap row on Mountain Top&rsquo;s own scorecard</b> &mdash; hole 2 is the hardest at 221 yards, hole 4 the easiest at 82.</p>'
-  + '<div class="box" style="margin-top:12px">'
   + '<h2>The five Cup courses</h2>'
   + '<p class="note" style="margin:-4px 2px 14px">The highlighted tee is the one to play. Want to go back? <strong>The tee plan</strong> below has the next set up and the handicap adjustment.</p>'
   + COURSES.map(cc).join("")
@@ -1249,7 +1248,7 @@ try{
 
 /* Build stamp. The numbers are baked in when the file is built, so what you see
    is what was published — no clock, no cache, no guessing which copy you have. */
-const BUILD = {v:"3", d:"14 Sep 2026", t:"2026-09-14T20:00:35Z"};
+const BUILD = {v:"3", d:"14 Sep 2026", t:"2026-09-14T20:15:11Z"};
 (function(){
   const v=$("#bv"), d=$("#bd"); if(!v||!d) return;
   v.textContent = BUILD.v; d.textContent = BUILD.d;
