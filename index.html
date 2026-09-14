@@ -267,6 +267,13 @@ a[href^="tel:"]::before{content:"\260E\FE0E";margin-right:5px;font-size:.85em;op
 .skw:last-child{border-bottom:0}
 .skw b{font-variant-numeric:tabular-nums;color:var(--ink)}
 .skn{font-size:11.5px;color:var(--ink-3);font-style:italic;margin-top:7px;line-height:1.45}
+.opts{margin:11px 0 0;border:1px solid var(--line);border-radius:9px;overflow:hidden;background:var(--surface-2)}
+.opt{padding:10px 12px;border-top:1px solid var(--line)}
+.opt:first-child{border-top:0}
+.optn{font-weight:700;font-size:13px;color:var(--brass)}
+.opth{font-size:11px;color:var(--ink-3);font-weight:600;float:right;margin-left:10px}
+.optd{font-size:12.5px;color:var(--ink-2);margin-top:3px;line-height:1.45;clear:both}
+.yourcall{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3);font-weight:700;margin-bottom:2px}
 .livenote{font-size:11.5px;color:var(--ink-3);text-align:center;margin-top:10px;font-style:italic}
 
 /* money */
@@ -384,7 +391,10 @@ const PLACE = {
   buzzard:  ["Buzzard Bar",            "Buzzard Bar, Top of the Rock, Ridgedale, MO 65739"],
   osage:    ["Osage Restaurant",       "Osage Restaurant, Top of the Rock, Ridgedale, MO 65739"],
   sgf:      ["Springfield airport",    "Springfield-Branson National Airport, 2300 N Airport Blvd, Springfield, MO 65802"],
-  bkg:      ["Branson airport",        "Branson Airport, 4000 Branson Airport Blvd, Hollister, MO 65672"]
+  bkg:      ["Branson airport",        "Branson Airport, 4000 Branson Airport Blvd, Hollister, MO 65672"],
+  grandview:["Grandview Conference Center","Grandview Conference Center, 190 Top of the Rock Rd, Ridgedale, MO 65739"],
+  devils:   ["Devil's Pool Restaurant",  "Devil's Pool Restaurant, Big Cedar Lodge, Ridgedale, MO 65739"],
+  reg:      ["Big Cedar registration",   "Big Cedar Lodge Registration, 612 Devil's Pool Rd, Ridgedale, MO 65739"]
 };
 function mapBtn(key){
   const pl = PLACE[key]; if(!pl) return "";
@@ -400,16 +410,16 @@ const BCL = "612 Devil's Pool Road, Ridgedale, MO 65739";
 const ROSTER = [
   {k:"Heis", h:3.3, t:"World", sat:"Mountain Top", note:"Low man"},
   {k:"Kepps", h:8.2, t:"Cleveland", sat:"Mountain Top", note:""},
-  {k:"Jehls", h:11.2, t:"World", sat:"Mountain Top", note:""},
+  {k:"Jehls", h:10.8, t:"World", sat:"Mountain Top", note:""},
   {k:"Joyce", h:17.6, t:"Cleveland", sat:"Fishing", note:""},
-  {k:"Schmidty", h:17.6, t:"Cleveland", sat:"Fishing", note:"Organizer · flies from Branson"},
+  {k:"Schmidty", h:18.2, t:"Cleveland", sat:"Fishing", note:"Organizer · flies from Branson"},
   {k:"Trev", h:19.6, t:"World", sat:"Fishing", note:"Out 3:41 PM Sun"},
   {k:"Kurtz", h:23.3, t:"Cleveland", sat:"Mountain Top", note:""},
   {k:"Ski", h:31.3, t:"World", sat:"Fishing", note:"Own car · out 6:08 AM Sun"}
 ];
 const TEAMS = {
-  Cleveland:{name:"Cleveland", men:[["Kepps",8.2],["Joyce",17.6],["Schmidty",17.6],["Kurtz",23.3]]},
-  World:    {name:"The World", men:[["Heis",3.3],["Jehls",11.2],["Trev",19.6],["Ski",31.3]]}
+  Cleveland:{name:"Cleveland", men:[["Kepps",8.2],["Joyce",17.6],["Schmidty",18.2],["Kurtz",23.3]]},
+  World:    {name:"The World", men:[["Heis",3.3],["Jehls",10.8],["Trev",19.6],["Ski",31.3]]}
 };
 const MATCHES = [
   {id:"s1a", s:"S1 · Thu · Ozarks National",  f:"Best Ball", t:"12:30", a:"Kepps + Kurtz", b:"Heis + Ski"},
@@ -430,21 +440,21 @@ const MATCHES = [
 
 const COURSES = [
   {n:"Ozarks National", loc:"ozarks", arch:"Coore & Crenshaw", par:71, pace:"4:30", when:"Thu 12:30",
-   tees:[["Ozarks (tips)","7,036","73.9","131"],["Blue","6,510","71.3","126"],["Blue/White","6,264","70.0","122"],
-         ["White","5,903","68.6","118"],["White/Red","5,407","66.6","115"],["Red","5,025","64.6","112"]],
+   tees:[["Ozarks (tips)","7,036","74.1","135"],["Blue","6,510","71.7","128"],["Blue/White","6,264","70.2","128"],
+         ["White","5,903","68.5","120"],["White/Red","5,407","66.3","116"],["Red","5,025","64.4","114"]],
    rec:"Blue/White", caddie:"yes",
    note:"Wide off the tee, but the greens have false fronts and run away from you. <b>Putt from off the surface</b> &mdash; the ground game is real here."},
   {n:"Cliffhangers", loc:"cliff", arch:"Johnny &amp; John Paul Morris", par:54, pace:"3:30", when:"Fri 9:00",
-   tees:[["Back","1,910","52.6","89"],["Front","1,560","51.3","88"]],
+   tees:[["Back","1,910","52.0","85"],["Front","1,560","50.7","77"]],
    rec:"Back", caddie:"no",
    note:"18 par-3s, 60 to 170 yards, cut into limestone cliffs. Hole 3 tees from inside a cave behind a waterfall and the cart path runs through a cave on 18. <b>Take less club than feels right downhill.</b>"},
   {n:"Buffalo Ridge Springs", loc:"buffalo", arch:"Tom Fazio", par:71, pace:"4:30", when:"Fri 1:40",
-   tees:[["Black / Buffalo","7,036","73.4","130"],["Gold / Blue","6,628","71.4","127"],["Bronze","6,232","69.3","125"],
-         ["Silver / White","5,883","67.5","123"],["White/Red","5,367","65.7","118"],["Red","5,032","63.8","113"]],
-   rec:"Bronze", caddie:"yes",
+   tees:[["Buffalo","7,036","74.0","134"],["Blue","6,616","72.0","132"],["Blue/White","6,183","69.6","131"],
+         ["White","5,881","68.1","126"],["White/Red","5,495","66.2","122"],["Red","5,004","64.2","113"]],
+   rec:"Blue/White", caddie:"yes",
    note:"Native fescue swallows anything offline, and there are free-ranging bison. Your second 18 of the day &mdash; <b>legs go by 14, so club up.</b>"},
   {n:"Mountain Top", loc:"mtntop", arch:"Gary Player &amp; Johnny Morris", par:39, pace:"2:00", when:"Sat 9:00",
-   tees:[["Back","1,927","&mdash;","&mdash;"],["Forward","1,091","&mdash;","&mdash;"]],
+   tees:[["Back","1,912","&mdash;","&mdash;"],["Forward","1,091","&mdash;","&mdash;"]],
    rec:"Back", caddie:"no",
    note:"13 par-3s along a ridgeline. <b>Walking only, no carts</b> &mdash; under 2 miles, longest hole 95 yards. Unrated, so no slope and no course handicap. Only four of you play it."},
   {n:"Top of the Rock", loc:"torgolf", arch:"Jack Nicklaus", par:27, pace:"1:45", when:"Sun 9:30",
@@ -458,101 +468,140 @@ const COURSES = [
    note:"Tiger&rsquo;s only public design. <b>450 feet of elevation change</b> and greens running 9.5&ndash;11. The bonus 19th at The Big Rock is 99 yards from the White and doesn&rsquo;t count toward par. Longest pace of the week at 5:00."}
 ];
 
+/* Stroke indexes off the 2026 scorecards. Cliffhangers prints no handicap row,
+   so that one is derived — ranked by yardage within each nine, odd numbers on
+   the longer nine, which is how an unrated card gets allocated. */
+const SI = {
+  "Ozarks National":       [8,18,14,2,10,12,6,16,4,13,9,11,3,5,15,1,17,7],
+  "Buffalo Ridge Springs": [5,1,9,17,7,13,11,3,15,12,18,4,8,2,14,10,16,6],
+  "Payne's Valley":        [3,7,17,11,9,13,15,5,1,16,12,18,2,10,4,14,8,6],
+  "Cliffhangers":          [18,14,8,2,16,12,10,4,6,9,17,3,5,1,7,13,11,15],
+  "Mountain Top":          [11,1,6,13,10,8,9,4,7,3,2,5,12]
+};
 const D = (m,d,h,mi)=>new Date(2026,m-1,d,h,mi);
 const DAYS = [
-  {id:"thu", label:"Thu 10/1", title:"Thursday, October 1", sub:"Ozarks National &middot; then Thunder Ridge", events:[
+  {id:"thu", label:"Thu 10/1", title:"Thursday, October 1", sub:"Ozarks National &middot; then the cottage", events:[
     {t:"10:08 AM", at:D(10,1,10,8), w:"Land at Springfield", p:"SGF", loc:"sgf", tags:["6 on AA 3584"],
-     d:"<p>Clubs stay in the car &mdash; we go straight to the course.</p>"},
+     d:"<p>Clubs and bags into the rental cars. <b>We go to the lodge first, not the course</b> &mdash; drop the cars and the luggage at registration, then shuttle to Ozarks National.</p><p>That&rsquo;s the whole point: nobody drives back after eighteen holes and a few beers.</p>"},
     {t:"10:42 AM", at:D(10,1,10,42), w:"Ski lands", p:"SGF &middot; Delta via Atlanta", loc:"sgf", tags:["Ski"],
-     d:"<p>He has his <b>own rental car</b> &mdash; he'll drive himself straight to the course. Don't wait at the airport.</p>"},
-    {t:"10:45 AM", at:D(10,1,10,45), w:"Drive to Ozarks National", p:"SGF &rarr; the golf complex", loc:"ozarks", tags:["All 8","~55 min"],
-     d:"<p><a href='"+MAP(PVC)+"' target='_blank' rel='noopener'>"+PVC+"</a></p>"},
-    {t:"11:40 AM", at:D(10,1,11,40), w:"Check in for golf &amp; warm up", p:"Ozarks National pro shop", loc:"ozarks", key:1, tags:["All 8"],
-     d:"<p><b>Fifty minutes before the tee</b>, which is what we want on day one. Get your course handicap sorted, hit balls, eat something.</p><p>The practice facility has two putting greens, a three-green short-game area with bunkers, and a range with zoysia and artificial surfaces. The Tom Watson Putting Course is here too.</p><p>Pro shop <a href='tel:+14173395420'>(417) 339-5420</a></p>"},
+     d:"<p>He has his <b>own rental car</b>, and how this goes depends on the clock.</p><p><b>If he&rsquo;s close</b> &mdash; he meets us at registration and jumps on the shuttle with everyone.</p><p><b>If he&rsquo;s behind</b> &mdash; he drives straight to Ozarks National and we sort the car out later. Don&rsquo;t wait at the airport, don&rsquo;t hold the shuttle past the tee.</p><p>Playing this one by ear.</p>"},
+    {t:"10:45 AM", at:D(10,1,10,45), w:"Drive to Big Cedar", p:"SGF &rarr; registration &middot; ~55 min", loc:"reg", tags:["6 guys"],
+     d:"<p><b>Nothing to arrange.</b> Our rides are private and pre-booked through Courtney &mdash; a driver meets us at registration. She can flex the times on the day if we&rsquo;re running behind.</p>"},
+    {t:"11:40 AM", at:D(10,1,11,40), w:"Park at registration", p:"Registration Building", loc:"reg", key:1, tags:["6 guys","NO CHECK-IN YET"],
+     d:"<p><b>We are not checking in.</b> The cottage won&rsquo;t be ready this early, so all that happens here is leaving the cars and getting in the van. <b>Bags stay in the locked cars</b> &mdash; there&rsquo;s nowhere to put them yet.</p><p>Ryan is asking about an early check-in. If it comes through we&rsquo;ll drop everything properly, but plan on not.</p><p>Right at the roundabout on Highway 86, through the grand entrance, then the scenic road down to registration.</p><p><a href='tel:+14173395039'>(417) 339-5039</a></p>"},
+    {t:"11:55 AM", at:D(10,1,11,55), w:"Shuttle to Ozarks National", p:"Registration &rarr; the golf complex", loc:"ozarks", key:1, tags:["~15 min"],
+     d:"<p>Private transport, already arranged. If it hasn&rsquo;t turned up by <b>12:00</b>, call Ryan &mdash; don&rsquo;t stand there being polite about it with a 12:30 tee.</p>"},
+    {t:"12:10 PM", at:D(10,1,12,10), w:"Check in for golf", p:"Ozarks National pro shop", loc:"ozarks", key:1, tags:["All 8","No range time"],
+     d:"<p><b>Twenty minutes before the tee.</b> Get your course handicap sorted and roll a few putts. There is <b>no time for the range</b> today &mdash; eat on the course.</p><p>The practice facility here is excellent: two putting greens, a three-green short-game area with bunkers, a range with zoysia and artificial surfaces, and the Tom Watson Putting Course. Save all of it for Friday.</p><p>Pro shop <a href='tel:+14173395420'>(417) 339-5420</a></p>"},
     {t:"12:30 PM", at:D(10,1,12,30), w:"TEE &mdash; Ozarks National", p:"Group 1", loc:"ozarks", golf:1, tags:["Best Ball","Session 1"],
-     d:"<p>Coore &amp; Crenshaw, par 71. <b>Heis + Ski vs Kepps + Kurtz.</b></p><p><b>Forecaddie with each group.</b> $50 plus a $30 tip, cash at the end.</p>"},
+     d:"<p>Coore &amp; Crenshaw, par 71. <b>Kepps + Kurtz vs Heis + Ski.</b></p><p><b>Forecaddie with each group.</b> $50 plus a $30 tip, cash at the end.</p>"},
     {t:"12:40 PM", at:D(10,1,12,40), w:"TEE &mdash; Ozarks National", p:"Group 2", loc:"ozarks", golf:1, tags:["Best Ball","Session 1"],
-     d:"<p><b>Jehls + Trev vs Joyce + Schmidty.</b></p>"},
-    {t:"5:15 PM", at:D(10,1,17,15), w:"Finish", p:"4:30 pace", tags:[],
-     d:"<p>Second group in around 5:15, then about 20 minutes to the lodge.</p>"},
-    {t:"5:45 PM", at:D(10,1,17,45), w:"Check in, drop bags", p:"Registration Building, Big Cedar", loc:"lodge", key:1, tags:["All 8"],
-     d:"<p>Ryan has the reservation number. Use <b>express check-in and the digital key</b> in the Big Cedar app so nobody queues at a desk.</p><p>Right at the roundabout on Highway 86, through the grand entrance, then the scenic road down to registration.</p><p>The cottage has a covered porch, gas grills and a wood-burning fireplace, and it&rsquo;s walking distance to the infinity pool. Four bedrooms, eight men &mdash; sort it out among yourselves.</p><p><a href='" + MAP(BCL) + "' target='_blank' rel='noopener'>" + BCL + "</a> &middot; <a href='tel:+14173395039'>(417) 339-5039</a></p>"},
-    {t:"6:00 PM", at:D(10,1,18,0), w:"Show starts at Thunder Ridge", p:"We won&rsquo;t make this one", loc:"thunder", tags:["FYI"],
-     d:"<p>Gates and the first band. Golf finishes around 5:15, so realistically we catch the back half of the openers. No great loss &mdash; the good stuff is later.</p>"},
-    {t:"6:30 PM", at:D(10,1,18,30), w:"Shuttle to Thunder Ridge", p:"Less than a mile from the lodge", loc:"thunder", key:1, tags:["Concert crew"],
-     d:"<p>Big Cedar runs a <b>complimentary shuttle to Thunder Ridge</b>. Nobody drives, nobody parks, nobody is counting drinks.</p><p>Dispatch <a href='tel:+14173395104'>(417) 339-5104</a> or the Big Cedar Shuttle app. They run until midnight.</p>"},
-    {t:"6:45 PM", at:D(10,1,18,45), w:"VIP &mdash; buffet and drinks", p:"Thunder Ridge Nature Arena", loc:"thunder", key:1, tags:["Concert crew","THIS IS DINNER"],
-     d:"<p>VIP access through Ryan&rsquo;s contact at the venue: <b>buffet, drinks, private bar service and lounge seating</b>, plus the underground tunnel entrance that premium ticket holders get.</p><p>1901 State Hwy 86, Ridgedale &middot; <a href='" + MAP("1901 State Hwy 86, Ridgedale, MO 65739") + "' target='_blank' rel='noopener'>map</a></p>"},
-    {t:"~7:00 PM", at:D(10,1,19,0), w:"Staind &middot; Seether &middot; Hoobastank &middot; Hinder", p:"Thunder Ridge Nature Arena", loc:"thunder", golf:0, key:1, tags:["Concert crew"],
-     d:"<p><b>Staind&rsquo;s &lsquo;Break the Cycle&rsquo; 25th Anniversary Tour.</b> Seether is direct support; Hoobastank and Hinder open.</p><p><i>Break the Cycle</i> came out in 2001 and went five-times platinum. &ldquo;It&rsquo;s Been Awhile&rdquo; owned rock radio for what felt like a decade, and &ldquo;Outside&rdquo;, &ldquo;Fade&rdquo; and &ldquo;For You&rdquo; came off the same record. Aaron Lewis on the tour: <i>&ldquo;25 years later to be touring, celebrating this album&hellip; it&rsquo;s like one big family reunion.&rdquo;</i></p><p>Four bands, all of them peak 2001&ndash;2006. Set times aren&rsquo;t published, but billing order puts <b>Staind on around 9:00&ndash;9:15</b>.</p><p><b>The venue:</b> Johnny Morris spent a decade building Thunder Ridge as &ldquo;a gift to the people and heritage of the Ozarks&rdquo; &mdash; 18,000 seats terraced into the hillside with Table Rock Lake and the Ozarks behind the stage.</p><p><b>Bring a layer.</b> Outdoor amphitheatre, October, after dark. The quarter-zip you packed for golf.</p>"},
-    {t:"7:15 PM", at:D(10,1,19,15), w:"Pizza at the cottage", p:"For anyone skipping the show", loc:"lodge", tags:["Everyone else"],
-     d:"<p><b>Big Cedar in-room dining</b> &mdash; <a href='tel:+14173352777'>(417) 335-2777</a>, or ext. 7666 from the cottage. All-day menu 11 AM to 10 PM and they deliver to the cottages. <b>Ask whether pizza is on the menu</b>; Big Cedar doesn&rsquo;t publish it.</p><p>Backup: <b>Uncle Buck&rsquo;s carry-out</b>, same number, pizza definitely on the menu, kitchen shuts at 8 PM. Or <b>Domino&rsquo;s Hollister</b> <a href='tel:+14173377788'>(417) 337-7788</a> &mdash; carry-out only, they don&rsquo;t deliver here.</p>"},
-    {t:"9:00 PM", at:D(10,1,21,0), w:"Porch and fire", p:"The cottage", loc:"lodge", tags:["Everyone else"],
-     d:"<p>Wood-burning fireplace, covered porch, gas grills.</p>"},
-    {t:"~11:00 PM", at:D(10,1,23,0), w:"Shuttle back", p:"Thunder Ridge &rarr; Big Cedar", loc:"lodge", tags:["Concert crew"],
-     d:"<p>Shuttles run until midnight.</p><p>Friday is <b>36 holes off a 9:00 tee</b>. The buffet is free and so are the drinks. Govern yourselves accordingly.</p>"}
+     d:"<p><b>Joyce + Schmidty vs Jehls + Trev.</b></p>"},
+    {t:"5:15 PM", at:D(10,1,17,15), w:"Finish &amp; shuttle back", p:"Ozarks National &rarr; registration", loc:"reg", tags:["All 8"],
+     d:"<p>Second group in around 5:15 and the ride is booked to meet us. Nobody drives back after eighteen holes &mdash; that&rsquo;s the entire reason the cars are at the lodge.</p>"},
+    {t:"6:00 PM", at:D(10,1,18,0), w:"Check in, then cars to the cottage", p:"Registration &rarr; Bass Pro Cottages", loc:"lodge", key:1, tags:["All 8"],
+     d:"<p><b>Now</b> we check in &mdash; the cottage is ready and the cars are already sitting here. Ryan has the reservation number. Use <b>express check-in and the digital key</b> in the Big Cedar app so nobody queues at a desk.</p><p>Then drive the cars the short hop down. <b>They stay parked at the cottage all weekend</b> &mdash; the only time one moves again is Saturday morning&rsquo;s run to the dock.</p><p>Four bedrooms, eight men, covered porch, gas grills, wood-burning fireplace, walking distance to the infinity pool. Sort the rooms out among yourselves.</p>"},
+    {t:"6:30 PM", at:D(10,1,18,30), w:"Dinner &mdash; your call", p:"Nothing is booked", loc:"lodge", key:1, tags:["All 8","DECIDE TOGETHER"],
+     d:"<div class='yourcall'>No set plan. Here&rsquo;s what&rsquo;s open.</div><div class='opts'>"
+      + "<div class='opt'><span class='opth'>order 24h ahead</span><div class='optn'>Backyard basket at the cottage</div><div class='optd'>Big Cedar preps the sides and apps, we grill the protein &mdash; KC strip, chicken, Angus burgers or dogs. Porch, fire, game on, nobody moves a car. <b>Needs ordering the day before</b>, so this one gets decided before we fly.</div></div>"
+      + "<div class='opt'><span class='opth'>11 AM &ndash; 10 PM</span><div class='optn'>Room service</div><div class='optd'>Full menu delivered to the cottage. Ext. 7666 or <a href='tel:+14173352777'>(417) 335-2777</a>. Same night at home, zero effort, no 24-hour notice.</div></div>"
+      + "<div class='opt'><span class='opth'>grill closes 8 PM</span><div class='optn'>Uncle Buck&rsquo;s &amp; Fun Mountain</div><div class='optd'>Bowling, arcade, laser tag, burgers and shakes. <b>The kitchen shuts at 8:00 and the building closes at 9:00</b>, last lane out at 7:45 &mdash; so this is an early evening, not a night.</div></div>"
+      + "<div class='opt'><span class='opth'>shuttle &times; 4</span><div class='optn'>Thunder Ridge concert</div><div class='optd'>Staind, Seether, Hoobastank and Hinder. Cottage to the Grandview Conference Center on the app, then the Grandview shuttle to Thunder Ridge every 30 minutes. Shuttles run to midnight. Staind on around 9:00.</div></div>"
+      + "<div class='opt'><span class='opth'>kitchen to 8 PM</span><div class='optn'>Carry-out</div><div class='optd'>Uncle Buck&rsquo;s <a href='tel:+14173352777'>(417) 335-2777</a>, or Domino&rsquo;s Hollister <a href='tel:+14173377788'>(417) 337-7788</a> &mdash; carry-out only, they don&rsquo;t deliver here.</div></div>"
+      + "</div>"},
+    {t:"7:15 PM", at:D(10,1,19,15), w:"Steelers at Browns", p:"Thursday Night Football &middot; Prime Video", loc:"lodge", key:1, tags:["Cleveland"],
+     d:"<p>Our own team, on night one, in the rivalry game. Kickoff <b>7:15 our time</b>.</p><p>It&rsquo;s a Prime Video game, so it isn&rsquo;t on regular cable. Whoever gets to the cottage TV first, sort the login.</p><p>Uncle Buck&rsquo;s closes at 9:00, so watching it there means watching half of it.</p>"},
+    {t:"9:00 PM", at:D(10,1,21,0), w:"Porch and fire", p:"The cottage", loc:"lodge", tags:[],
+     d:"<p>Friday is <b>36 holes off a 9:00 tee</b>. Govern yourselves accordingly.</p>"}
   ]},
+
   {id:"fri", label:"Fri 10/2", title:"Friday, October 2", sub:"36 holes &middot; Cliffhangers &amp; Buffalo Ridge", events:[
-    {t:"7:15 AM", at:D(10,2,7,15), w:"Breakfast", p:"Truman Cafe &amp; Custard, or the cottage", loc:"truman", tags:["All 8"],
-     d:"<p>Eat properly. Longest day of the trip.</p>"},
-    {t:"7:45 AM", at:D(10,2,7,45), w:"Head to Cliffhangers", p:"~20 min to the golf complex", loc:"cliff", tags:["All 8"],
-     d:"<p>On the ground at Cliffhangers by 8:10 for a 9:00 tee. Driving ourselves, or the resort shuttle &mdash; <b>book it 90 minutes before the tee time</b>. Dispatch <a href='tel:+14173395104'>(417) 339-5104</a> or the Big Cedar Shuttle app.</p>"},
+    {t:"7:00 AM", at:D(10,2,7,0), w:"Breakfast &mdash; your call", p:"Nothing is booked", loc:"lodge", tags:["All 8"],
+     d:"<div class='yourcall'>Eat properly. Longest day of the trip.</div><div class='opts'>"
+      + "<div class='opt'><span class='opth'>free</span><div class='optn'>The cottage</div><div class='optd'>Whatever we had Courtney stock. No transport, no waiting, and the only option with zero dependencies before a 9:00 tee.</div></div>"
+      + "<div class='opt'><span class='opth'>6:30 &ndash; 10:45 AM</span><div class='optn'>Truman Cafe &amp; Custard</div><div class='optd'>Opens earliest of anything on property. Coffee and a proper sit-down.</div></div>"
+      + "<div class='opt'><span class='opth'>7:00 &ndash; 10:30 AM</span><div class='optn'>Mountain Top Grill</div><div class='optd'>Same clubhouse complex as Cliffhangers, so you can eat and walk to the first tee.</div></div>"
+      + "</div>"},
+    {t:"8:00 AM", at:D(10,2,8,0), w:"Head to Cliffhangers", p:"~20 min to the golf complex", loc:"cliff", tags:["All 8"],
+     d:"<p>Pickup is arranged for <b>thirty minutes before the tee</b>, same as every scheduled ride this weekend. On the ground by 8:30.</p>"},
     {t:"9:00 AM", at:D(10,2,9,0), w:"TEE &mdash; Cliffhangers", p:"Group 1", loc:"cliff", golf:1, tags:["Pins &amp; Points","Session 2"],
-     d:"<p>18 par-3s, par 54, 60&ndash;170 yards. <b>Heis + Trev vs Kepps + Schmidty.</b></p><p>Hole 3, the &lsquo;Lion&rsquo;s Den&rsquo;, tees from inside a cave behind a waterfall. The cart path drives through a cave on 18.</p><p><b>Pins &amp; Points.</b> Two points a hole &mdash; one for the closest tee shot on the green (gross, no strokes), one for the better net score. Everyone plays their own ball.</p>"},
+     d:"<p>18 par-3s, par 54, 60&ndash;170 yards. <b>Kepps + Schmidty vs Heis + Trev.</b></p><p>Hole 3, the &lsquo;Lion&rsquo;s Den&rsquo;, tees from inside a cave behind a waterfall. The cart path drives through a cave on 18.</p><p><b>Pins &amp; Points.</b> Two points a hole &mdash; one for the closest tee shot on the green (gross, no strokes), one for the better net score. Everyone plays their own ball.</p>"},
     {t:"9:15 AM", at:D(10,2,9,15), w:"TEE &mdash; Cliffhangers", p:"Group 2", loc:"cliff", golf:1, tags:["Pins &amp; Points","Session 2"],
-     d:"<p><b>Jehls + Ski vs Joyce + Kurtz.</b></p>"},
-    {t:"12:45 PM", at:D(10,2,12,45), w:"Finish &mdash; and move", p:"Cliffhangers", loc:"buffalo", key:1, tags:["All 8","TIGHT"],
-     d:"<p><b>This is the squeeze.</b> Published pace here is 3:30, so the 9:15 group finishes about 12:45. Buffalo Ridge tees at 1:40 at a different clubhouse twenty minutes away.</p><p>That&rsquo;s roughly 55 minutes to drive, eat and warm up, and we want to be at Buffalo Ridge by <b>1:10</b>. <b>Eat at the turn on Cliffhangers, not after.</b> Do not plan a sit-down lunch.</p>"},
+     d:"<p><b>Joyce + Kurtz vs Jehls + Ski.</b></p>"},
+    {t:"12:30 PM", at:D(10,2,12,30), w:"Lunch at Mountain Top", p:"Same clubhouse &middot; walk over", loc:"mtgrill", key:1, tags:["All 8"],
+     d:"<p>Pace here is 3:30, so group one is in about 12:30 and group two around 12:45. <b>Mountain Top Grill is in the same clubhouse complex</b> &mdash; Cliffhangers, Ozarks National, Mountain Top and Payne&rsquo;s Valley all share it. Walk over, don&rsquo;t drive.</p><p>Group two has about twenty-five minutes to eat. <b>Order for the whole table as soon as group one sits down</b> and the food is there when the rest walk in.</p>"},
+    {t:"1:10 PM", at:D(10,2,13,10), w:"Pickup to Buffalo Ridge", p:"Thirty minutes before the tee", loc:"buffalo", key:1, tags:["All 8"],
+     d:"<p><b>Different clubhouse</b> &mdash; Buffalo Ridge Blvd, not Golf Club Drive. This is the one on-course move of the day that needs a vehicle.</p><p><a href='"+MAP(BRA)+"' target='_blank' rel='noopener'>Directions</a></p>"},
     {t:"1:40 PM", at:D(10,2,13,40), w:"TEE &mdash; Buffalo Ridge Springs", p:"Group 1", loc:"buffalo", golf:1, tags:["Best Ball","Session 3"],
-     d:"<p>Tom Fazio, par 71. <b>Heis + Jehls vs Kepps + Joyce.</b></p><p><b>Forecaddie with each group.</b> The fescue here eats anything offline &mdash; this is where a spotter pays for itself.</p><p><b>Different clubhouse</b> &mdash; Buffalo Ridge Blvd, not Golf Club Drive. <a href='"+MAP(BRA)+"' target='_blank' rel='noopener'>Directions</a></p><p>Native grasses and free-ranging bison. Second 18 of the day, so club up.</p>"},
+     d:"<p>Tom Fazio, par 71. <b>Kepps + Joyce vs Heis + Jehls.</b></p><p><b>Forecaddie with each group.</b> The fescue here eats anything offline &mdash; this is where a spotter pays for itself.</p><p>Native grasses and free-ranging bison. Second 18 of the day, so club up.</p>"},
     {t:"1:50 PM", at:D(10,2,13,50), w:"TEE &mdash; Buffalo Ridge Springs", p:"Group 2", loc:"buffalo", golf:1, tags:["Best Ball","Session 3"],
-     d:"<p><b>Trev + Ski vs Schmidty + Kurtz.</b></p>"},
-    {t:"6:20 PM", at:D(10,2,18,20), w:"Finish", p:"4:30 pace", tags:[], d:"<p>Back to the lodge, about 20 minutes.</p>"},
-    {t:"7:00 PM", at:D(10,2,19,0), w:"Dinner &mdash; Uncle Buck's", p:"Fun Mountain", loc:"unclebuck", key:1, tags:["All 8","CLOSES 8 PM"],
-     d:"<p>Fish Bowl &amp; Grill. Burgers, pizza, salads, shakes. The Bunker Bar and Blue Fin Lounge are right there.</p><p><b>The kitchen closes at 8:00 PM.</b></p>"},
-    {t:"8:00 PM", at:D(10,2,20,0), w:"Fun Mountain", p:"Big Cedar Lodge", loc:"funmtn", tags:["All 8"],
-     d:"<p>50,000 square feet: underwater-themed bowling, laser tag, bumper cars, arcade, golf simulators, Krazy Darts, indoor putt-putt and a rock wall.</p><p>Square up any presses and hammers from the day here, while both cards are still in someone&rsquo;s pocket.</p>"}
+     d:"<p><b>Schmidty + Kurtz vs Trev + Ski.</b></p>"},
+    {t:"6:20 PM", at:D(10,2,18,20), w:"Finish", p:"4:30 pace", tags:[],
+     d:"<p>Group two walks off around 6:20. The ride home is arranged &mdash; nobody stands in a car park after 36 holes.</p>"},
+    {t:"7:00 PM", at:D(10,2,19,0), w:"Dinner &mdash; your call", p:"Nothing is booked", loc:"lodge", key:1, tags:["All 8","DECIDE TOGETHER"],
+     d:"<div class='yourcall'>No set plan. Bourbon tasting is at 8:00 if we want it.</div><div class='opts'>"
+      + "<div class='opt'><span class='opth'>2 &ndash; 11 PM</span><div class='optn'>Buzzard Bar &middot; Top of the Rock</div><div class='optd'>Live music from 8:30. Same road as the tasting, so one shuttle leg covers both.</div></div>"
+      + "<div class='opt'><span class='opth'>4 &ndash; 9 PM</span><div class='optn'>Osage &middot; Top of the Rock</div><div class='optd'>The proper sit-down at Top of the Rock, over Table Rock Lake. Also next to the tasting.</div></div>"
+      + "<div class='opt'><span class='opth'>4 &ndash; 9 PM</span><div class='optn'>Devil&rsquo;s Pool</div><div class='optd'>At the lodge rather than Top of the Rock, so it&rsquo;s the closer option if the tasting is a no.</div></div>"
+      + "<div class='opt'><span class='opth'>11 AM &ndash; 10 PM</span><div class='optn'>Room service at the cottage</div><div class='optd'>The low-effort answer after 36 holes. Order from the 16th tee, it lands about 7:00, and we still make the tasting. Ext. 7666.</div></div>"
+      + "<div class='opt'><span class='opth'>grill closes 8 PM</span><div class='optn'>Uncle Buck&rsquo;s</div><div class='optd'>Only works if we skip the tasting &mdash; the kitchen shuts at 8:00 and the building at 9:00.</div></div>"
+      + "</div>"},
+    {t:"8:00 PM", at:D(10,2,20,0), w:"Buffalo Trace bourbon tasting", p:"Grandview Conference Center", loc:"grandview", key:1, tags:["All 8","BOOKED","BRING ID"],
+     d:"<p><b>Buffalo Trace On Tour</b>, 8:00 to 9:30. Four curated pours with a host, the distillery&rsquo;s history, and merch while it lasts. No bottles for sale at the event. Complimentary.</p><p>190 Top of the Rock Rd &mdash; the conference centre, not the restaurant side.</p><p><b>Two separate reservations, four seats each.</b> One is under Ryan, one under Kurtz. <b>Whoever the booking is under has to be there with photo ID or that group of four doesn&rsquo;t get in.</b> Reservations are nontransferable.</p><p><b>21+, government photo ID, no exceptions.</b> Bring your licence.</p>"}
   ]},
+
   {id:"sat", label:"Sat 10/3", title:"Saturday, October 3", sub:"Split morning &middot; Payne&rsquo;s Valley &middot; sunset", events:[
-    {t:"6:30 AM", at:D(10,3,6,30), w:"Anglers up", p:"The cottage", loc:"lodge", tags:["Fishing 4"],
-     d:"<p>Cold on the lake in October. <b>Bring your golf clothes on the boat</b> &mdash; there is no time to come back and change.</p>"},
-    {t:"7:00 AM", at:D(10,3,7,0), w:"Guided bass fishing", p:"Bent Hook Marina", loc:"marina", key:1, tags:["Ski","Trev","Joyce","Schmidty","3 CUP POINTS"],
-     d:"<p>Four hours on Table Rock Lake with professional guides.</p><p><b>THREE CUP POINTS ARE ON THIS.</b> Most Fish, Big Bass and The Slam &mdash; see the Games tab for how each is won.</p><p><b>Mixed boats:</b> Ski with Joyce, Trev with Schmidty. Same water, same guide, so it&rsquo;s the anglers being tested and not the guides.</p><p>$200 a man for the boat, plus about <b>$40 cash</b> for the guide at the dock.</p>"},
-    {t:"8:00 AM", at:D(10,3,8,0), w:"Golfers depart", p:"~20 min to Mountain Top", loc:"mtntop", tags:["Golf 4"], d:"<p>Kurtz, Jehls, Heis and Kepps.</p><p><b>Leaving at 8:00, not 8:15.</b> On the ground by 8:20 for a 9:00 tee &mdash; thirty minutes minimum before you hit.</p>"},
-    {t:"9:00 AM", at:D(10,3,9,0), w:"TEE &mdash; Mountain Top", p:"Kurtz, Jehls, Heis, Kepps", loc:"mtntop", golf:1, tags:["Best Ball","Session 4"],
-     d:"<p>Gary Player, 13 par-3s, par 39. <b>Walking only &mdash; no carts.</b> About two hours, under two miles.</p><p><b>Heis + Jehls vs Kepps + Kurtz.</b> One point.</p><p>Rangefinders free at the shop.</p>"},
-    {t:"11:00 AM", at:D(10,3,11,0), w:"Both groups free", p:"Marina / Mountain Top", loc:"marina", tags:[],
-     d:"<p>Fishing ends at 11:00 and Mountain Top finishes about the same time.</p><p><b>Anglers:</b> get the guide to confirm the final tally before you step off the boat. Three points ride on it.</p>"},
-    {t:"11:45 AM", at:D(10,3,11,45), w:"Regroup and eat fast", p:"Payne&rsquo;s Valley clubhouse", loc:"mtgrill", key:1, tags:["All 8"],
-     d:"<p>Mountain Top and Payne&rsquo;s Valley share a clubhouse, so the golf four are already here. Grab-and-go at Mountain Top Grill.</p><p><b>Report the water match here</b> &mdash; three cup points change hands before anyone tees off.</p><p>Seventy minutes from the boat to the first tee. Enough, but not for a shower.</p>"},
+    {t:"6:15 AM", at:D(10,3,6,15), w:"Anglers up", p:"The cottage", loc:"lodge", tags:["Fishing 4"],
+     d:"<p>Cold on the lake in October. Layer up &mdash; you&rsquo;re back here to change before golf, so fish in whatever you like.</p>"},
+    {t:"6:45 AM", at:D(10,3,6,45), w:"Drive to the dock", p:"One of the rental cars", loc:"marina", key:1, tags:["Fishing 4"],
+     d:"<p><b>We drive ourselves</b> &mdash; no shuttle needed. That&rsquo;s the only time a car moves all weekend, and it&rsquo;s what gets us back to the cottage to change.</p><p>Courtney is confirming the dock and the time.</p>"},
+    {t:"7:00 AM", at:D(10,3,7,0), w:"Guided bass fishing", p:"Table Rock Lake", loc:"marina", key:1, tags:["Ski","Trev","Joyce","Schmidty","3 CUP POINTS"],
+     d:"<p>Four hours on the water with professional guides.</p><p><b>THREE CUP POINTS ARE ON THIS.</b> Most Fish, Big Bass and The Slam &mdash; see the Games tab for how each is won.</p><p><b>Mixed boats:</b> Ski with Joyce, Trev with Schmidty. Same water, same guide, so it&rsquo;s the anglers being tested and not the guides.</p><p><b>Missouri permits:</b> Courtney is sending the forms. <b>Fill yours in before you travel</b> &mdash; not at the dock.</p><p>About <b>$40 cash</b> for the guide at the dock.</p><p>Ask the guides to have us in by <b>10:45</b> if they can. It buys the whole morning some slack.</p>"},
+    {t:"7:45 AM", at:D(10,3,7,45), w:"Pickup &mdash; Mountain Top four", p:"Cottage &rarr; Mountain Top", loc:"mtntop", key:1, tags:["Golf 4"],
+     d:"<p>Heis, Kepps, Jehls and Kurtz. On the ground by 8:05 for a 9:00 tee, which leaves time for breakfast at Mountain Top Grill (opens 7:00).</p>"},
+    {t:"9:00 AM", at:D(10,3,9,0), w:"TEE &mdash; Mountain Top", p:"Heis, Kepps, Jehls, Kurtz", loc:"mtntop", golf:1, tags:["Best Ball","Session 4"],
+     d:"<p>Gary Player, 13 par-3s, par 39. <b>Walking only &mdash; no carts.</b> About two hours, under two miles.</p><p><b>Kepps + Kurtz vs Heis + Jehls.</b> One point.</p><p><b>Strokes are already settled</b> and they&rsquo;re on the <b>Courses</b> tab. Look yours up before you leave the cottage, not on the first tee.</p><p>Rangefinders free at the shop.</p>"},
+    {t:"11:00 AM", at:D(10,3,11,0), w:"Off the water, off the course", p:"Dock / Mountain Top", tags:[],
+     d:"<p><b>Anglers:</b> get the guide to confirm the final tally before you step off the boat. Three points ride on it. Then drive back to the cottage.</p><p><b>Golfers:</b> you&rsquo;re already at the clubhouse Payne&rsquo;s Valley shares. <b>Order lunch for all eight now</b> so it&rsquo;s on the table when the fishermen walk in.</p>"},
+    {t:"11:15 AM", at:D(10,3,11,15), w:"Pickup &mdash; anglers to Payne&rsquo;s", p:"Cottage &rarr; Payne&rsquo;s Valley", loc:"paynes", key:1, tags:["Fishing 4","TIGHT"],
+     d:"<p>Twenty minutes at the cottage to get out of fishing clothes and into golf clothes. <b>It&rsquo;s tight</b> &mdash; which is why we asked the guides for 10:45.</p><p>Private transport, so if we&rsquo;re a few minutes late they wait.</p>"},
+    {t:"11:45 AM", at:D(10,3,11,45), w:"Regroup and eat", p:"Payne&rsquo;s Valley clubhouse", loc:"mtgrill", key:1, tags:["All 8"],
+     d:"<p>Food is already ordered. Sit down and eat.</p><p><b>Report the water match here</b> &mdash; three cup points change hands before anyone tees off.</p>"},
     {t:"12:10 PM", at:D(10,3,12,10), w:"TEE &mdash; Payne's Valley", p:"Group 1", loc:"paynes", golf:1, tags:["SINGLES","4 points"],
-     d:"<p>Tiger Woods / TGR Design, par 72. <b>The session that decides the cup.</b></p><p><b>Heis v Kepps &middot; Trev v Schmidty.</b></p><p><b>Forecaddie with each group.</b> 450+ feet of elevation change. Singles strokes are the full difference in course handicap, straight off GHIN.</p>"},
+     d:"<p>Tiger Woods / TGR Design, par 72. <b>The session that decides the cup.</b></p><p><b>Kepps v Heis &middot; Schmidty v Trev.</b></p><p><b>Forecaddie with each group.</b> 450+ feet of elevation change. Singles strokes are the full difference in course handicap, straight off GHIN.</p>"},
     {t:"12:20 PM", at:D(10,3,12,20), w:"TEE &mdash; Payne's Valley", p:"Group 2", loc:"paynes", golf:1, tags:["SINGLES","4 points"],
-     d:"<p><b>Jehls v Joyce &middot; Ski v Kurtz.</b></p>"},
+     d:"<p><b>Joyce v Jehls &middot; Kurtz v Ski.</b></p>"},
     {t:"5:20 PM", at:D(10,3,17,20), w:"Finish &mdash; then play the 19th", p:"The Big Rock", loc:"paynes", key:1, tags:["All 8"],
-     d:"<p>A bonus par-3 into a canyon with a waterfall. 99 yards from the White tee, and it doesn&rsquo;t count toward par.</p><p><b>But the carried skins pot rides on it.</b> One ball each, closest to the pin takes whatever is still riding after 18. And if the Cup is 7&ndash;7, this settles that too.</p>"},
+     d:"<p>A bonus par-3 into a canyon with a waterfall. 99 yards from the White tee, and it doesn&rsquo;t count toward par.</p><p><b>But the carried skins pot rides on it.</b> One ball each, closest to the pin takes whatever is still riding after 18. And if the Cup is 7&ndash;7, this settles that too.</p><p>Pace here is 5:00 and we&rsquo;re booked off 12:10, so there should be room. The ride home is private &mdash; a few minutes either way is fine.</p>"},
+    {t:"5:30 PM", at:D(10,3,17,30), w:"Back to the cottage", p:"Payne&rsquo;s Valley &rarr; Bass Pro Cottages", loc:"lodge", key:1, tags:["All 8"],
+     d:"<p>Drop the clubs, clean up, change. <b>This is the stop that gets your sticks home</b> ahead of Sunday&rsquo;s early departures.</p>"},
     {t:"6:00 PM", at:D(10,3,18,0), w:"Cocktails &amp; the Cup", p:"End of the Trail Wine Cellar", loc:"cellar", key:1, tags:["All 8"],
      d:"<p>Down the stone stairwell at Top of the Rock. Wine by the glass, a whiskey room and a cigar humidor.</p><p><b>Farm Cup presentation.</b></p>"},
-    {t:"6:30 PM", at:D(10,3,18,30), w:"Dinner &mdash; Buffalo Bar", p:"Top of the Rock", loc:"buffbar", key:1, tags:["All 8"],
-     d:"<p>Lower level of the Osage Restaurant. Stone patio over Table Rock Lake.</p><p><a href='"+MAP(TOR)+"' target='_blank' rel='noopener'>"+TOR+"</a></p>"},
+    {t:"6:30 PM", at:D(10,3,18,30), w:"Dinner &mdash; Buffalo Bar", p:"Top of the Rock", loc:"buffbar", key:1, tags:["All 8","THE ONE BOOKED DINNER"],
+     d:"<p>Lower level of the Osage Restaurant. Stone patio over Table Rock Lake.</p><p><b>6:30 is loose.</b> Sunset, cocktails and apps first &mdash; dinner itself can happen whenever we&rsquo;re ready.</p><p><a href='"+MAP(TOR)+"' target='_blank' rel='noopener'>"+TOR+"</a></p>"},
     {t:"6:43 PM", at:D(10,3,18,43), w:"Sunset Ceremony", p:"Buffalo Bar patio", loc:"buffbar", key:1, tags:["Don't miss it"],
-     d:"<p>A bagpiper plays as the sun sets over Table Rock Lake. As the last light goes an authentic Civil War cannon fires and you raise your glass.</p><p><b>Be on the patio by 6:35.</b></p>"},
+     d:"<p>A bagpiper plays as the sun sets over Table Rock Lake. As the last light goes an authentic Civil War cannon fires and you raise your glass.</p><p><b>Be on the patio by 6:35.</b> It&rsquo;s the only hard time all evening.</p>"},
     {t:"8:30 PM", at:D(10,3,20,30), w:"Nightcap", p:"Buzzard Bar, or the cottage", loc:"buzzard", tags:["Optional"],
-     d:"<p>Buzzard Bar has live music from the resort&rsquo;s singing cowboy.</p>"}
+     d:"<p>Buzzard Bar is open to 11:00 with live music from the resort&rsquo;s singing cowboy.</p><p>Ski is gone at 4:15 AM. <b>Say your goodbyes tonight.</b></p>"}
   ]},
+
   {id:"sun", label:"Sun 10/4", title:"Sunday, October 4", sub:"Top of the Rock, then out", events:[
     {t:"4:15 AM", at:D(10,4,4,15), w:"Ski rolls out", p:"Big Cedar &rarr; SGF", loc:"sgf", tags:["Ski"],
-     d:"<p>DL 1680 leaves Springfield at 6:08 AM for Atlanta, then DL 1240 into Detroit at 12:55 PM. He has his own car.</p><p><b>Say your goodbyes Saturday night</b> &mdash; nobody is seeing him off at 4 AM.</p>"},
+     d:"<p>DL 1680 leaves Springfield at 6:08 AM for Atlanta, then DL 1240 into Detroit at 12:55 PM.</p><p>His car is at the cottage and <b>shuttles don&rsquo;t run until 6 AM</b>, so everything he&rsquo;s leaving with needs to be with him Saturday night.</p><p><b>Say your goodbyes Saturday</b> &mdash; nobody is seeing him off at 4 AM.</p>"},
     {t:"8:00 AM", at:D(10,4,8,0), w:"The five depart", p:"Big Cedar &rarr; SGF", loc:"sgf", tags:["Heis","Kepps","Jehls","Joyce","Kurtz"],
-     d:"<p>AA 3584 at 10:38 AM, into O&rsquo;Hare at 12:29 PM.</p>"},
-    {t:"9:00 AM", at:D(10,4,9,0), w:"Arrive Top of the Rock", p:"Thirty minutes before the tee", tags:["Schmidty + Trev"], loc:"torgolf", d:"<p>Load the car before you come &mdash; cottage checkout lands mid-round.</p>"},
+     d:"<p>AA 3584 at 10:38 AM, into O&rsquo;Hare at 12:29 PM.</p><p>Cars are at the cottage, clubs came home Saturday evening. Load up and go.</p>"},
+    {t:"9:00 AM", at:D(10,4,9,0), w:"Arrive Top of the Rock", p:"Thirty minutes before the tee", loc:"torgolf", tags:["Schmidty + Trev"],
+     d:"<p>Trev has his own car, so this one doesn&rsquo;t need a shuttle.</p>"},
     {t:"9:30 AM", at:D(10,4,9,30), w:"TEE &mdash; Top of the Rock", p:"Schmidty + Trev", loc:"torgolf", golf:1, key:1, tags:["Just for fun"],
-     d:"<p><b>Jack Nicklaus, 9 holes, par 27.</b> One of only two par-3 courses ever used in official PGA competition.</p><p>Dramatic elevation, water and bunkers with Table Rock Lake below you. Carts with GPS. Pace is 1:45, so you&rsquo;re done by 11:15.</p><p>150 Top of the Rock Rd, Ridgedale &middot; pro shop <a href='tel:+14173395344'>(417) 339-5344</a></p><p><b>Load the car before you tee off</b> &mdash; cottage checkout will land in the middle of the round.</p>"},
-    {t:"11:15 AM", at:D(10,4,11,15), w:"Finish, then lunch", p:"Osage or Arnie&rsquo;s Barn", loc:"osage", tags:["Schmidty + Trev"],
-     d:"<p>Both are right there at Top of the Rock. Last meal of the trip.</p>"},
-    {t:"1:15 PM", at:D(10,4,13,15), w:"Trev heads for the airport", p:"&rarr; SGF", loc:"sgf", tags:["Trev"],
-     d:"<p>AA 3544 at 3:41 PM, into O&rsquo;Hare at 5:39 PM.</p><p>He&rsquo;s ticketed under his legal first name rather than Trev, worth knowing if anyone&rsquo;s helping him at a counter.</p>"},
-    {t:"&mdash;", at:D(10,4,14,0), w:"Schmidty out of Branson", p:"KBBG", loc:"bkg", tags:["Schmidty"], d:"<p>Own plane, own schedule.</p>"}
+     d:"<p><b>Jack Nicklaus, 9 holes, par 27.</b> One of only two par-3 courses ever used in official PGA competition.</p><p>Dramatic elevation, water and bunkers with Table Rock Lake below you. Carts with GPS. Pace is 1:45, so you&rsquo;re done by 11:15.</p><p>150 Top of the Rock Rd &middot; pro shop <a href='tel:+14173395344'>(417) 339-5344</a></p>"},
+    {t:"11:15 AM", at:D(10,4,11,15), w:"Finish, then brunch", p:"Osage &middot; Top of the Rock", loc:"osage", key:1, tags:["Schmidty + Trev"],
+     d:"<p><b>Osage Sunday brunch runs 10:00 to 2:00</b> and it&rsquo;s right there. Last meal of the trip.</p><p><b>Arnie&rsquo;s Barn is closed Sundays</b> &mdash; don&rsquo;t walk over there.</p>"},
+    {t:"12:45 PM", at:D(10,4,12,45), w:"Back to the cottage", p:"Shower, pack, check out", loc:"lodge", key:1, tags:["Schmidty + Trev","CHECKOUT"],
+     d:"<p>We&rsquo;ve asked Courtney for a <b>1:00 PM late checkout</b>. Until that&rsquo;s confirmed, assume standard checkout lands mid-round and <b>load the car before you tee off</b>.</p>"},
+    {t:"1:15 PM", at:D(10,4,13,15), w:"Trev runs Schmidty to Branson", p:"&rarr; Branson Jet Center", loc:"bkg", key:1, tags:["Schmidty + Trev"],
+     d:"<p>About twenty minutes. Trev then carries on to Springfield for <b>AA 3544 at 3:41 PM</b>, into O&rsquo;Hare at 5:39 PM &mdash; roughly another fifty minutes north, so he has room.</p><p>He&rsquo;s ticketed under his legal first name rather than Trev, worth knowing if anyone&rsquo;s helping him at a counter.</p>"},
+    {t:"&mdash;", at:D(10,4,14,0), w:"Schmidty out of Branson", p:"KBBG", loc:"bkg", tags:["Schmidty"],
+     d:"<p>Own plane, own schedule. Weather decides, not a departures board.</p>"}
   ]}
 ];
 
@@ -615,7 +664,7 @@ function cupPanel(){
     + '<div class="spts" id="ptsB" style="color:var(--world)">0</div></div></div>'
   + '<div class="sstat" id="sstat">14 points on the table. <b>First to 7&frac12; wins it.</b></div>'
   + '<h2>Teams</h2><div class="teams">'+teamCard("Cleveland")+teamCard("World")+'</div>'
-  + '<p class="note">Snake-drafted by handicap then adjusted &mdash; the two sides are within <strong>1.3 strokes</strong>. Partners rotate across the first three sessions, so by Saturday every man has played alongside each of his teammates exactly once. The Saturday tee split is deliberate too &mdash; it&rsquo;s the only arrangement that gets <b>every man a round with every other man across the three full-length courses</b>.</p>'
+  + '<p class="note">Snake-drafted by handicap then adjusted &mdash; the two sides are within <strong>2.3 strokes</strong>. Partners rotate across the first three sessions, so by Saturday every man has played alongside each of his teammates exactly once. The Saturday tee split is deliberate too &mdash; it&rsquo;s the only arrangement that gets <b>every man a round with every other man across the three full-length courses</b>.</p>'
   + '<h2>The matches</h2><div id="matches"></div>'
   + '<div class="livenote" id="livenote">Tap a winner as each match finishes. This saves on your own phone, so pick one scorekeeper and let him run it.</div>'
   + '<h2>Scoring</h2><div class="box">'
@@ -633,120 +682,98 @@ function cupPanel(){
 function gamesPanel(){
   const fmtBlock = (name,when,one,rules,ex) =>
     '<div class="fmt"><div class="fmt-h"><div class="fmt-n">'+name+'</div><div class="fmt-w">'+when+'</div></div>'
-    + '<p class="fmt-one">'+one+'</p><ul class="fmt-r">'+rules.map(r=>'<li>'+r+'</li>').join("")+'</ul>'
-    + '<div class="fmt-ex"><b>For example</b>'+ex+'</div></div>';
+    + '<p class="fmt-one">'+one+'</p><ul class="fmt-r">'+rules.map(r=>'<li>'+r+'</li>').join("")
+    + '</ul>'+(ex?'<div class="fmt-ex"><b>For example</b>'+ex+'</div>':'')+'</div>';
   return '<div class="panel" id="p-games" role="tabpanel">'
-  + '<h2>How the games work</h2>'
-  + '<p class="note" style="margin:-4px 2px 16px">Read this once before Thursday.</p>'
 
-  + '<h2>1 &middot; Forget stroke play</h2>'
-  + '<div class="box">'+rowsHTML([
-      ["What we&rsquo;re not doing","Adding up every shot over 18 holes and comparing totals.","36%"],
-      ["What we are doing","<b>Match play.</b> Each hole is its own little contest. Win it and you go &lsquo;1 up&rsquo;. Lose it and you&rsquo;re &lsquo;1 down&rsquo;. Tie it and nothing changes &mdash; that&rsquo;s a &lsquo;halve&rsquo;.","36%"],
-      ["Why it&rsquo;s better","A blow-up hole costs you <b>one hole, not seven strokes</b>. Make a 9 on the 4th, lose that hole, walk to the 5th level with the world. This is why it works for a group running 3 to 31.","36%"],
-      ["If you&rsquo;re beaten","<b>Pick up.</b> You&rsquo;ve lost the hole either way, and it keeps us moving.","36%"],
-      ["How a match ends","As soon as you&rsquo;re further ahead than there are holes left. 3 up with 2 to play wins &mdash; that&rsquo;s what &ldquo;3 and 2&rdquo; means. All square after 18 and the match is halved.","36%"]])
-  + '</div>'
-
-  + '<h2>2 &middot; How you get shots</h2>'
-  + '<div class="box">'+rowsHTML([
-      ["Open GHIN","Pick the course and the tee we&rsquo;re playing and it gives you your <b>course handicap</b> for the day. That&rsquo;s your number &mdash; it already accounts for how hard the course is. Do it each morning; it changes course to course.","34%"],
-      ["Nobody plays off it raw","The <b>lowest man in the match drops to zero</b> and everyone else gets the <b>difference</b>. He&rsquo;s a 6 and you&rsquo;re a 20? You get 14 shots, he gets none.","34%"],
-      ["Where the shots fall","The scorecard has a row marked <b>Handicap</b> or <b>Stroke Index</b> ranking the holes 1 (hardest) to 18 (easiest). Fourteen shots means one on each of the holes marked 1 to 14.","34%"],
-      ["What a shot does","Subtract 1 from your score on that hole. A 6 becomes a <b>net 5</b>. The net score is what counts.","34%"],
-      ["More than 18 shots","One on every hole, then a second on the hardest ones until you run out.","34%"],
-      ["For the rules lawyers","Formal events apply a 90% allowance in best ball. <b>We play full course handicap</b> &mdash; it&rsquo;s what GHIN hands you and it&rsquo;s a shot or two a match.","34%"]])
-  + '</div>'
-  + '<p class="note">Example: Heis is a 4, you&rsquo;re a 20. He drops to 0 and you get <b>16 shots</b>, on the holes indexed 1 to 16. <i>Pull your real number each morning.</i></p>'
-  + '<h2>3 &middot; The three formats</h2>'
-  + fmtBlock("Best Ball","Thu &middot; Fri PM &middot; Sat AM",
-      "Two of you against two of them. Everyone plays their own ball, and your team&rsquo;s better score counts.",
-      ["You and your partner each play your own ball all the way to the hole. So do both opponents, and your side keeps whichever of your two scores is better &mdash; your best ball.",
-       "At the end of the hole your team bins the worse of your two net scores and keeps the better one. So do they. Those two numbers decide the hole.",
-       "Partner having a nightmare? Doesn&rsquo;t matter, his score gets thrown away. Partner safe on the green in two? Then <b>you</b> take on the flag. That&rsquo;s the whole strategy.",
-       "Strokes: full GHIN course handicap, low man in the match down to zero."],
-      "Par 4, stroke index 3. Heis (no shots) makes 4. Ski gets a shot here and makes 6, so his net is 5 &mdash; The World keeps Heis&rsquo;s 4. Kepps gets a shot and makes 5, net 4. Kurtz gets a shot and makes 7, net 6 &mdash; Cleveland keeps Kepps&rsquo;s net 4. Four against four: <b>halved</b>, nobody moves.")
-  + fmtBlock("Pins &amp; Points","Friday morning at Cliffhangers",
-      "Everyone plays their own ball. Two points every hole &mdash; one for the best tee shot, one for the best score.",
-      ["<b>The Pin (1 point):</b> closest tee shot that finishes <b>on the green</b>. If nobody hits it, closest ball anywhere takes it. This point is <b>gross</b> &mdash; no strokes. A good swing is a good swing whoever hits it.",
-       "<b>The Hole (1 point):</b> better net score of the pair, exactly like best ball. Full course handicap, low man in the match to zero.",
-       "Tie either point and it splits &mdash; half a point each. Most points after 18 wins the match. There are 36 on the table.",
-       "<b>Why this one here:</b> 18 par-3s means the tee shot <i>is</i> the hole. No driving advantage, no second shot &mdash; the field is closer at Cliffhangers than anywhere else on the trip, and everyone gets 18 cracks at a point with one swing.",
-       "And you still write down your own score on every hole."],
-      "Hole 7, 135 yards over a ravine. Heis is 18 feet; Ski hits it to 9 feet &mdash; <b>Ski takes the pin point</b>, no strokes involved. Ski two-putts for a 3, net 2 with his shot. Heis rolls in the 18-footer for a 2. <b>Heis takes the scoring point.</b> Hole halved, 1&ndash;1.")
-  + fmtBlock("Singles","Saturday afternoon at Payne&rsquo;s Valley",
-      "Just you against one other man. No partner to hide behind.",
-      ["One against one, hole by hole, same match play rules.",
-       "Strokes: the full difference between the two course handicaps, same as every other format. If he&rsquo;s 9 lower than you, you get 9 shots on the holes indexed 1 to 9.",
-       "Four matches at once, worth <b>four of the eleven points</b>. This is what decides the cup, which is why it&rsquo;s last and on the best course.",
-       "Finish early? Walk back and support whoever&rsquo;s still out there. That&rsquo;s the tradition and it&rsquo;s half the fun."],
-      "Ski&rsquo;s course handicap is 34, Kurtz&rsquo;s is 25 &mdash; a difference of 9. Ski gets a shot on the nine hardest holes; Kurtz gets none. On the 2nd (index 4) Ski makes 6 for a net 5, Kurtz makes 5. <b>Halved.</b>")
-
-  + '<h2>4 &middot; The water match</h2>'
-  + '<div class="flag"><b>Three cup points on Table Rock Lake</b>The Saturday fishing split falls two-and-two across the teams entirely by accident, so it works as a straight team match. <b>Cleveland:</b> Joyce and Schmidty. <b>The World:</b> Ski and Trev.</div>'
-  + '<div class="box">'
-  + rowsHTML([["Most Fish","Highest total count. <b>Everything</b> that comes over the gunwale counts &mdash; bass, crappie, white bass, walleye, bluegill. Zero equipment, zero argument: the guide keeps the tally.","30%"],
-              ["Big Bass","Longest single black bass, measured in <b>inches</b> on the guide&rsquo;s board. Photograph it next to the tape. Length rather than weight, because juggling a scale in a moving boat is a nuisance and every guide has a bump board.","30%"],
-              ["The Slam","Most black bass <b>species</b> boated. Table Rock holds largemouth, smallmouth <i>and</i> spotted, and all three in one morning is a genuine <b>Table Rock Slam</b>. No measuring at all &mdash; you just name the fish. Ties go to whoever got there first.","30%"]])
-  + '</div>'
-  + '<div class="box" style="margin-top:12px">'
-  + rowsHTML([["Mixed boats","<b>Ski with Joyce, Trev with Schmidty.</b> Put each team in its own boat and you&rsquo;re testing the guides, not the anglers.","30%"],
-              ["The guide referees","He keeps the count and works the tape, and his call is final. Tell him at the dock there&rsquo;s a competition on.","30%"],
-              ["Species rule","Everything counts for Most Fish. <b>Big Bass and The Slam are black bass only</b> &mdash; largemouth, smallmouth, spotted. Ties are halved.","30%"],
-              ["Report it","Payne&rsquo;s Valley clubhouse, 11:45. Three points change hands before anyone tees off.","30%"]])
-  + '</div>'
-
-  + '<h2>5 &middot; The skins pot</h2>'
-  + '<div class="flag"><b>$25 a man per round, one pot, all eight</b>Scored <b>net</b>, so this is where the high handicaps make theirs. Eight men is <b>$200 a round</b>, which is $100 a man and <b>$800 in the pot</b> across the four rounds where all eight play. Mountain Top is only four of you, so it sits out. All collected Thursday; nobody hands money over on a tee box.</div>'
-  + '<div class="box">'
-  + rowsHTML([["You find out in the clubhouse","Nobody is comparing eight net scores on the 7th tee. Both cards go <b>side by side over a beer afterwards</b> and Ryan reads out the winners. That&rsquo;s how the men&rsquo;s league runs it and walking in not knowing is half the fun.","32%"],
-              ["Every hole is worth the same","$200 a round over 18 holes is <b>$11.11 a hole</b>, every round, all weekend. Tie one and the next is worth $22. Tie again and it&rsquo;s $33. Call it eleven dollars and let the ledger do the cents.","32%"],
-              ["Winning a hole","All eight net scores compared, <b>across both groups</b>. The single lowest net takes it. Everyone plays off their own full GHIN course handicap &mdash; nobody drops to zero here, that&rsquo;s only for the Cup matches.","32%"],
-              ["Ties kill the hole","Two or more men tie for low net and <b>nobody wins</b>. This is the rule everyone forgets. With eight players and strokes flying about, expect roughly half the holes to tie.","32%"],
-              ["How it accumulates","A tied hole isn&rsquo;t lost, it <b>carries onto the next one</b>. Tie the 2nd and the 3rd is worth $22. Tie that too and the 4th is worth $33. <b>Carries run right through the weekend</b>, so a dead Thursday means Friday morning starts fat and a hole late on Saturday can be worth $60 or $70.","32%"],
-              ["What usually wins one","A real birdie. But watch the men taking <b>two strokes on the same hole</b> &mdash; Ski bogeying a stroke-index-1 par 4 is a net 3, exactly as good as Heis making a real birdie. Those two tying each other is what builds the fat carries.","32%"],
-              ["The 19th settles the rest","Anything still riding after Payne&rsquo;s Valley goes to the bonus <b>19th at The Big Rock</b>. One ball each into the canyon, closest to the pin takes the whole carried pot. That&rsquo;s what the 19th is for.","32%"],
-              ["You&rsquo;ll find out that evening","Ryan works the eight net scores off the photographed cards and posts the winners and the running total to the group chat. Walking in not knowing is half the fun.","32%"]])
-  + '</div>'
-  + '<div class="wex" style="margin-top:12px"><b>Worked example</b>'
-  + '<p style="margin:0">Thursday at Ozarks National. <b>Hole 1:</b> Kepps alone on net 3, everyone else 4 or worse &mdash; he takes <b>$11.11</b>. <b>Hole 2:</b> Heis makes a real birdie for net 3; Ski takes two strokes on the hole and bogeys for net 3 as well. <b>Tied &mdash; nobody wins, it carries.</b> <b>Hole 3:</b> three men tie on net 4, carries again &mdash; the 4th is now worth <b>$33</b>. <b>Hole 4:</b> Jehls alone on net 3 and he collects the lot.</p>'
-  + '<p style="margin:8px 0 0">Nobody knows any of this until both cards come together in the clubhouse.</p></div>'
-  + '<div class="box" style="margin-top:12px">'
-  + rowsHTML([["Use your own full number","Skins is net and <b>everyone plays off their own full GHIN course handicap</b>. That&rsquo;s different from the Cup matches, where the low man drops to zero. Skins is an individual game across the whole field &mdash; nobody drops to zero.","32%"],
-              ["Cliffhangers looks odd","It&rsquo;s an 18-hole par-3 course with a slope of 89, so GHIN will hand a 31 index something like a <b>23</b> and a 3 index something like a <b>1</b>. That&rsquo;s correct. Pull it from the app and don&rsquo;t argue with it.","32%"],
-              ["The appeal","Nobody can lose more than the $100 they put in, and one carried hole late on Saturday can hand most of it back in a single swing.","32%"]])
-  + '</div>'
-
-  + '<h2>6 &middot; Keeping track</h2>'
-  + '<div class="flag"><b>Photograph both cards. That&rsquo;s the whole job.</b>One scribe per group, same man all weekend. At the end of every round both cards get photographed into the group chat, and <b>Ryan runs the numbers that evening</b> and posts the result. Nobody is comparing eight net scores on the 7th tee.</div>'
-  + '<div class="box">'
-  + rowsHTML([["What the card needs","Every man&rsquo;s <b>gross score on every hole</b>, legibly, plus the tee you played. That&rsquo;s it &mdash; no net maths on the course, no dots, no running tallies.","32%"],
-              ["Course handicaps","Pull yours from GHIN <b>each morning</b> for the course and tee, and write it on the card. It changes course to course.","32%"],
-              ["The Cup","Whoever wins a match says so at the end of it. Ryan taps it into <b>The Cup</b> tab and the running score is live for everyone.","32%"],
-              ["Skins","Settled from the cards, not on the course. Winners and running totals go into the group chat the same evening &mdash; disputes die when the numbers are public that day.","32%"]])
-  + '</div>'
-  + '<h2>7 &middot; Pressing and hammering</h2>'
-  + '<div class="flag"><b>Side money only</b>A Cup match is worth <b>one point</b> however the bet goes &mdash; you cannot press your way to two. Cup on the card, cash in Splitwise, two separate things.</div>'
-  + '<div class="box">'
-  + rowsHTML([["The press","You&rsquo;re <b>2 down</b>, so you open a second match over the holes that are left, same stake. Now two bets run at once. Lose the original, win the press, you walk off square.","30%"],
-              ["The hammer","<b>Double the stake, between shots.</b> Your opponent either accepts and plays on for double, or concedes the hole right there. It can be thrown back at you in the same hole.","30%"],
-              ["When to throw it","His ball is in the water and he hasn&rsquo;t played three yet. Never while a man is over the ball or into his routine &mdash; once the shot is struck the window is gone.","30%"]])
-  + '</div>'
-  + '<h2>House rules &mdash; agree these on the first tee</h2><div class="box">'
-  + rowsHTML([["Base stake","Set one number per match and use it all trip. $20 is plenty.","32%"],
-              ["Presses","Only when 2 down. <b>Optional, not automatic</b>, and one per nine.","32%"],
-              ["Hammers","Two per side per round, thrown between shots.","32%"],
-              ["The Cup","Untouched. Every match is worth one point however the money lands.","32%"],
-              ["Settling","Splitwise at the end. Nobody chases cash on the 14th tee.","32%"]])
-  + '</div>'
-
-  + '<h2>If you remember nothing else</h2><div class="creed">'
+  + '<h2>If you read nothing else</h2><div class="creed">'
   + ["Each hole is its own contest. Win, lose or halve, then move on.",
-     "Your shots come on the hardest holes &mdash; check the stroke index row on the card.",
+     "<b>Your strokes are already worked out</b> &mdash; they&rsquo;re on the Courses tab.",
      "Best ball: play your own ball, your team keeps the better score.",
      "Pins &amp; Points: closest tee shot wins a point, better score wins a point.",
      "Singles: just you and him.",
-     "If you can&rsquo;t win the hole, pick up."].map((l,i)=>'<div class="creed-l"><span>'+(i+1)+'</span>'+l+'</div>').join("")
+     "If you can&rsquo;t win the hole, pick up.",
+     "Photograph both cards at the end of every round. That&rsquo;s the whole job."]
+     .map((l,i)=>'<div class="creed-l"><span>'+(i+1)+'</span>'+l+'</div>').join("")
+  + '</div>'
+
+  + '<h2>1 &middot; Match play, not stroke play</h2>'
+  + '<div class="box">'+rowsHTML([
+      ["Every hole is a contest","Win it and you go &lsquo;1 up&rsquo;. Lose it and you&rsquo;re &lsquo;1 down&rsquo;. Tie it and nothing changes &mdash; a &lsquo;halve&rsquo;.","36%"],
+      ["Why we play it","A blow-up costs you <b>one hole, not seven strokes</b>. Make a 9 on the 4th, lose that hole, walk to the 5th level with the world. That&rsquo;s what makes a group running 3 to 31 work.","36%"],
+      ["If you&rsquo;re beaten, pick up","You&rsquo;ve lost the hole either way and it keeps us moving.","36%"],
+      ["How a match ends","When you&rsquo;re further ahead than there are holes left. 3 up with 2 to play &mdash; that&rsquo;s &ldquo;3 and 2&rdquo;. All square after 18 is a halve.","36%"]])
+  + '</div>'
+
+  + '<h2>2 &middot; Your strokes</h2>'
+  + '<div class="flag"><b>Already done. Nothing to look up.</b>Every man&rsquo;s course handicap for every course is on the <b>Courses</b> tab, worked out from the real ratings off each scorecard. Know your number before you leave the cottage.</div>'
+  + '<div class="box">'+rowsHTML([
+      ["In a Cup match","The <b>lowest man drops to zero</b> and everyone else gets the difference. He&rsquo;s an 8 and you&rsquo;re a 20, you get 12 shots and he gets none.","34%"],
+      ["Where they fall","On the hardest holes, using the <b>Handicap</b> row on the scorecard. Twelve shots means one on each of the holes marked 1 to 12.","34%"],
+      ["What a shot does","Subtract 1 from your score there. A 6 becomes a <b>net 5</b>, and the net is what counts.","34%"],
+      ["In skins, it&rsquo;s different","There you play off your <b>own full number</b> and nobody drops to zero. More on that below.","34%"]])
+  + '</div>'
+  + '<p class="note">We play full course handicap. Formal events knock it back to 90% in best ball; we don&rsquo;t, and it&rsquo;s worth a shot or two a match.</p>'
+
+  + '<h2>3 &middot; The three formats</h2>'
+  + fmtBlock("Best Ball","Thu &middot; Fri PM &middot; Sat AM",
+      "Two of you against two of them. Everyone plays their own ball, and your team&rsquo;s better score counts.",
+      ["You and your partner each play your own ball to the hole. So do both opponents.",
+       "Your team bins the worse of your two net scores and keeps the better one. So do they. Those two numbers decide the hole.",
+       "Partner having a nightmare? His score gets thrown away. Partner safe on the green in two? Then <b>you</b> take on the flag. That&rsquo;s the whole strategy."],
+      "Par 4, stroke index 3. Heis makes 4 with no shots. Ski gets a shot and makes 6, net 5 &mdash; The World keeps Heis&rsquo;s 4. Kepps gets a shot and makes 5, net 4. Kurtz gets a shot and makes 7, net 6 &mdash; Cleveland keeps the net 4. <b>Halved.</b>")
+  + fmtBlock("Pins &amp; Points","Friday morning at Cliffhangers",
+      "Everyone plays their own ball. Two points every hole &mdash; one for the best tee shot, one for the best score.",
+      ["<b>The Pin:</b> closest tee shot that finishes <b>on the green</b>. If nobody hits it, closest ball anywhere. This point is <b>gross</b> &mdash; no strokes.",
+       "<b>The Hole:</b> better net score of the pair, exactly like best ball.",
+       "Tie either point and it splits. Most points after 18 wins the match &mdash; there are 36 on the table.",
+       "18 par-3s means the tee shot <i>is</i> the hole, which is why this format lives here."],
+      "Hole 7, 135 yards over a ravine. Heis is 18 feet, Ski is 9 &mdash; <b>Ski takes the pin</b>, no strokes involved. Ski two-putts for net 2. Heis rolls in the 18-footer for a 2. <b>Heis takes the score.</b> Halved 1&ndash;1.")
+  + fmtBlock("Singles","Saturday afternoon at Payne&rsquo;s Valley",
+      "Just you against one other man. No partner to hide behind.",
+      ["Same match play rules, one on one.",
+       "Four matches at once, worth <b>four of the fourteen points</b>. This is what decides the cup, which is why it&rsquo;s last and on the best course.",
+       "Finish early? Walk back and support whoever&rsquo;s still out. That&rsquo;s the tradition."], "")
+
+  + '<h2>4 &middot; The water match</h2>'
+  + '<div class="flag"><b>Three cup points on Table Rock Lake</b>The Saturday fishing split falls two-and-two entirely by accident, so it works as a straight team match. <b>Cleveland:</b> Joyce and Schmidty. <b>The World:</b> Ski and Trev. Mixed boats &mdash; Ski with Joyce, Trev with Schmidty &mdash; so we&rsquo;re testing the anglers, not the guides.</div>'
+  + '<div class="box">'
+  + rowsHTML([["Most Fish","Highest count. <b>Everything</b> over the gunwale counts &mdash; bass, crappie, white bass, walleye, bluegill.","30%"],
+              ["Big Bass","Longest single <b>black bass</b>, in inches on the guide&rsquo;s bump board. Photograph it next to the tape.","30%"],
+              ["The Slam","Most black bass <b>species</b> boated. Largemouth, smallmouth and spotted all in one morning is a genuine Table Rock Slam.","30%"],
+              ["The guide referees","He keeps the count and works the tape, and his call is final. Tell him at the dock there&rsquo;s a competition on. Ties are halved.","30%"],
+              ["Report it","Payne&rsquo;s Valley clubhouse, 11:45, before anyone tees off.","30%"]])
+  + '</div>'
+
+  + '<h2>5 &middot; The skins pot</h2>'
+  + '<div class="flag"><b>$25 a man per round, one pot, all eight</b>Scored <b>net</b>, so this is where the high handicaps make theirs. $200 a round, <b>$800 across the weekend</b>. All collected Thursday &mdash; nobody hands money over on a tee box. Mountain Top sits out; only four of you play it.</div>'
+  + '<div class="box">'
+  + rowsHTML([["Every hole is worth the same","$200 over 18 holes is <b>$11.11 a hole</b>. Tie one and the next is worth $22. Tie again and it&rsquo;s $33.","32%"],
+              ["Winning a hole","All eight net scores compared, <b>across both groups</b>. Single lowest net takes it. Everyone plays off their <b>own full number</b> &mdash; nobody drops to zero here.","32%"],
+              ["Ties kill the hole","Two men tie for low net and <b>nobody wins</b>. This is the rule everyone forgets. Expect roughly half the holes to tie.","32%"],
+              ["Carries run all weekend","A tied hole isn&rsquo;t lost, it rolls onto the next. A dead Thursday means Friday morning starts fat, and a hole late on Saturday can be worth $60 or $70.","32%"],
+              ["What usually wins one","A real birdie &mdash; but watch the men taking <b>two strokes on one hole</b>. Ski bogeying a stroke-index-1 par 4 is a net 3, exactly as good as Heis making a birdie.","32%"],
+              ["The 19th settles the rest","Anything still riding after Payne&rsquo;s Valley goes to the bonus <b>19th at The Big Rock</b>. One ball each, closest to the pin takes the lot.","32%"],
+              ["You find out that evening","Nobody compares eight net scores on the 7th tee. Both cards go side by side after the round, Ryan works it out and posts the winners. Walking in not knowing is half the fun.","32%"]])
+  + '</div>'
+  + '<div class="wex" style="margin-top:12px"><b>How a carry builds</b>'
+  + '<p style="margin:0"><b>Hole 1:</b> Kepps alone on net 3 &mdash; he takes <b>$11.11</b>. <b>Hole 2:</b> Heis birdies for net 3; Ski takes two strokes and bogeys for net 3 as well. <b>Tied, nobody wins, it carries.</b> <b>Hole 3:</b> three men tie on net 4 &mdash; carries again, so the 4th is worth <b>$33</b>. <b>Hole 4:</b> Jehls alone on net 3 and he collects the lot.</p></div>'
+
+  + '<h2>6 &middot; Keeping track</h2>'
+  + '<div class="flag"><b>Photograph both cards. That&rsquo;s the whole job.</b>One scribe per group, same man all weekend. Cards into the group chat at the end of every round, and Ryan runs the numbers that evening.</div>'
+  + '<div class="box">'
+  + rowsHTML([["What the card needs","Every man&rsquo;s <b>gross score on every hole</b>, legibly, plus the tee you played. No net maths on the course, no dots, no running tallies.","32%"],
+              ["The Cup","Whoever wins a match says so at the end of it. Ryan taps it in and the running score goes live for everyone.","32%"],
+              ["Skins","Settled from the cards, not on the course. Winners and totals into the group chat the same evening &mdash; disputes die when the numbers are public that day.","32%"]])
+  + '</div>'
+
+  + '<h2>7 &middot; Side money</h2>'
+  + '<div class="flag"><b>Nothing to do with the Cup</b>A Cup match is worth <b>one point</b> however the bet goes &mdash; you cannot press your way to two. Cup on the card, cash in Splitwise, two separate things.</div>'
+  + '<div class="box">'
+  + rowsHTML([["The press","You&rsquo;re <b>2 down</b>, so you open a second match over the holes that are left, same stake. Lose the original, win the press, you walk off square. <b>One per nine, optional.</b>","30%"],
+              ["The hammer","<b>Double the stake, between shots.</b> He accepts and plays on for double, or concedes the hole there. Can be thrown back at you on the same hole. <b>Two per side per round.</b>","30%"],
+              ["When to throw it","His ball is in the water and he hasn&rsquo;t played three. <b>Never</b> while a man is over the ball &mdash; once the shot is struck the window is gone.","30%"],
+              ["Agree it on the first tee","One base stake for the whole trip. $20 is plenty. Not written on the card, it didn&rsquo;t happen.","30%"]])
   + '</div></div>';
 }
 
@@ -766,18 +793,93 @@ function golfPanel(){
       + '<div style="margin-top:10px">'+(c.loc?mapBtn(c.loc):'')+'</div>'
       + (badge?'<div>'+badge+'</div>':'') + '</div>';
   };
+  /* USGA Course Handicap = Index x (Slope / 113) + (Course Rating - Par).
+     Full handicap, no allowances. Computed from the roster and the tee tables
+     above, so it can never drift out of step with them. */
+  const RATED = [
+    {n:"Ozarks National", when:"Thu",    tee:"Blue/White"},
+    {n:"Cliffhangers",    when:"Fri AM", tee:"Back"},
+    {n:"Buffalo Ridge Springs", short:"Buffalo Ridge", when:"Fri PM", tee:"Blue/White"},
+    {n:"Payne's Valley",  when:"Sat PM", tee:"Blue/White"}
+  ];
+  const chFor = (idx, c, teeName) => {
+    const t = c.tees.find(x=>x[0]===teeName);
+    const cr = parseFloat(t[2]), sl = parseFloat(t[3]);
+    if(!isFinite(cr) || !isFinite(sl)) return null;
+    return Math.round(idx * (sl/113) + (cr - c.par));
+  };
+  /* Mountain Top's card carries a men's handicap row even though the course is
+     unrated. Hole -> stroke index, straight off the 2026 scorecard. */
+  const MT_SI = SI["Mountain Top"];
+  const mtHoles = n => {
+    const hs = []; for(let h=1;h<=13;h++) if(MT_SI[h-1]<=n) hs.push(h);
+    if(hs.length===13) return "every hole";
+    const miss = []; for(let h=1;h<=13;h++) if(MT_SI[h-1]>n) miss.push(h);
+    if(miss.length<=2) return "all but "+(miss.length===1?"hole ":"holes ")+miss.join(" and ");
+    return hs.join(", ");
+  };
+  /* Mountain Top publishes no slope, so we price it off Cliffhangers — the other
+     all-par-3 course on the trip — then scale 18 holes down to 13. Computed from
+     the roster so it tracks any handicap or team change automatically. */
+  const mtFour = () => {
+    const cl = COURSES.find(c=>c.n==="Cliffhangers");
+    const t  = cl.tees.find(x=>x[0]===cl.rec);
+    const cr = parseFloat(t[2]), sl = parseFloat(t[3]);
+    const four = ROSTER.filter(m=>m.sat==="Mountain Top")
+      .map(m=>({k:m.k, h:m.h, t:m.t, c:Math.round(m.h*(sl/113)+(cr-cl.par))}))
+      .sort((a,b)=>a.c-b.c);
+    const lo = four[0].c;
+    four.forEach(x=>x.s = Math.round((x.c-lo)*13/18));
+    return four;
+  };
+  const mtTable = () => '<div class="box"><table class="mtable"><thead><tr>'
+    + '<th>Man</th><th class="num">Strokes</th><th>On these holes</th></tr></thead><tbody>'
+    + mtFour().map(x=>'<tr><td style="font-weight:700">'+x.k
+        + '<br><span style="color:var(--'+(x.t==="Cleveland"?"cleveland":"world")+');font-size:10.5px;font-weight:600">'
+        + (x.t==="Cleveland"?"Cleveland":"The World")+'</span></td>'
+        + '<td class="num" style="font-weight:800;color:var(--brass);font-size:17px">'
+        + (x.s===0?'<span style="font-size:13px;color:var(--ink-3);font-weight:600">&ndash;</span>':x.s)+'</td>'
+        + '<td style="font-size:12px;color:var(--ink-2)">'
+        + (x.s===0?'<span style="color:var(--ink-3)">plays scratch</span>':mtHoles(x.s))+'</td></tr>').join("")
+    + '</tbody></table></div>';
+
+  const chTable = () => {
+    const cols = RATED.map(r=>{ const c = COURSES.find(x=>x.n===r.n); return {r:r, c:c}; });
+    return '<div class="box scroll"><table class="mtable"><thead><tr><th>Man</th>'
+      + cols.map(x=>'<th class="num" style="font-size:10.5px;line-height:1.2">'
+          + (x.r.short||x.r.n).replace(" ","<br>") + '<br><span style="color:var(--ink-3);font-weight:400">'+x.r.when+'</span></th>').join("")
+      + '</tr></thead><tbody>'
+      + ROSTER.map(m=>'<tr><td style="font-weight:700">'+m.k
+          + '<br><span style="color:var(--ink-3);font-size:10.5px;font-weight:400">'+m.h.toFixed(1)+'</span></td>'
+          + cols.map(x=>'<td class="num" style="font-weight:700;color:var(--brass)">'+chFor(m.h,x.c,x.r.tee)+'</td>').join("")
+          + '</tr>').join("")
+      + '</tbody></table></div>';
+  };
+
   return '<div class="panel" id="p-golf" role="tabpanel">'
+  + '<h2>Your strokes</h2>'
+  + '<div class="flag"><b>Worked out before we land</b>Nobody is doing arithmetic on a first tee. These are your <b>course handicaps</b> &mdash; full handicap, no allowances &mdash; off the tees we&rsquo;re playing. Know your number before Thursday.</div>'
+  + chTable()
+  + '<p class="note">Index &times; (Slope &divide; 113) + (Rating &minus; Par), rounded. <b>Final numbers land the Monday before we fly</b> once everyone&rsquo;s weekend rounds post.</p>'
+  + '<h2>Mountain Top &mdash; settled</h2>'
+  + '<div class="flag"><b>Thirteen holes, and the course has no rating</b>So there is no course handicap to look up. Ryan priced it off a rated par-3 course of the same character and scaled it to 13 holes. <b>These are your strokes</b> &mdash; nothing to work out on the walk to the first tee.</div>'
+  + mtTable()
+  + '<p class="note">Best Ball, one Cup point. Holes come straight off the <b>handicap row on Mountain Top&rsquo;s own scorecard</b> &mdash; hole 2 is the hardest at 221 yards, hole 4 the easiest at 82.</p>'
+  + '<div class="box" style="margin-top:12px">'
+  + rowsHTML([["Top of the Rock","Rated 27.7 but no published slope either. Sunday is two guys playing for fun, so it doesn&rsquo;t matter.","36%"]])
+  + '</div>'
   + '<h2>The six courses</h2>'
   + '<p class="note" style="margin:-4px 2px 14px">The highlighted tee is the one to play. Want to go back? <strong>The tee plan</strong> below has the next set up and the handicap adjustment.</p>'
   + COURSES.map(cc).join("")
   + '<h2>The tee plan</h2>'
-  + '<div class="flag"><b>One set, everyone plays it</b>The three full-length courses land between <b>6,232 and 6,505</b> &mdash; enough course to feel like you played it, short enough that a 36-hole Friday doesn&rsquo;t finish in the dark. <b>The back set on every par-3 course</b>, which is the Back tee at Cliffhangers and Mountain Top and the Black at Top of the Rock.</div>'
+  + '<p class="note" style="margin:-4px 2px 14px">Moving back adds <b>more strokes for the high men than the low</b>, which is why the add column is a range. And you don&rsquo;t need it at all if you just take your number off the tee you actually play &mdash; handicaps from different tees are directly comparable.</p>'
+  + '<div class="flag"><b>One set, everyone plays it</b>The three full-length courses land between <b>6,183 and 6,505</b> &mdash; enough course to feel like you played it, short enough that a 36-hole Friday doesn&rsquo;t finish in the dark. <b>The back set on every par-3 course</b>, which is the Back tee at Cliffhangers and Mountain Top and the Black at Top of the Rock.</div>'
   + '<div class="box scroll"><table class="mtable"><thead><tr><th>Round</th><th>Play this</th><th class="num">Yds</th><th>Want to go back?</th><th class="num">Add</th></tr></thead><tbody>'
-  + [["Ozarks National","Thu","Blue/White","6,264","Blue &mdash; 6,510","+1"],
+  + [["Ozarks National","Thu","Blue/White","6,264","Blue &mdash; 6,510","+1&ndash;2"],
      ["Cliffhangers","Fri AM","Back","1,910","&ndash;","&ndash;"],
-     ["Buffalo Ridge","Fri PM","Bronze","6,232","Gold/Blue &mdash; 6,628","+2"],
-     ["Payne&rsquo;s Valley","Sat PM","Blue/White","6,505","Blue &mdash; 6,876","+2"],
-     ["Mountain Top","Sat AM","Back","1,927","&ndash;","&ndash;"],
+     ["Buffalo Ridge","Fri PM","Blue/White","6,183","Blue &mdash; 6,616","+2&ndash;3"],
+     ["Payne&rsquo;s Valley","Sat PM","Blue/White","6,505","Blue &mdash; 6,876","+2&ndash;3"],
+     ["Mountain Top","Sat AM","Back","1,912","&ndash;","&ndash;"],
      ["Top of the Rock","Sun","Black","1,420","&ndash;","&ndash;"]]
     .map(r=>'<tr><td style="font-size:12px;line-height:1.25">'+r[0]+'<br><span style="color:var(--ink-3);font-size:10.5px">'+r[1]+'</span></td>'
       +'<td style="font-weight:700;color:var(--brass)">'+r[2]+'</td><td class="num">'+r[3]+'</td>'
@@ -806,19 +908,22 @@ function golfPanel(){
               ["Not doing","Bag carriers ($100/bag). That means walking, and Buffalo Ridge doesn&rsquo;t permit it anyway.","32%"]])
   + '</div>'
 
-  + '<h2>The thirty-minute rule</h2>'
-  + '<div class="flag"><b>On the property half an hour before every tee time</b>Thirty minutes <i>standing at the course</i>, not thirty minutes of driving still to do. Bag drop, pro shop, cart, a few balls and finding the first tee eats twenty minutes on its own. Turning up at ten to is how you make a double on the opening hole.</div>'
+  + '<h2>The 45-minute rule</h2>'
+  + '<div class="flag"><b>Picked up an hour before the tee. Standing on the course 45 minutes before.</b>Bag drop, pro shop, a bucket and finding the first tee eats twenty minutes on its own. Rolling up at ten to is how you make a double on the opening hole.</div>'
   + '<div class="box">'
-  + rowsHTML([["Thu &middot; Ozarks National","Arrive <b>11:40</b> for 12:30. Fifty minutes &mdash; first round of the trip and everyone needs a course handicap sorted.","36%"],
-              ["Fri &middot; Cliffhangers","Leave Big Cedar <b>7:45</b>, on the ground <b>8:10</b> for 9:00.","36%"],
-              ["Fri &middot; Buffalo Ridge","There by <b>1:10</b> for 1:40. This is the tight one &mdash; Cliffhangers doesn&rsquo;t finish until 12:45 and it&rsquo;s a different clubhouse twenty minutes away.","36%"],
-              ["Sat &middot; Mountain Top","Leave Big Cedar <b>8:00</b>, on the ground <b>8:20</b> for 9:00.","36%"],
-              ["Sat &middot; Payne&rsquo;s Valley","Regroup at the clubhouse by <b>11:45</b> for 12:10.","36%"],
-              ["Sun &middot; Top of the Rock","There by <b>9:00</b> for 9:30.","36%"]])
+  + rowsHTML([["Fri &middot; Cliffhangers","Pickup <b>8:00</b> for 9:00.","36%"],
+              ["Sat &middot; Mountain Top","Pickup <b>7:45</b> for 9:00 &mdash; early on purpose, so there&rsquo;s time for breakfast at the grill.","36%"],
+              ["Sun &middot; Top of the Rock","There by <b>8:45</b> for 9:30.","36%"]])
+  + '</div>'
+  + '<p class="note" style="margin:12px 2px 0"><b>Three rounds can&rsquo;t take the full 45.</b> Don&rsquo;t turn up expecting it.</p>'
+  + '<div class="box" style="margin-top:8px">'
+  + rowsHTML([["Thu &middot; Ozarks National","We land at 10:08 and drop cars at the lodge first. You get about <b>twenty minutes</b> &mdash; course handicap, a few putts, go.","36%"],
+              ["Fri &middot; Buffalo Ridge","Cliffhangers doesn&rsquo;t finish until 12:45 and the tee is 1:40, twenty minutes away, with lunch in between. <b>No warm-up</b> &mdash; but you&rsquo;ve just played 18, so you&rsquo;re warm.","36%"],
+              ["Sat &middot; Payne&rsquo;s Valley","The fishermen come off the water at 11:00 and have to change. Everyone at the clubhouse <b>11:45</b> for 12:10.","36%"]])
   + '</div>'
 
-  + '<h2>Practice &amp; warm-up</h2><div class="box">'
-  + rowsHTML([["Ozarks National Practice Facility","Two putting greens, a three-green short-game area with bunkers, and a range with zoysia and artificial surfaces. Serves Ozarks National, Cliffhangers, Mountain Top and Payne&rsquo;s Valley. <b>Get there for 11:40 on Thursday</b>, fifty minutes before the tee.","36%"],
+  + '<h2>Practice &amp; warm-up</h2><div class="box"> '
+  + rowsHTML([["Ozarks National Practice Facility","Two putting greens, a three-green short-game area with bunkers, and a range with zoysia and artificial surfaces. Serves Ozarks National, Cliffhangers, Mountain Top and Payne&rsquo;s Valley. <b>Thursday is too tight to use it</b> &mdash; save it for Friday morning at Cliffhangers.","36%"],
               ["Tom Watson Putting Course","A 9-hole putting course at the same complex. Worth a beer and a bet.","36%"],
               ["Buffalo Ridge","Its own practice area &mdash; zoysia and rye tees, bunkers, pitching area, two putting greens.","36%"],
               ["Rentals","Clubs $60 a set (TaylorMade). Digital rangefinders free at every pro shop.","36%"]])
@@ -872,7 +977,8 @@ function moneyPanel(){
   + '<div class="row"><div class="k" style="font-weight:700;color:var(--ink)">Balance at check-in</div><div class="v mono" style="color:var(--brass);font-size:15px">'+money(871.67)+'</div></div>'
   + '</div><p class="note">Tax and the resort fee aren&rsquo;t quoted yet, so the balance will move a little.</p>'
   + '<h2>Still to come</h2><div class="box">'
-  + rowsHTML([["Rental cars","<b>Left open on purpose.</b> Two SUVs, and we&rsquo;ll work out the split afterwards. Nothing to do now.","34%"],
+  + rowsHTML([["Rental cars","<b>Left open on purpose.</b> We&rsquo;ll work out the split afterwards. Nothing to do now.","34%"],
+              ["The cottage groceries","Courtney shops before we arrive and fronts the cost. Ryan reimburses her in full and adds a gratuity &mdash; figure <b>$15&ndash;20 a man</b>. <b>Don&rsquo;t Venmo her directly.</b>","34%"],
               ["Meals and bar tabs","Splitwise. Whoever fronts it puts it in.","34%"],
               ["Rental clubs","$60 a set, if you&rsquo;re not bringing your own.","34%"],
               ["Bring cash for","<b>$240</b> cash for forecaddies over three rounds, <b>~$40</b> for the fishing guide, plus bag drop, shuttle drivers and bartenders.","34%"]])
@@ -890,15 +996,14 @@ function bankPanel(){
      ["Skins","$25 &times; 4 rounds","$800","<b>Net</b>, all eight"]]
     .map(r=>'<tr><td style="font-weight:700;color:var(--brass)">'+r[0]+'</td><td style="font-size:12px">'+r[1]+'</td><td class="num">'+r[2]+'</td><td style="font-size:11.5px;color:var(--ink-2)">'+r[3]+'</td></tr>').join("")
   + '</tbody><tfoot><tr><td>All in</td><td style="font-size:12px">$250 a man</td><td class="num">$2,000</td><td></td></tr></tfoot></table></div>'
-  + '<p class="note">That&rsquo;s the most anyone can lose across four days &mdash; around a tenth of what the trip already costs you. Ryan can change any of these in the spreadsheet and every number recalculates.</p>'
+  + '<p class="note">That&rsquo;s the most anyone can lose across four days &mdash; around a tenth of what the trip already costs you.</p>'
 
   + '<h2>Why it&rsquo;s sized this way</h2>'
   + '<div class="box">'
-  + rowsHTML([["The Cup &mdash; dead even","You win if <b>your team</b> wins, and the teams are balanced to within <b>1.3 strokes</b>. Ski&rsquo;s odds are identical to Heis&rsquo;s. That&rsquo;s exactly why nearly two thirds of all the money sits here &mdash; it&rsquo;s the one bet where the worst golfer and the best golfer have the same expected return. Winning four split $1,200, so <b>$300 each</b>.","32%"],
-              ["Skins &mdash; leans high","Net skins reward <b>one brilliant hole</b>, and high handicaps have far more variance than low ones. Ski will make a net eagle somewhere this weekend and take a fat carried pot with it. Heis is more consistent, which means his good holes get tied more often. Every hole is worth <b>$11.11</b> and carries run all weekend, so a hole tied five times pays <b>$66</b> to whoever finally wins it.","32%"],
+  + rowsHTML([["The Cup &mdash; dead even","You win if <b>your team</b> wins, and the teams are balanced to within <b>2.3 strokes</b>. Ski&rsquo;s odds are identical to Heis&rsquo;s. That&rsquo;s exactly why nearly two thirds of all the money sits here &mdash; it&rsquo;s the one bet where the worst golfer and the best golfer have the same expected return. Winning four split $1,200, so <b>$300 each</b>.","32%"],
+              ["Skins &mdash; leans high","Net skins reward <b>one brilliant hole</b>, and high handicaps have far more variance than low ones. Ski will make a net eagle somewhere this weekend and take a fat carried pot with it. Heis is more consistent, which means his good holes get tied more often.","32%"],
               ["Two pots, and that&rsquo;s the lot","<b>The Cup is the game</b> and everything else is a side bet that mustn&rsquo;t get in the way of the match in front of you. Neither pot is scored gross, which is exactly why Ski can go home in front. Nothing to track on the course beyond your own score.","32%"]])
   + '</div>'
-  + '<p class="note"><strong>The structure is deliberate.</strong> $1,200 in the Cup, where handicap is irrelevant because you win with your team, and $800 in skins, which is net and leans toward the back of the field. <strong>Neither pot is scored gross</strong>, which is the whole reason Ski can go home in front.</p>'
   + '<div class="flag" style="margin-top:12px"><b>Why a win only doubles your money</b>Four against four with everyone in for the same amount means the losing four fund the winning four <b>exactly</b> &mdash; so a winner can only ever collect one buy-in. No structure beats that in an even team bet; the only lever is the size of the buy-in. At $150 a man the swing between winning and losing is <b>$300</b>.</div>'
 
   + '<h2>When the money moves</h2>'
@@ -913,42 +1018,31 @@ function bankPanel(){
   + '<h2>House rules</h2>'
   + '<div class="box">'
   + rowsHTML([["Money up front","Before the first tee shot Thursday. No IOUs, no &ldquo;I&rsquo;ll get you later&rdquo;. This one rule stops the whole problem.","30%"],
-              ["Not on the card, didn&rsquo;t happen","A press nobody wrote down is not a press. A hammer nobody initialled was never thrown. Everyone agrees to this Thursday so nobody argues Saturday.","30%"],
               ["One banker","Ryan holds the money and the ledger. Nobody keeps a competing tally in their head.","30%"],
-              ["Publish every round","Cards into the group chat, running totals posted. Disputes die when the numbers are public the same day.","30%"],
-              ["Capped downside","<b>Nobody can lose more than $250</b> across the two pots. Presses and hammers are the only open-ended money, which is why they&rsquo;re capped on the Games tab.","30%"]])
+              ["Capped downside","Nobody can lose more than <b>$250</b> across the two pots. Presses and hammers are the only open-ended money, which is why they&rsquo;re capped on the Games tab.","30%"]])
   + '</div>'
-  + '<p class="note">Ryan settles skins from the photographed cards after each round and posts the totals to the group chat. The spreadsheet takes eight final numbers at the end, one per man, and checks the whole thing balances to zero.</p>'
   + '</div>';
 }
 
 /* ---------- Resort ---------- */
 function resortPanel(){
   return '<div class="panel" id="p-resort" role="tabpanel">'
-  + '<h2>Thursday night &mdash; Thunder Ridge</h2>'
-  + '<div class="flag"><b>Tell Ryan if you want a VIP pass</b>Staind, Seether, Hoobastank and Hinder, under a mile from the lodge. VIP is buffet, drinks and lounge seating through Ryan&rsquo;s contact at the venue, and <b>it counts as dinner</b>. Full detail on the Thu 10/1 tab.</div>'
-
-  + '<h2>Eating &amp; drinking</h2><div class="box">'
-  + rowsHTML([["On the schedule already","Thursday pizza at the cottage, Friday <a href=\'"+G(PLACE.unclebuck[1])+"\' target=\"_blank\" rel=\"noopener\" class=\"vlink\">Uncle Buck&rsquo;s</a> (kitchen shuts 8 PM), Saturday <a href=\'"+G(PLACE.cellar[1])+"\' target=\"_blank\" rel=\"noopener\" class=\"vlink\">the wine cellar</a> then <a href=\'"+G(PLACE.buffbar[1])+"\' target=\"_blank\" rel=\"noopener\" class=\"vlink\">Buffalo Bar</a>. Times are on the day tabs.","34%"],
-              ["Between rounds","<a href=\'"+G(PLACE.mtgrill[1])+"\' target=\"_blank\" rel=\"noopener\" class=\"vlink\">Mountain Top Grill</a> at the clubhouse, and <a href=\'"+G(PLACE.truman[1])+"\' target=\"_blank\" rel=\"noopener\" class=\"vlink\">Truman Cafe</a> for a fast breakfast.","34%"],
-              ["If you want a proper meal","<b>The Worman House</b>, fine dining in a restored 1920s mansion, Tue&ndash;Sat 5&ndash;9 PM. <b>Arnie&rsquo;s Barn</b> is Mexican in a barn moved here from Arnold Palmer&rsquo;s own property.","34%"],
-              ["Late","<a href=\'"+G(PLACE.buzzard[1])+"\' target=\"_blank\" rel=\"noopener\" class=\"vlink\">Buzzard Bar</a> has the resort&rsquo;s singing cowboy. Blue Fin and the Bunker Bar overlook the bowling at Fun Mountain.","34%"]])
-  + '</div>'
-
-  + '<h2>The Bat Bar</h2>'
-  + '<div class="flag"><b>A drive-through bar inside a cave</b>Rent a cart at the Top of the Rock Welcome Center and drive a 2.5-mile loop past nine waterfalls, a skybridge over the lake and a sabre-tooth tiger fossil. Partway round the trail goes into a four-storey cave with a bar built against the rock.</div>'
+  + '<h2>Eating</h2>'
+  + '<div class="flag"><b>Only one dinner is booked</b>Saturday &mdash; the wine cellar at 6:00, then Buffalo Bar at 6:30 for the sunset. Thursday and Friday are wide open and the options sit on each day&rsquo;s tab. Friday&rsquo;s bourbon tasting at 8:00 is booked, but it isn&rsquo;t dinner.</div>'
   + '<div class="box">'
-  + rowsHTML([["When we could do it","<b>Sunday, and only Schmidty and Trev.</b> They finish Top of the Rock at 11:15 already standing at the Welcome Center. Saturday is a squeeze against the 6:43 sunset ceremony and Thu/Fri are gone.","30%"],
-              ["Book ahead","<b>Fri, Sat and Sun are timed-slot only.</b> Pricing rises as the date approaches, so buy online early. Plus $10 per vehicle to enter Top of the Rock, card only.","30%"],
-              ["Practical","Last cart leaves <b>6:30 PM</b> and the bar shuts about <b>5:58 PM</b> on the 3rd. Carts hold four, drivers 18+. Allow 90 minutes with stops. <b>Bring cash</b> &mdash; older reviews say the bar is cash only, and don&rsquo;t count on a free drink being included.","30%"],
-              ["Free with the ticket","The <b>Ancient Ozarks Museum</b> underneath Top of the Rock. 35,000 sq ft of fossils, Native American artifacts, a Civil War gallery and a serious firearms collection. Daily 9 AM&ndash;7 PM, no booking.","30%"]])
+  + rowsHTML([["At the cottage","In-room dining delivers 11 AM&ndash;10 PM, <a href=\'tel:+14173352777\' style=\"color:var(--brass);font-weight:600\">(417) 335-2777</a> or ext. 7666. <b>Backyard baskets</b> &mdash; they prep, we grill &mdash; need <b>24 hours&rsquo; notice</b>.","34%"],
+              ["Before golf","<a href=\'"+G(PLACE.truman[1])+"\' target=\"_blank\" rel=\"noopener\" class=\"vlink\">Truman Cafe</a> from 6:30 AM, <a href=\'"+G(PLACE.mtgrill[1])+"\' target=\"_blank\" rel=\"noopener\" class=\"vlink\">Mountain Top Grill</a> from 7:00 at the clubhouse.","34%"],
+              ["Sit-down dinner","<b>Devil&rsquo;s Pool</b> at the lodge and <b>Osage</b> at Top of the Rock, both 4&ndash;9 PM. Osage does Sunday brunch 10&ndash;2, which is the last meal of the trip.","34%"],
+              ["Late","<a href=\'"+G(PLACE.buzzard[1])+"\' target=\"_blank\" rel=\"noopener\" class=\"vlink\">Buzzard Bar</a> until 11 with the singing cowboy. <b>Uncle Buck&rsquo;s kitchen shuts at 8</b> and Fun Mountain closes at 9 &mdash; it&rsquo;s an early evening, not a night.","34%"]])
   + '</div>'
 
-  + '<h2>If you get a spare hour</h2><div class="box">'
-  + rowsHTML([["On your route anyway","The <b>Chapel of the Ozarks</b> on the bluff, the <b>infinity edge</b> where the sunset ceremony happens, and two putting courses &mdash; Tom Watson at the Payne&rsquo;s clubhouse and one at Top of the Rock. All free, all ten minutes.","34%"],
-              ["Cedar Creek Spa","Open until 8 PM Wed&ndash;Sat, so Friday after 36 holes is the only window. Ask for the <b>Therapeutic</b> massage, not the relaxation one. No prices published &mdash; call <a href=\'tel:+18002256343\'>(800) 225-6343</a> ext. 3 and book weeks ahead.","34%"],
-              ["The pools","Heated saltwater, so October is fine. The Swimmin&rsquo; Hole has an adults-only section and bookable cabanas. Brushy Creek indoor runs 8 AM&ndash;10 PM.","34%"],
-              ["Off property","<b>The Summit</b> in downtown Branson, ~25 min, is the best single stop &mdash; nightclub, country bar, sports bar and arcade under one roof. Most Branson bars only get going Thu&ndash;Sat.","34%"]])
+  + '<h2>If you get a spare hour</h2>'
+  + '<p class="note" style="margin:-4px 2px 12px">Realistically there isn&rsquo;t one. Here it is anyway.</p>'
+  + '<div class="box">'
+  + rowsHTML([["Free, on your route","The <b>Ancient Ozarks Museum</b> under Top of the Rock &mdash; fossils, a Civil War gallery, serious firearms, daily 9&ndash;7. The chapel on the bluff, the infinity edge, and two putting courses. All ten minutes.","32%"],
+              ["The Bat Bar","A cart trail at Top of the Rock past nine waterfalls and into a four-storey cave with a bar in it. <b>Timed slots, book online early</b>, last cart 6:30 PM, allow 90 minutes. Bring cash. Only really fits Sunday, and only for Schmidty and Trev.","32%"],
+              ["The pools","Heated saltwater, so October is fine. Brushy Creek indoor runs 8 AM&ndash;10 PM.","32%"],
+              ["Cedar Creek Spa","Open to 8 PM Wed&ndash;Sat, so Friday after 36 holes is the only window. Ask for the <b>Therapeutic</b>, not the relaxation one. Book weeks ahead &mdash; <a href=\'tel:+18002256343\' style=\"color:var(--brass);font-weight:600\">(800) 225-6343</a> ext. 3.","32%"]])
   + '</div>'
 
   + '<h2>Numbers worth having</h2><div class="box">'
@@ -964,25 +1058,29 @@ function resortPanel(){
       +'<div class="cmeta">'+c[1]+'</div></div><div class="chcp" style="font-size:12px;color:var(--brass);white-space:nowrap">'+fmtTel(c[2])+'</div></a>').join("")
   + '</div><p class="note">Each other&rsquo;s numbers are in your phone and the group chat. These are the ones that aren&rsquo;t.</p>'
   + '<h2>Getting around</h2><div class="box">' 
-  + rowsHTML([["Resort shuttle","On demand, 6 AM to midnight. <a href='tel:+14173395104' style='color:var(--brass);font-weight:600'>(417) 339-5104</a> or the Shuttle app.","38%"],
-              ["For golf","Book the shuttle <b>90 minutes before</b> your tee time.","38%"],
-              ["To the golf complex","~20 min. Ozarks National, Cliffhangers, Mountain Top and Payne&rsquo;s Valley all share it.","38%"],
+  + rowsHTML([["Everything on this itinerary","<b>Private transport, already booked.</b> Ryan arranged it all with Courtney. A driver comes to you &mdash; there is nothing to request and nothing to pay.","38%"],
+              ["Pickups for golf","<b>One hour before the tee</b>, so you&rsquo;re standing on the course 45 minutes out. Courtney can move any of it on the day &mdash; tell Ryan rather than improvising.","38%"],
+              ["Anything not on here","That&rsquo;s what the <b>Big Cedar Shuttle app</b> is for &mdash; or dispatch <a href='tel:+14173395104' style='color:var(--brass);font-weight:600'>(417) 339-5104</a>. On demand, 6 AM to midnight, and they want about <b>30 minutes&rsquo; notice</b>.","38%"],
+              ["Your clubs","<b>Stay at the courses.</b> The resort moves them. Don&rsquo;t haul anything back and forth.","38%"],
+              ["Our cars","Parked at the cottage from Thursday evening. <b>Nobody drives after golf</b> &mdash; that&rsquo;s the whole reason the shuttle exists.","38%"],
+              ["To the golf complex","~20 min. Ozarks National, Cliffhangers, Mountain Top and Payne&rsquo;s Valley all share a clubhouse.","38%"],
               ["To Buffalo Ridge","~20 min &mdash; a <b>different</b> clubhouse on Buffalo Ridge Blvd.","38%"],
-              ["To Top of the Rock","~5 min.","38%"],
+              ["To Top of the Rock","~5 min. Buzzard Bar, Osage, Buffalo Bar, the wine cellar and the Grandview Conference Center are all here.","38%"],
               ["Apps","Big Cedar app for the digital key and directory; Big Cedar Shuttle app for rides.","38%"]])
   + '</div>'
   + '<h2>Pack this</h2><div class="box">'
   + rowsHTML([["Soft-spike shoes","Metal is banned everywhere","50%"],["5 collared shirts","One per round","50%"],
               ["Rain gear","October in Missouri","50%"],["Quarter-zip","Mornings around 50&deg;F","50%"],
               ["Walking shoes","Mountain Top has no carts","50%"],["Warm layer for the boat","7 AM on the lake is cold","50%"],
-              ["Golf clothes in your boat bag","No time to change before Payne&rsquo;s Valley","50%"],
+              ["Golf clothes for Saturday","You change at the cottage between the lake and Payne&rsquo;s","50%"],
               ["<b>$240 cash for forecaddies</b>","$80 a man at the end of each of the three rounds","50%"],
               ["Polarized sunglasses","Water and course","50%"],["Collar for Top of the Rock","Saturday dinner is a step up","50%"],
               ["Battery pack","Friday is ten hours outdoors","50%"],["Advil","36 holes, then a 7 AM start","50%"]])
   + '</div>'
-  + '<h2>Two things we need from you</h2><div class="box">'
-  + rowsHTML([["Thunder Ridge","Tell Ryan if you want a <b>VIP pass</b> so he can pull the right number.","36%"],
-              ["Splitwise","Get in before Thursday.","36%"]])
+  + '<h2>What we need from you</h2><div class="box">'
+  + rowsHTML([["The grocery list","Ryan will send a sheet. <b>Put what you want in it by Friday 25 September.</b> Courtney shops before we arrive and it doesn&rsquo;t get restocked, so this is your one shot.","36%"],
+              ["Splitwise","Get in before Thursday.","36%"],
+              ["Photo ID","Bring your licence. The Friday bourbon tasting is 21+ and checks at the door.","36%"]])
   + '</div><p class="note">Everything else &mdash; caddies, fishing guides, tee times, tickets &mdash; Ryan has. Don&rsquo;t chase him.</p></div>';
 }
 
@@ -1124,6 +1222,10 @@ function paintLive(d){
   }
 }
 try{
+  /* file:// has no origin, so fetch throws a CORS error into the console for anyone
+     who opens this straight off disk. The page is identical either way — just don't
+     make the noise. */
+  if(!/^https?:/.test(location.protocol)) throw 0;
   fetch("results.json?t="+Date.now(), {cache:"no-store"})
     .then(function(r){ return r.ok ? r.json() : null; })
     .then(function(d){ if(d && typeof d==="object") paintLive(d); })
