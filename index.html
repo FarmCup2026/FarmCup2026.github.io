@@ -284,6 +284,12 @@ a[href^="tel:"]::before{content:"\260E\FE0E";margin-right:5px;font-size:.85em;op
 .yourcall{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3);font-weight:700;margin-bottom:2px}
 .build{margin-top:10px;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:#939C88;font-weight:600;text-shadow:0 1px 2px rgba(0,0,0,.5)}
 .build.fresh{color:#A8C79A}
+.cardlink{display:flex;align-items:center;gap:10px;margin-top:8px;padding:9px 12px;border:1px solid var(--line);
+  border-radius:9px;background:var(--surface-2);text-decoration:none;color:var(--ink);min-height:44px}
+.cardlink .ci{color:var(--brass);font-size:15px;line-height:1}
+.cardlink .ctxt{flex:1;display:flex;flex-direction:column;line-height:1.25}
+.cardlink .ctxt b{font-size:13px}
+.cardlink .ctxt i{font-style:normal;font-size:10.5px;color:var(--ink-3)}
 .livenote{font-size:11.5px;color:var(--ink-3);text-align:center;margin-top:10px;font-style:italic}
 
 /* money */
@@ -450,34 +456,31 @@ const MATCHES = [
 ];
 
 const COURSES = [
-  {n:"Ozarks National", loc:"ozarks", arch:"Coore & Crenshaw", par:71, pace:"4:30", when:"Thu 12:30",
+  {n:"Ozarks National", card:"Big%20Cedar%20Lodge%20Ozarks%20National.pdf", loc:"ozarks", arch:"Coore & Crenshaw", par:71, pace:"4:30", when:"Thu 12:30",
    tees:[["Ozarks (tips)","7,036","74.1","135"],["Blue","6,510","71.7","128"],["Blue/White","6,264","70.2","128"],
          ["White","5,903","68.5","120"],["White/Red","5,407","66.3","116"],["Red","5,025","64.4","114"]],
    rec:"Blue/White", caddie:"yes",
    note:"Wide off the tee, but the greens have false fronts and run away from you. <b>Putt from off the surface</b> &mdash; the ground game is real here."},
-  {n:"Cliffhangers", loc:"cliff", arch:"Johnny &amp; John Paul Morris", par:54, pace:"3:30", when:"Fri 9:00",
+  {n:"Cliffhangers", card:"Big%20Cedar%20Lodge%20Cliffhangers.pdf", loc:"cliff", arch:"Johnny &amp; John Paul Morris", par:54, pace:"3:30", when:"Fri 9:00",
    tees:[["Back","1,910","52.0","85"],["Front","1,560","50.7","77"]],
    rec:"Back", caddie:"no",
    note:"18 par-3s, 60 to 170 yards, cut into limestone cliffs. Hole 3 tees from inside a cave behind a waterfall and the cart path runs through a cave on 18. <b>Take less club than feels right downhill.</b>"},
-  {n:"Buffalo Ridge Springs", loc:"buffalo", arch:"Tom Fazio", par:71, pace:"4:30", when:"Fri 1:40",
+  {n:"Buffalo Ridge Springs", card:"Big%20Cedar%20Lodge%20Buffalo%20Ridge.pdf", loc:"buffalo", arch:"Tom Fazio", par:71, pace:"4:30", when:"Fri 1:40",
    tees:[["Buffalo","7,036","74.0","134"],["Blue","6,616","72.0","132"],["Blue/White","6,183","69.6","131"],
          ["White","5,881","68.1","126"],["White/Red","5,495","66.2","122"],["Red","5,004","64.2","113"]],
    rec:"Blue/White", caddie:"yes",
    note:"Native fescue swallows anything offline, and there are free-ranging bison. Your second 18 of the day &mdash; <b>legs go by 14, so club up.</b>"},
-  {n:"Mountain Top", loc:"mtntop", arch:"Gary Player &amp; Johnny Morris", par:39, pace:"2:00", when:"Sat 9:00",
+  {n:"Mountain Top", card:"Big%20Cedar%20Lodge%20Mountain%20Top.pdf", loc:"mtntop", arch:"Gary Player &amp; Johnny Morris", par:39, pace:"2:00", when:"Sat 9:00",
    tees:[["Back","1,912","&mdash;","&mdash;"],["Forward","1,091","&mdash;","&mdash;"]],
    rec:"Back", caddie:"no",
    note:"13 par-3s along a ridgeline. <b>Walking only, no carts</b> &mdash; under 2 miles, longest hole 95 yards. Unrated, so no slope and no course handicap. Only four of you play it."},
-  {n:"Top of the Rock", loc:"torgolf", arch:"Jack Nicklaus", par:27, pace:"1:45", when:"Sun 9:30",
-   tees:[["Black","1,420","27.7","&mdash;"],["Bronze","1,284","&mdash;","&mdash;"],["Red","945","&mdash;","&mdash;"]],
-   rec:"Black", caddie:"no",
-   note:"<b>Sunday morning &mdash; Schmidty and Trev only.</b> A 9-hole par-3 by Jack Nicklaus, and one of only two par-3 courses ever used in official PGA competition. Dramatic elevation, water and bunkers with Table Rock Lake underneath; a few holes stretch past 200 yards. Carts with GPS. No slope is published. Pro shop <a href='tel:+14173395344'>(417) 339-5344</a>."},
-  {n:"Payne's Valley", loc:"paynes", arch:"Tiger Woods / TGR Design", par:72, pace:"5:00", when:"Sat 12:10",
+  {n:"Payne's Valley", card:"Big%20Cedar%20Lodge%20Paynes%20Valley.pdf", loc:"paynes", arch:"Tiger Woods / TGR Design", par:72, pace:"5:00", when:"Sat 12:10",
    tees:[["Tiger","7,370","75.6","132"],["Blue","6,876","73.2","125"],["Blue/White","6,505","71.3","122"],
          ["White","6,133","69.4","119"],["White/Red","5,414","66.7","111"],["Red","4,957","64.0","102"]],
    rec:"Blue/White", caddie:"yes",
    note:"Tiger&rsquo;s only public design. <b>450 feet of elevation change</b> and greens running 9.5&ndash;11. The bonus 19th at The Big Rock is 99 yards from the White and doesn&rsquo;t count toward par. Longest pace of the week at 5:00."}
 ];
+
 
 /* Stroke indexes off the 2026 scorecards. Cliffhangers prints no handicap row,
    so that one is derived — ranked by yardage within each nine, odd numbers on
@@ -601,7 +604,7 @@ const DAYS = [
      d:"<p>DL 1680 leaves Springfield at 6:08 AM for Atlanta, then DL 1240 into Detroit at 12:55 PM.</p><p>His car is at the cottage and <b>shuttles don&rsquo;t run until 6 AM</b>, so everything he&rsquo;s leaving with needs to be with him Saturday night.</p><p><b>Say your goodbyes Saturday</b> &mdash; nobody is seeing him off at 4 AM.</p>"},
     {t:"8:00 AM", at:D(10,4,8,0), w:"The five depart", p:"Big Cedar &rarr; SGF", loc:"sgf", tags:["Heis","Kepps","Jehls","Joyce","Kurtz"],
      d:"<p>AA 3584 at 10:38 AM, into O&rsquo;Hare at 12:29 PM.</p><p>Cars are at the cottage, clubs came home Saturday evening. Load up and go.</p>"},
-    {t:"9:00 AM", at:D(10,4,9,0), w:"Arrive Top of the Rock", p:"Thirty minutes before the tee", loc:"torgolf", tags:["Schmidty + Trev"],
+    {t:"8:45 AM", at:D(10,4,8,45), w:"Arrive Top of the Rock", p:"Forty-five minutes before the tee", loc:"torgolf", tags:["Schmidty + Trev"],
      d:"<p>Trev has his own car, so this one doesn&rsquo;t need a shuttle.</p>"},
     {t:"9:30 AM", at:D(10,4,9,30), w:"TEE &mdash; Top of the Rock", p:"Schmidty + Trev", loc:"torgolf", golf:1, key:1, tags:["Just for fun"],
      d:"<p><b>Jack Nicklaus, 9 holes, par 27.</b> One of only two par-3 courses ever used in official PGA competition.</p><p>Dramatic elevation, water and bunkers with Table Rock Lake below you. Carts with GPS. Pace is 1:45, so you&rsquo;re done by 11:15.</p><p>150 Top of the Rock Rd &middot; pro shop <a href='tel:+14173395344'>(417) 339-5344</a></p>"},
@@ -802,6 +805,9 @@ function golfPanel(){
           return '<tr'+(on?' class="rec"':'')+'><td>'+t[0]+(on?' &#9664; play this':'')+'</td><td class="num">'+t[1]+'</td><td class="num">'+t[2]+'</td><td class="num">'+t[3]+'</td></tr>';}).join("")
       + '</tbody></table></div>'
       + '<div style="margin-top:10px">'+(c.loc?mapBtn(c.loc):'')+'</div>'
+      + (c.card?'<a class="cardlink" href="'+c.card+'" target="_blank" rel="noopener">'
+          + '<span class="ci">&#9647;</span><span class="ctxt"><b>Scorecard</b><i>Yardages, ratings and the handicap row</i></span>'
+          + '<span class="mgo">&rsaquo;</span></a>':'')
       + (badge?'<div>'+badge+'</div>':'') + '</div>';
   };
   /* USGA Course Handicap = Index x (Slope / 113) + (Course Rating - Par).
@@ -877,21 +883,18 @@ function golfPanel(){
   + mtTable()
   + '<p class="note">Best Ball, one Cup point. Holes come straight off the <b>handicap row on Mountain Top&rsquo;s own scorecard</b> &mdash; hole 2 is the hardest at 221 yards, hole 4 the easiest at 82.</p>'
   + '<div class="box" style="margin-top:12px">'
-  + rowsHTML([["Top of the Rock","Rated 27.7 but no published slope either. Sunday is two guys playing for fun, so it doesn&rsquo;t matter.","36%"]])
-  + '</div>'
-  + '<h2>The six courses</h2>'
+  + '<h2>The five Cup courses</h2>'
   + '<p class="note" style="margin:-4px 2px 14px">The highlighted tee is the one to play. Want to go back? <strong>The tee plan</strong> below has the next set up and the handicap adjustment.</p>'
   + COURSES.map(cc).join("")
   + '<h2>The tee plan</h2>'
   + '<p class="note" style="margin:-4px 2px 14px">Moving back adds <b>more strokes for the high men than the low</b>, which is why the add column is a range. And you don&rsquo;t need it at all if you just take your number off the tee you actually play &mdash; handicaps from different tees are directly comparable.</p>'
-  + '<div class="flag"><b>One set, everyone plays it</b>The three full-length courses land between <b>6,183 and 6,505</b> &mdash; enough course to feel like you played it, short enough that a 36-hole Friday doesn&rsquo;t finish in the dark. <b>The back set on every par-3 course</b>, which is the Back tee at Cliffhangers and Mountain Top and the Black at Top of the Rock.</div>'
+  + '<div class="flag"><b>One set, everyone plays it</b>The three full-length courses land between <b>6,183 and 6,505</b> &mdash; enough course to feel like you played it, short enough that a 36-hole Friday doesn&rsquo;t finish in the dark. <b>The back set on both par-3 courses</b> &mdash; the Back tee at Cliffhangers and at Mountain Top.</div>'
   + '<div class="box scroll"><table class="mtable"><thead><tr><th>Round</th><th>Play this</th><th class="num">Yds</th><th>Want to go back?</th><th class="num">Add</th></tr></thead><tbody>'
   + [["Ozarks National","Thu","Blue/White","6,264","Blue &mdash; 6,510","+1&ndash;2"],
      ["Cliffhangers","Fri AM","Back","1,910","&ndash;","&ndash;"],
      ["Buffalo Ridge","Fri PM","Blue/White","6,183","Blue &mdash; 6,616","+2&ndash;3"],
-     ["Payne&rsquo;s Valley","Sat PM","Blue/White","6,505","Blue &mdash; 6,876","+2&ndash;3"],
      ["Mountain Top","Sat AM","Back","1,912","&ndash;","&ndash;"],
-     ["Top of the Rock","Sun","Black","1,420","&ndash;","&ndash;"]]
+     ["Payne&rsquo;s Valley","Sat PM","Blue/White","6,505","Blue &mdash; 6,876","+2&ndash;3"]]
     .map(r=>'<tr><td style="font-size:12px;line-height:1.25">'+r[0]+'<br><span style="color:var(--ink-3);font-size:10.5px">'+r[1]+'</span></td>'
       +'<td style="font-weight:700;color:var(--brass)">'+r[2]+'</td><td class="num">'+r[3]+'</td>'
       +'<td style="font-size:11.5px;color:var(--ink-3)">'+r[4]+'</td><td class="num">'+r[5]+'</td></tr>').join("")
@@ -921,17 +924,17 @@ function golfPanel(){
 
   + '<h2>The 45-minute rule</h2>'
   + '<div class="flag"><b>Picked up an hour before the tee. Standing on the course 45 minutes before.</b>Bag drop, pro shop, a bucket and finding the first tee eats twenty minutes on its own. Rolling up at ten to is how you make a double on the opening hole.</div>'
-  + '<div class="box">'
-  + rowsHTML([["Fri &middot; Cliffhangers","Pickup <b>8:00</b> for 9:00.","36%"],
-              ["Sat &middot; Mountain Top","Pickup <b>7:45</b> for 9:00 &mdash; early on purpose, so there&rsquo;s time for breakfast at the grill.","36%"],
-              ["Sun &middot; Top of the Rock","There by <b>8:45</b> for 9:30.","36%"]])
-  + '</div>'
-  + '<p class="note" style="margin:12px 2px 0"><b>Three rounds can&rsquo;t take the full 45.</b> Don&rsquo;t turn up expecting it.</p>'
-  + '<div class="box" style="margin-top:8px">'
-  + rowsHTML([["Thu &middot; Ozarks National","We land at 10:08 and drop cars at the lodge first. You get about <b>twenty minutes</b> &mdash; course handicap, a few putts, go.","36%"],
-              ["Fri &middot; Buffalo Ridge","Cliffhangers doesn&rsquo;t finish until 12:45 and the tee is 1:40, twenty minutes away, with lunch in between. <b>No warm-up</b> &mdash; but you&rsquo;ve just played 18, so you&rsquo;re warm.","36%"],
-              ["Sat &middot; Payne&rsquo;s Valley","The fishermen come off the water at 11:00 and have to change. Everyone at the clubhouse <b>11:45</b> for 12:10.","36%"]])
-  + '</div>'
+  + '<div class="box scroll"><table class="mtable"><thead><tr><th>Round</th><th class="num">At the course</th><th>What you get</th></tr></thead><tbody>'
+  + [["Ozarks National","Thu","12:10","<b>20 min.</b> We land at 10:08 and drop cars at the lodge first. Handicap, a few putts, go.",1],
+     ["Cliffhangers","Fri AM","8:15","<b>45 min.</b> Pickup 8:00. The full rule.",0],
+     ["Buffalo Ridge","Fri PM","1:30","<b>10 min.</b> Cliffhangers runs to 12:45 and there&rsquo;s lunch in between. No warm-up &mdash; but you&rsquo;ve just played 18.",1],
+     ["Mountain Top","Sat AM","8:05","<b>55 min.</b> Pickup 7:45, early on purpose so there&rsquo;s time for breakfast at the grill.",0],
+     ["Payne&rsquo;s Valley","Sat PM","11:45","<b>25 min.</b> The fishermen are off the water at 11:00 and have to change first.",1]]
+    .map(r=>'<tr><td style="font-size:12px;line-height:1.25">'+r[0]+'<br><span style="color:var(--ink-3);font-size:10.5px">'+r[1]+'</span></td>'
+      +'<td class="num" style="font-weight:700;color:var(--'+(r[4]?'cleveland':'brass')+')">'+r[2]+'</td>'
+      +'<td style="font-size:11.5px;color:var(--ink-2);line-height:1.4">'+r[3]+'</td></tr>').join("")
+  + '</tbody></table></div>'
+  + '<p class="note"><b>Three of the five are tight and that is structural, not sloppy.</b> Don&rsquo;t turn up at those three expecting a bucket of balls.</p>'
 
   + '<h2>Practice &amp; warm-up</h2><div class="box"> '
   + rowsHTML([["Ozarks National Practice Facility","Two putting greens, a three-green short-game area with bunkers, and a range with zoysia and artificial surfaces. Serves Ozarks National, Cliffhangers, Mountain Top and Payne&rsquo;s Valley. <b>Thursday is too tight to use it</b> &mdash; save it for Friday morning at Cliffhangers.","36%"],
@@ -1246,7 +1249,7 @@ try{
 
 /* Build stamp. The numbers are baked in when the file is built, so what you see
    is what was published — no clock, no cache, no guessing which copy you have. */
-const BUILD = {v:"2", d:"14 Sep 2026", t:"2026-09-14T19:52:03Z"};
+const BUILD = {v:"3", d:"14 Sep 2026", t:"2026-09-14T20:00:35Z"};
 (function(){
   const v=$("#bv"), d=$("#bd"); if(!v||!d) return;
   v.textContent = BUILD.v; d.textContent = BUILD.d;
