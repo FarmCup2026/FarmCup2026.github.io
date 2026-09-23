@@ -706,7 +706,7 @@ function gamesPanel(){
      "Best ball: play your own ball, your team keeps the better score.",
      "Pins &amp; Points: closest tee shot wins a point, better score wins a point.",
      "Singles: just you and him.",
-     "<b>Hole everything out.</b> Your score counts for skins whether the match is over or not.",
+     "<b>Hole out, or take your triple.</b> 6 on a par 3, 7 on a par 4, 8 on a par 5. Either way you have a score for skins.",
      "Photograph both cards at the end of every round. That&rsquo;s the whole job."]
      .map((l,i)=>'<div class="creed-l"><span>'+(i+1)+'</span>'+l+'</div>').join("")
   + '</div>'
@@ -716,8 +716,12 @@ function gamesPanel(){
       ["Every hole is a contest","Win it and you go &lsquo;1 up&rsquo;. Lose it and you&rsquo;re &lsquo;1 down&rsquo;. Tie it and nothing changes &mdash; a &lsquo;halve&rsquo;.","36%"],
       ["Why we play it","A blow-up costs you <b>one hole, not seven strokes</b>. Make a 9 on the 4th, lose that hole, walk to the 5th level with the world. That&rsquo;s what makes a group running 3 to 31 work.","36%"],
       ["Finish every hole","Even when the match hole is gone, <b>hole it out</b>. Skins compares all eight net scores on every hole &mdash; a picked-up ball is a missing score, and it can cost you a carried pot worth more than the match.","36%"],
+      ["Unless you hit your triple","<b>Triple bogey is the max on every hole.</b> 6 on a par 3, 7 on a par 4, 8 on a par 5, gross, same number for all eight of us. Get there and pick the ball up. That <i>is</i> your score &mdash; it goes on the card and into skins, it just won&rsquo;t win anything.","36%"],
+      ["No maths, no lookups","It&rsquo;s the same number whatever your handicap and whatever hole you&rsquo;re on, so nobody is reading a stroke index row while three men stand and watch. <b>A capped score has never once decided a skin</b> &mdash; that&rsquo;s the whole reason we can keep the rule this blunt.","36%"],
       ["How a match ends","When you&rsquo;re further ahead than there are holes left. 3 up with 2 to play &mdash; that&rsquo;s &ldquo;3 and 2&rdquo;. All square after 18 is a halve.","36%"]])
   + '</div>'
+  + '<div class="wex" style="margin-top:12px"><b>The max, hole by hole</b>'
+  + '<p style="margin:0"><b>Par 3 &rarr; 6.  Par 4 &rarr; 7.  Par 5 &rarr; 8.</b><br>Lying 7 on a par 5 with the ball still off the green? <b>Pick it up, write 8, walk on.</b> Your strokes still come off it, so Ski taking two there posts a net 6 and stays in the skin. Nobody grinds out an 11.</p></div>'
 
   + '<h2>2 &middot; Your strokes</h2>'
   + '<div class="flag"><b>Already done. Nothing to look up.</b>Every man&rsquo;s course handicap for every course is on the <b>Courses</b> tab, worked out from the real ratings off each scorecard. Know your number before you leave the cottage.</div>'
@@ -1258,7 +1262,7 @@ try{
 
 /* Build stamp. The numbers are baked in when the file is built, so what you see
    is what was published — no clock, no cache, no guessing which copy you have. */
-const BUILD = {v:"4", d:"22 Sep 2026", t:"2026-09-22T21:31:40Z"};
+const BUILD = {v:"5", d:"23 Sep 2026", t:"2026-09-23T18:24:18Z"};
 (function(){
   const v=$("#bv"), d=$("#bd"); if(!v||!d) return;
   v.textContent = BUILD.v; d.textContent = BUILD.d;
