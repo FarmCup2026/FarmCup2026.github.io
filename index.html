@@ -247,8 +247,8 @@ a[href^="tel:"]::before{content:"\260E\FE0E";margin-right:5px;font-size:.85em;op
 .mtop{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px}
 .mses{font-family:"Roboto Mono",monospace;font-size:9.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3)}
 .mvs{display:grid;grid-template-columns:1fr auto 1fr;gap:9px;align-items:center;font-size:13px}
-.mvs .a{font-weight:600;color:var(--cleveland);text-align:right}
-.mvs .b{font-weight:600;color:var(--world)}
+.mvs .a{font-weight:600;color:var(--garnet);text-align:right}
+.mvs .b{font-weight:600;color:var(--gold)}
 .mvs .v{font-family:"Roboto Mono",monospace;font-size:10px;color:var(--ink-3)}
 .mbtns{display:flex;gap:6px;margin-top:9px}
 .mbtn{
@@ -673,34 +673,31 @@ function cupPanel(){
   return '<div class="panel" id="p-cup" role="tabpanel">'
   + '<div id="liveband"></div>'
   + '<h2>The Farm Cup</h2>'
+  + '<div class="teams">'+teamCard("Garnet")+teamCard("Gold")+'</div>'
+  + '<div style="height:14px"></div>'
   + '<div class="score"><div class="sside"><div class="sname" style="color:var(--garnet)">Garnet</div>'
     + '<div class="spts" id="ptsA" style="color:var(--garnet)">0</div></div><div class="sdash">v</div>'
     + '<div class="sside"><div class="sname" style="color:var(--gold)">Gold</div>'
     + '<div class="spts" id="ptsB" style="color:var(--gold)">0</div></div></div>'
   + '<div class="sstat" id="sstat">14 points on the table. <b>First to 7&frac12; wins it.</b></div>'
-  + '<h2>Teams</h2><div class="teams">'+teamCard("Garnet")+teamCard("Gold")+'</div>'
-  + '<p class="note">These sides come out of a <strong>brute force of all 35 possible four-four splits</strong>, each given its own optimal schedule and run through 480,000 simulations of this exact 14-point competition. Not matched on combined handicap &mdash; <b>matched on who actually wins the cup</b>. <b>Three splits tie</b>, and they are the same answer wearing different hats: Heis and Kurtz together, plus two of Joyce, Schmidty and Trev &mdash; three men inside two strokes of each other.</p>'
-  + '<p class="note">The schedule was then built for <b>the friendly part</b>. Every man partners each of his three teammates, shares a tee group with all seven others, and <b>no two men spend more than three sessions together</b> &mdash; 16 of the 28 pairs meet exactly twice. Somebody has to repeat a partner, because each side has eight partner slots and only six possible pairings.</p>'
-  + '<h2>Why these sides</h2><div class="box">'
-  + rowsHTML([["Combined handicap is a red herring","The most evenly <b>summed</b> split available is 66.0 against 66.0 &mdash; <b>dead level</b>. Simulated, it wins the cup <b>72%</b> of the time. Adding up indexes measures nothing that matters.","34%"],["What was actually optimised","All <b>35</b> possible four-four splits, each run <b>hundreds of thousands</b> of times through this exact 14-point schedule &mdash; three Best Ball sessions, the Pins &amp; Points, four singles, three points on the lake. The winner is the one whose <b>cup win probability</b> sits closest to a coin flip.","34%"],["The answer","<b>Garnet 50.8% &middot; Gold 49.2%.</b> Expected points <b>7.03 to 6.97</b> out of 14. Just over half of all simulated weekends finish <b>8&ndash;6 or closer</b>.","34%"],["Where the low and high men sit","One side takes the single best player and three men inside six strokes of each other. The other takes the <b>two</b> next-best and the highest index in the field. Those two shapes cancel: the lone star wins gross-scoring events, the pair of solid players absorbs a wild partner in Best Ball.","34%"],["The course-difficulty term","Scoring variance widens with handicap and a penalty rate scales with index, because nobody has played these courses and forced carries, fescue and 450 feet of elevation punish a high index far harder than they punish a low one. It shifts the field <b>a lot</b> &mdash; it is what exposes the dead-level 66.0-v-66.0 split as a fraud &mdash; but it moves <b>this</b> split by under a point, which is why it survives whether or not you believe in it.","34%"]])  + '</div>'
-  + '<h2>What pulls the other way</h2><div class="box">'
-  + rowsHTML([["Match play caps the damage","When Ski loses a hole he loses it by <b>1.2 strokes on average</b>, and <b>19%</b> of the holes he drops are dropped by two or more. Match play charges exactly one hole either way. Every stroke past the first is free.","34%"],["Best Ball turns wildness into an asset","Only the better ball counts, so a partner absorbs the disasters. Ski&rsquo;s per-hole net goes from <b>4.27 alone to 3.78</b> once someone can cover the hole for him. <b>Three of the six sessions are Best Ball</b> &mdash; this is the single biggest reason a high index is not the liability it looks like.","34%"],["Pins &amp; Points is where the low man is worth most","Closest to the pin is <b>gross, no strokes</b>. Across the eight, Heis takes <b>36%</b> of the pins on his own; Ski takes <b>2.4%</b>. It is also where the social mix was paid for. Friday morning&rsquo;s two matches are the most one-sided on the card on paper &mdash; <b>81/19 one way, 22/78 the other</b> &mdash; and they cancel, so the session is dead even at 1.03 points of 2. Thirty-six points are contested over 18 holes with a pin live on every one, so it grinds rather than routs. <b>Nobody should read the numbers and feel written off.</b>","34%"],["Three points are pure noise","Nobody&rsquo;s index catches a bass. <b>Three of the fourteen</b> are a coin flip, which caps how much of an edge any split could have had in the first place.","34%"],["The 7&ndash;7 tiebreak is not neutral","Closest to the pin on the 19th is gross, so it leans to the better strikers &mdash; <b>51/49 to Garnet</b>. It is in the number above.","34%"]])  + '</div>'
-  + '<h2>The forecast</h2>'
-  + '<div class="flag"><b>Thursday is the wet one</b>The National Weather Service, AccuWeather and Weather Underground all agree: <b>Thursday</b> showers likely, high around 80, a thunderstorm in the mix &mdash; the heaviest day by a distance. <b>Friday</b> a chance of showers, high 76. <b>Saturday</b> partly sunny and mostly dry. <b>Sunday</b> mostly sunny after a morning shower. Checked Monday 28 September &mdash; look again Wednesday night before you pack.</div>'
-  + '<div class="box">'
-  + rowsHTML([["It does not change the teams","The sides were re-run with rain modelled in &mdash; heavier rough, longer carries, no roll, a penalty rate that climbs with index. Across all 35 splits rain moves the cup by <b>0.7 of a point on average</b>, and it moves <b>this</b> split by <b>0.3</b>. The team question and the weather question are independent.","34%"],["The cup is decided in the good weather","<b>Saturday carries 8 of the 14 points</b> &mdash; three on the lake, one at Mountain Top, four in the singles &mdash; and Saturday is the driest day of the four. Thursday, the wet one, is worth <b>2</b>.","34%"],["If a session is washed out, it still holds","Nine cancellation scenarios were run. The cup stays close to even in every one of them. <b>Nothing needs redrawing if the weather takes a day.</b>","34%"],["Mountain Top is fine","The one walking-only round, along an open ridgeline, is <b>Saturday morning</b> &mdash; the best weather window of the trip. That is luck, not planning, but take it.","34%"],["Bring the wet stuff","Rain gloves grip <b>better</b> wet than dry, and they cost almost nothing. A spare pair, a dry towel in the bag and waterproof trousers. Thursday and Friday you will use all three.","34%"]])  + '</div>'
   + '<h2>The matches</h2><div id="matches"></div>'
-  + '<div class="livenote" id="livenote">Tap a winner as each match finishes. This saves on your own phone, so pick one scorekeeper and let him run it.</div>'
+  + '<div class="livenote" id="livenote">Ryan posts the official results. Taps here only save on your phone.</div>'
   + '<h2>Scoring</h2><div class="box">'
-  + rowsHTML([["Each match","Worth 1 point. Win it 1, halve it &frac12; each, lose it 0.","38%"],
-              ["14 points","Eleven on the golf course, three on Table Rock Lake.","38%"],
-              ["To win the cup","First team to <b>7&frac12;</b>. Get there and it&rsquo;s over.","38%"],
-              ["A tie","7&ndash;7 and the cup is shared &mdash; or settle it on the 19th, closest to the pin.","38%"],
-              ["The shape","Saturday carries 8 of the 14 &mdash; three on the water, one at Mountain Top, four in the singles. Nobody is out of it until Saturday evening.","38%"]])
+  + rowsHTML([["Each match","1 point. Halved is &frac12; each.","34%"],
+              ["The cup","First to <b>7&frac12;</b> of 14.","34%"],
+              ["7&ndash;7","Shared, or settle it on the 19th: closest to the pin.","34%"]])
   + '</div>'
-  + '<p class="note">New to these formats? The <strong>Games</strong> tab explains all of it in plain English. Read it before Thursday.</p>'
+  + '<p class="note">New to the formats? See <strong>The Games</strong>.</p>'
+  + '<h2>How the teams were picked</h2><div class="box">'
+  + rowsHTML([["The method","All 35 possible four-man splits, each simulated hundreds of thousands of times through this exact schedule. Picked on who wins the cup, not on combined handicap.","34%"],
+              ["The result","<b>Garnet 50.8% &middot; Gold 49.2%.</b> Three splits tied; all of them put Heis and Kurtz together.","34%"],
+              ["Why not combined handicap","The most evenly summed split, 66.0 v 66.0, wins the cup 72% of the time.","34%"],
+              ["Stress-tested","Rain, washed-out sessions, streaky players and the two-shot rule. The teams held every time.","34%"],
+              ["The pairings","Everyone partners each teammate and plays with all seven others. Nobody spends more than three rounds with the same man.","34%"]])
+  + '</div>'
   + '</div>';
 }
+
 
 /* ---------- The Games ---------- */
 function gamesPanel(){
@@ -1272,7 +1269,7 @@ try{
 
 /* Build stamp. The numbers are baked in when the file is built, so what you see
    is what was published — no clock, no cache, no guessing which copy you have. */
-const BUILD = {v:"13", d:"28 Sep 2026", t:"2026-09-28T21:40:00Z"};
+const BUILD = {v:"15", d:"28 Sep 2026", t:"2026-09-28T22:10:00Z"};
 (function(){
   const v=$("#bv"), d=$("#bd"); if(!v||!d) return;
   v.textContent = BUILD.v; d.textContent = BUILD.d;
