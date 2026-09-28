@@ -14,7 +14,7 @@
   --ground:#E9EAE4; --surface:#FDFDFB; --surface-2:#F2F3ED; --line:#D3D6CC;
   --ink:#1B211C; --ink-2:#4A5249; --ink-3:#767E74;
   --brass:#9C6520; --brass-soft:#F0E3D0;
-  --cleveland:#9E4E33; --world:#25646F; --bison:#9E4E33; --buzzards:#25646F; --fairway:#4A7540;
+  --cleveland:#9E4E33; --world:#25646F; --garnet:#8C1D2B; --gold:#9A7611; --fairway:#4A7540;
   --cleveland-soft:#F3E4DE; --world-soft:#DDEAEC;
   --shadow:0 1px 2px rgba(27,33,28,.07),0 4px 14px rgba(27,33,28,.055);
   --r:11px;
@@ -23,7 +23,7 @@
   --ground:#12170F; --surface:#1B2119; --surface-2:#232A20; --line:#333B2F;
   --ink:#EDEFE7; --ink-2:#B3BAAE; --ink-3:#8A927F;
   --brass:#D2953F; --brass-soft:#33291A;
-  --cleveland:#D08055; --world:#63AEBA; --bison:#D08055; --buzzards:#63AEBA; --fairway:#8CBB7A;
+  --cleveland:#D08055; --world:#63AEBA; --garnet:#D9707C; --gold:#E0BC4E; --fairway:#8CBB7A;
   --cleveland-soft:#3A2318; --world-soft:#14302F;
   --shadow:0 1px 2px rgba(0,0,0,.4),0 4px 16px rgba(0,0,0,.3);
 }}
@@ -31,7 +31,7 @@
   --ground:#12170F; --surface:#1B2119; --surface-2:#232A20; --line:#333B2F;
   --ink:#EDEFE7; --ink-2:#B3BAAE; --ink-3:#8A927F;
   --brass:#D2953F; --brass-soft:#33291A;
-  --cleveland:#D08055; --world:#63AEBA; --bison:#D08055; --buzzards:#63AEBA; --fairway:#8CBB7A;
+  --cleveland:#D08055; --world:#63AEBA; --garnet:#D9707C; --gold:#E0BC4E; --fairway:#8CBB7A;
   --cleveland-soft:#3A2318; --world-soft:#14302F;
   --shadow:0 1px 2px rgba(0,0,0,.4),0 4px 16px rgba(0,0,0,.3);
 }
@@ -258,8 +258,9 @@ a[href^="tel:"]::before{content:"\260E\FE0E";margin-right:5px;font-size:.85em;op
 }
 .mbtn:hover{border-color:var(--brass);color:var(--ink)}
 .mbtn:focus-visible{outline:2px solid var(--brass);outline-offset:1px}
-.mbtn.on[data-w="Bison"]{background:var(--bison);border-color:var(--bison);color:#fff}
-.mbtn.on[data-w="Buzzards"]{background:var(--buzzards);border-color:var(--buzzards);color:#fff}
+.mbtn.on[data-w="Garnet"]{background:var(--garnet);border-color:var(--garnet);color:#fff}
+.mbtn.on[data-w="Gold"]{background:var(--gold);border-color:var(--gold);color:#1B1406}
+.team .thead[style*="--gold"]{color:#1B1406}
 .mbtn.on[data-w="Halved"]{background:var(--ink-2);border-color:var(--ink-2);color:var(--surface)}
 .live{border:1px solid var(--brass);border-radius:var(--r);background:var(--surface);padding:12px 14px;margin:0 0 18px;box-shadow:var(--shadow)}
 .live .lh{display:flex;align-items:center;gap:8px;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);font-weight:800}
@@ -425,18 +426,18 @@ const TOR = "150 Top of the Rock Rd, Ridgedale, MO 65739";
 const BCL = "612 Devil's Pool Road, Ridgedale, MO 65739";
 
 const ROSTER = [
-  {k:"Heis", h:3.2, t:"Bison", sat:"Mountain Top", note:"Low man"},
-  {k:"Kepps", h:8.2, t:"Buzzards", sat:"Mountain Top", note:"Low man · Buzzards"},
-  {k:"Jehls", h:10.8, t:"Buzzards", sat:"Mountain Top", note:""},
-  {k:"Joyce", h:17.6, t:"Buzzards", sat:"Fishing", note:""},
-  {k:"Schmidty", h:18.0, t:"Bison", sat:"Fishing", note:"Organizer · flies from Branson"},
-  {k:"Trev", h:19.6, t:"Bison", sat:"Fishing", note:"Out 3:41 PM Sun"},
-  {k:"Kurtz", h:23.3, t:"Bison", sat:"Mountain Top", note:""},
-  {k:"Ski", h:31.3, t:"Buzzards", sat:"Fishing", note:"Own car · out 6:08 AM Sun"}
+  {k:"Heis", h:3.2, t:"Garnet", sat:"Mountain Top", note:"Low man"},
+  {k:"Kepps", h:8.2, t:"Gold", sat:"Mountain Top", note:"Low man · Gold"},
+  {k:"Jehls", h:10.8, t:"Gold", sat:"Mountain Top", note:""},
+  {k:"Joyce", h:17.6, t:"Gold", sat:"Fishing", note:""},
+  {k:"Schmidty", h:18.0, t:"Garnet", sat:"Fishing", note:"Organizer · flies from Branson"},
+  {k:"Trev", h:19.6, t:"Garnet", sat:"Fishing", note:"Out 3:41 PM Sun"},
+  {k:"Kurtz", h:23.3, t:"Garnet", sat:"Mountain Top", note:""},
+  {k:"Ski", h:31.3, t:"Gold", sat:"Fishing", note:"Own car · out 6:08 AM Sun"}
 ];
 const TEAMS = {
-  Bison:   {name:"Bison",    men:[["Heis",3.2],["Schmidty",18.0],["Trev",19.6],["Kurtz",23.3]]},
-  Buzzards:{name:"Buzzards", men:[["Kepps",8.2],["Jehls",10.8],["Joyce",17.6],["Ski",31.3]]}
+  Garnet:   {name:"Garnet",    men:[["Heis",3.2],["Schmidty",18.0],["Trev",19.6],["Kurtz",23.3]]},
+  Gold:{name:"Gold", men:[["Kepps",8.2],["Jehls",10.8],["Joyce",17.6],["Ski",31.3]]}
 };
 const MATCHES = [
   {id:"s1a", s:"S1 · Thu · Ozarks National",  f:"Best Ball", t:"12:30", a:"Heis + Trev", b:"Jehls + Ski"},
@@ -672,18 +673,18 @@ function cupPanel(){
   return '<div class="panel" id="p-cup" role="tabpanel">'
   + '<div id="liveband"></div>'
   + '<h2>The Farm Cup</h2>'
-  + '<div class="score"><div class="sside"><div class="sname" style="color:var(--bison)">Bison</div>'
-    + '<div class="spts" id="ptsA" style="color:var(--bison)">0</div></div><div class="sdash">v</div>'
-    + '<div class="sside"><div class="sname" style="color:var(--buzzards)">Buzzards</div>'
-    + '<div class="spts" id="ptsB" style="color:var(--buzzards)">0</div></div></div>'
+  + '<div class="score"><div class="sside"><div class="sname" style="color:var(--garnet)">Garnet</div>'
+    + '<div class="spts" id="ptsA" style="color:var(--garnet)">0</div></div><div class="sdash">v</div>'
+    + '<div class="sside"><div class="sname" style="color:var(--gold)">Gold</div>'
+    + '<div class="spts" id="ptsB" style="color:var(--gold)">0</div></div></div>'
   + '<div class="sstat" id="sstat">14 points on the table. <b>First to 7&frac12; wins it.</b></div>'
-  + '<h2>Teams</h2><div class="teams">'+teamCard("Bison")+teamCard("Buzzards")+'</div>'
+  + '<h2>Teams</h2><div class="teams">'+teamCard("Garnet")+teamCard("Gold")+'</div>'
   + '<p class="note">These sides come out of a <strong>brute force of all 35 possible four-four splits</strong>, each given its own optimal schedule and run through 480,000 simulations of this exact 14-point competition. Not matched on combined handicap &mdash; <b>matched on who actually wins the cup</b>. <b>Three splits tie</b>, and they are the same answer wearing different hats: Heis and Kurtz together, plus two of Joyce, Schmidty and Trev &mdash; three men inside two strokes of each other.</p>'
   + '<p class="note">The schedule was then built for <b>the friendly part</b>. Every man partners each of his three teammates, shares a tee group with all seven others, and <b>no two men spend more than three sessions together</b> &mdash; 16 of the 28 pairs meet exactly twice. Somebody has to repeat a partner, because each side has eight partner slots and only six possible pairings.</p>'
   + '<h2>Why these sides</h2><div class="box">'
-  + rowsHTML([["Combined handicap is a red herring","The most evenly <b>summed</b> split available is 66.0 against 66.0 &mdash; <b>dead level</b>. Simulated, it wins the cup <b>72%</b> of the time. Adding up indexes measures nothing that matters.","34%"],["What was actually optimised","All <b>35</b> possible four-four splits, each run <b>200,000</b> times through this exact 14-point schedule &mdash; three Best Ball sessions, the Pins &amp; Points, four singles, three points on the lake. The winner is the one whose <b>cup win probability</b> sits closest to a coin flip.","34%"],["The answer","<b>Bison 49.7% &middot; Buzzards 50.3%.</b> Expected points <b>6.98 to 7.02</b> out of 14. Just over half of all simulated weekends finish <b>8&ndash;6 or closer</b>.","34%"],["Where the low and high men sit","One side takes the single best player and three men inside six strokes of each other. The other takes the <b>two</b> next-best and the highest index in the field. Those two shapes cancel: the lone star wins gross-scoring events, the pair of solid players absorbs a wild partner in Best Ball.","34%"],["The course-difficulty term","Scoring variance widens with handicap and a penalty rate scales with index, because nobody has played these courses and forced carries, fescue and 450 feet of elevation punish a high index far harder than they punish a low one. It shifts the field <b>a lot</b> &mdash; it is what exposes the 66.1-v-66.2 split as a fraud &mdash; but it moves <b>this</b> split by under a point, which is why it survives whether or not you believe in it.","34%"]])  + '</div>'
+  + rowsHTML([["Combined handicap is a red herring","The most evenly <b>summed</b> split available is 66.0 against 66.0 &mdash; <b>dead level</b>. Simulated, it wins the cup <b>72%</b> of the time. Adding up indexes measures nothing that matters.","34%"],["What was actually optimised","All <b>35</b> possible four-four splits, each run <b>200,000</b> times through this exact 14-point schedule &mdash; three Best Ball sessions, the Pins &amp; Points, four singles, three points on the lake. The winner is the one whose <b>cup win probability</b> sits closest to a coin flip.","34%"],["The answer","<b>Garnet 49.7% &middot; Gold 50.3%.</b> Expected points <b>6.98 to 7.02</b> out of 14. Just over half of all simulated weekends finish <b>8&ndash;6 or closer</b>.","34%"],["Where the low and high men sit","One side takes the single best player and three men inside six strokes of each other. The other takes the <b>two</b> next-best and the highest index in the field. Those two shapes cancel: the lone star wins gross-scoring events, the pair of solid players absorbs a wild partner in Best Ball.","34%"],["The course-difficulty term","Scoring variance widens with handicap and a penalty rate scales with index, because nobody has played these courses and forced carries, fescue and 450 feet of elevation punish a high index far harder than they punish a low one. It shifts the field <b>a lot</b> &mdash; it is what exposes the 66.1-v-66.2 split as a fraud &mdash; but it moves <b>this</b> split by under a point, which is why it survives whether or not you believe in it.","34%"]])  + '</div>'
   + '<h2>What pulls the other way</h2><div class="box">'
-  + rowsHTML([["Match play caps the damage","When Ski loses a hole he loses it by <b>1.2 strokes on average</b>, and <b>19%</b> of the holes he drops are dropped by two or more. Match play charges exactly one hole either way. Every stroke past the first is free.","34%"],["Best Ball turns wildness into an asset","Only the better ball counts, so a partner absorbs the disasters. Ski&rsquo;s per-hole net goes from <b>4.27 alone to 3.78</b> once someone can cover the hole for him. <b>Three of the six sessions are Best Ball</b> &mdash; this is the single biggest reason a high index is not the liability it looks like.","34%"],["Pins &amp; Points is where the low man is worth most","Closest to the pin is <b>gross, no strokes</b>. Across the eight, Heis takes <b>36%</b> of the pins on his own; Ski takes <b>2.4%</b>. It is also where the social mix was paid for. Friday morning&rsquo;s two matches are the most one-sided on the card on paper &mdash; <b>81/19 one way, 22/78 the other</b> &mdash; and they cancel, so the session is dead even at 1.03 points of 2. Thirty-six points are contested over 18 holes with a pin live on every one, so it grinds rather than routs. <b>Nobody should read the numbers and feel written off.</b>","34%"],["Three points are pure noise","Nobody&rsquo;s index catches a bass. <b>Three of the fourteen</b> are a coin flip, which caps how much of an edge any split could have had in the first place.","34%"],["The 7&ndash;7 tiebreak is not neutral","Closest to the pin on the 19th is gross, so it leans to the better strikers &mdash; <b>51/49 to the Bison</b>. It is in the number above.","34%"]])  + '</div>'
+  + rowsHTML([["Match play caps the damage","When Ski loses a hole he loses it by <b>1.2 strokes on average</b>, and <b>19%</b> of the holes he drops are dropped by two or more. Match play charges exactly one hole either way. Every stroke past the first is free.","34%"],["Best Ball turns wildness into an asset","Only the better ball counts, so a partner absorbs the disasters. Ski&rsquo;s per-hole net goes from <b>4.27 alone to 3.78</b> once someone can cover the hole for him. <b>Three of the six sessions are Best Ball</b> &mdash; this is the single biggest reason a high index is not the liability it looks like.","34%"],["Pins &amp; Points is where the low man is worth most","Closest to the pin is <b>gross, no strokes</b>. Across the eight, Heis takes <b>36%</b> of the pins on his own; Ski takes <b>2.4%</b>. It is also where the social mix was paid for. Friday morning&rsquo;s two matches are the most one-sided on the card on paper &mdash; <b>81/19 one way, 22/78 the other</b> &mdash; and they cancel, so the session is dead even at 1.03 points of 2. Thirty-six points are contested over 18 holes with a pin live on every one, so it grinds rather than routs. <b>Nobody should read the numbers and feel written off.</b>","34%"],["Three points are pure noise","Nobody&rsquo;s index catches a bass. <b>Three of the fourteen</b> are a coin flip, which caps how much of an edge any split could have had in the first place.","34%"],["The 7&ndash;7 tiebreak is not neutral","Closest to the pin on the 19th is gross, so it leans to the better strikers &mdash; <b>51/49 to Garnet</b>. It is in the number above.","34%"]])  + '</div>'
   + '<h2>The forecast</h2>'
   + '<div class="flag"><b>Thursday is the wet one</b>The National Weather Service, AccuWeather and Weather Underground all agree: <b>Thursday</b> showers likely, high around 80, a thunderstorm in the mix &mdash; the heaviest day by a distance. <b>Friday</b> a chance of showers, high 76. <b>Saturday</b> partly sunny and mostly dry. <b>Sunday</b> mostly sunny after a morning shower. Checked Monday 28 September &mdash; look again Wednesday night before you pack.</div>'
   + '<div class="box">'
@@ -726,11 +727,11 @@ function gamesPanel(){
       ["Why we play it","A blow-up costs you <b>one hole, not seven strokes</b>. Make a 9 on the 4th, lose that hole, walk to the 5th level with the world. That&rsquo;s what makes a group running 3 to 31 work.","36%"],
       ["Finish every hole","Even when the match hole is gone, <b>hole it out</b>. Skins compares all eight net scores on every hole &mdash; a picked-up ball is a missing score, and it can cost you a carried pot worth more than the match.","36%"],
       ["Unless you hit your triple","<b>Triple bogey is the max on every hole.</b> 6 on a par 3, 7 on a par 4, 8 on a par 5, gross, same number for all eight of us. Get there and pick the ball up. That <i>is</i> your score &mdash; it goes on the card and into skins, it just won&rsquo;t win anything.","36%"],
-      ["No maths, no lookups","It&rsquo;s the same number whatever your handicap and whatever hole you&rsquo;re on, so nobody is reading a stroke index row while three men stand and watch. <b>A capped score has never once decided a skin</b> &mdash; that&rsquo;s the whole reason we can keep the rule this blunt.","36%"],
+      ["Getting two shots? Hole it out","If you&rsquo;re getting <b>two shots on a hole</b> from the man you&rsquo;re playing, <b>no picking up</b>. You finish the hole. It only comes up when Heis is in the match.","36%"],["Wet fairways","If it&rsquo;s wet, <b>lift, clean and place</b> in your own fairway.","36%"],
       ["How a match ends","When you&rsquo;re further ahead than there are holes left. 3 up with 2 to play &mdash; that&rsquo;s &ldquo;3 and 2&rdquo;. All square after 18 is a halve.","36%"]])
   + '</div>'
   + '<div class="wex" style="margin-top:12px"><b>The max, hole by hole</b>'
-  + '<p style="margin:0"><b>Par 3 &rarr; 6.  Par 4 &rarr; 7.  Par 5 &rarr; 8.</b><br>Lying 7 on a par 5 with the ball still off the green? <b>Pick it up, write 8, walk on.</b> Your strokes still come off it, so Ski taking two there posts a net 6 and stays in the skin. Nobody grinds out an 11.</p></div>'
+  + '<p style="margin:0"><b>Par 3 &rarr; 6.  Par 4 &rarr; 7.  Par 5 &rarr; 8.</b><br>Lying 7 on a par 5 with the ball still off the green? <b>Pick it up, write 8, walk on.</b> Nobody grinds out an 11. <b>Unless you&rsquo;re getting two shots on that hole</b> &mdash; then you play it out.</p></div>'
 
   + '<h2>2 &middot; Your strokes</h2>'
   + '<div class="flag"><b>Already done. Nothing to look up.</b>Every man&rsquo;s course handicap for every course is on the <b>Courses</b> tab, worked out from the real ratings off each scorecard. Know your number before you leave the cottage.</div>'
@@ -749,7 +750,7 @@ function gamesPanel(){
       ["You and your partner each play your own ball to the hole. So do both opponents.",
        "Your team bins the worse of your two net scores and keeps the better one. So do they. Those two numbers decide the hole.",
        "Partner having a nightmare? His score gets thrown away. Partner safe on the green in two? Then <b>you</b> take on the flag. That&rsquo;s the whole strategy."],
-      "Par 4, stroke index 3, Buffalo Ridge. <b>Heis + Kurtz v Joyce + Ski.</b> Heis makes 4 with no shots. Kurtz gets two shots and makes 7, net 5 &mdash; the Bison keep Heis&rsquo;s 4. Joyce gets a shot and makes 5, net 4. Ski gets two shots and makes 7, net 5 &mdash; the Buzzards keep Joyce&rsquo;s net 4. <b>Halved.</b>")
+      "Par 4, stroke index 3, Buffalo Ridge. <b>Heis + Kurtz v Joyce + Ski.</b> Heis makes 4 with no shots. Kurtz gets two shots and makes 7, net 5 &mdash; Garnet keeps Heis&rsquo;s 4. Joyce gets a shot and makes 5, net 4. Ski gets two shots and makes 7, net 5 &mdash; Gold keeps Joyce&rsquo;s net 4. <b>Halved.</b>")
   + fmtBlock("Pins &amp; Points","Friday morning at Cliffhangers",
       "Everyone plays their own ball. Two points every hole &mdash; one for the best tee shot, one for the best score.",
       ["<b>The Pin:</b> closest tee shot that finishes <b>on the green</b>. If nobody hits it, closest ball anywhere. This point is <b>gross</b> &mdash; no strokes.",
@@ -764,7 +765,7 @@ function gamesPanel(){
        "Finish early? Walk back and support whoever&rsquo;s still out. That&rsquo;s the tradition."], "")
 
   + '<h2>4 &middot; The water match</h2>'
-  + '<div class="flag"><b>Three cup points on Table Rock Lake</b>The Saturday split was built to fall two-and-two, so the water works as a straight team match. <b>Bison:</b> Schmidty and Trev. <b>Buzzards:</b> Joyce and Ski. Mixed boats &mdash; Ski with Schmidty, Joyce with Trev &mdash; so we&rsquo;re testing the anglers, not the guides.</div>'
+  + '<div class="flag"><b>Three cup points on Table Rock Lake</b>The Saturday split was built to fall two-and-two, so the water works as a straight team match. <b>Garnet:</b> Schmidty and Trev. <b>Gold:</b> Joyce and Ski. Mixed boats &mdash; Ski with Schmidty, Joyce with Trev &mdash; so we&rsquo;re testing the anglers, not the guides.</div>'
   + '<div class="box">'
   + rowsHTML([["Most Fish","Highest count. <b>Everything</b> over the gunwale counts &mdash; bass, crappie, white bass, walleye, bluegill.","30%"],
               ["Big Bass","Longest single <b>black bass</b>, in inches on the guide&rsquo;s bump board. Photograph it next to the tape.","30%"],
@@ -866,7 +867,7 @@ function golfPanel(){
   const mtTable = () => '<div class="box"><table class="mtable"><thead><tr>'
     + '<th>Man</th><th class="num">Strokes</th><th>On these holes</th></tr></thead><tbody>'
     + mtFour().map(x=>'<tr><td style="font-weight:700">'+x.k
-        + '<br><span style="color:var(--'+(x.t==="Bison"?"bison":"buzzards")+');font-size:10.5px;font-weight:600">'
+        + '<br><span style="color:var(--'+(x.t==="Garnet"?"garnet":"gold")+');font-size:10.5px;font-weight:600">'
         + x.t+'</span></td>'
         + '<td class="num" style="font-weight:800;color:var(--brass);font-size:17px">'
         + (x.s===0?'<span style="font-size:13px;color:var(--ink-3);font-weight:600">&ndash;</span>':x.s)+'</td>'
@@ -1187,7 +1188,7 @@ function buildMatches(){
     + '<span class="pill p-golf" style="margin:0">'+m.f+'</span></div>'
     + '<div class="mvs"><span class="a">'+m.a+'</span><span class="v">v</span><span class="b">'+m.b+'</span></div>'
     + '<div class="mbtns" role="group" aria-label="'+m.a.replace(/&amp;/g,"and")+' versus '+m.b.replace(/&amp;/g,"and")+'">'
-    + [['Bison','Bison'],['Halved','Halved'],['Buzzards','Buzzards']].map(x=>'<button type="button" class="mbtn" aria-pressed="false" data-w="'+x[0]+'" data-m="'+m.id+'">'+x[1]+'</button>').join("")
+    + [['Garnet','Garnet'],['Halved','Halved'],['Gold','Gold']].map(x=>'<button type="button" class="mbtn" aria-pressed="false" data-w="'+x[0]+'" data-m="'+m.id+'">'+x[1]+'</button>').join("")
     + '</div></div>').join("");
   paintCup();
 }
@@ -1198,12 +1199,12 @@ function paintCup(){
     b.setAttribute("aria-pressed", String(on));
   });
   let A=0,B=0;
-  Object.values(results).forEach(v=>{ if(v==="Bison")A++; else if(v==="Buzzards")B++; else if(v==="Halved"){A+=.5;B+=.5;} });
+  Object.values(results).forEach(v=>{ if(v==="Garnet")A++; else if(v==="Gold")B++; else if(v==="Halved"){A+=.5;B+=.5;} });
   const f = x => x===0 ? "0" : String(x).replace(/\.5$/,"½").replace(/^0½$/,"½");
   $("#ptsA").textContent=f(A); $("#ptsB").textContent=f(B);
   const played=Object.keys(results).length, st=$("#sstat");
-  if(A>=7.5) st.innerHTML='<b>The Bison win the Farm Cup.</b>';
-  else if(B>=7.5) st.innerHTML='<b>The Buzzards win the Farm Cup.</b>';
+  if(A>=7.5) st.innerHTML='<b>Garnet wins the Farm Cup.</b>';
+  else if(B>=7.5) st.innerHTML='<b>Gold wins the Farm Cup.</b>';
   else if(played===14) st.innerHTML='<b>7&ndash;7. Shared &mdash; or settle it on the 19th.</b>';
   else st.innerHTML=(14-played)+' match'+(14-played===1?'':'es')+' left. <b>First to 7&frac12; wins it.</b>';
 }
@@ -1226,7 +1227,7 @@ const mo  = n => { const v=Number(n); return isFinite(v) ? "$"+v.toFixed(2).repl
 
 function paintLive(d){
   if(d.matches && typeof d.matches==="object"){
-    const ok=new Set(MATCHES.map(m=>m.id)), val=["Bison","Buzzards","Halved"];
+    const ok=new Set(MATCHES.map(m=>m.id)), val=["Garnet","Gold","Halved"];
     let n=0;
     Object.keys(d.matches).forEach(k=>{
       if(ok.has(k) && val.indexOf(d.matches[k])>-1){ results[k]=d.matches[k]; n++; }
@@ -1271,7 +1272,7 @@ try{
 
 /* Build stamp. The numbers are baked in when the file is built, so what you see
    is what was published — no clock, no cache, no guessing which copy you have. */
-const BUILD = {v:"10", d:"28 Sep 2026", t:"2026-09-28T20:00:00Z"};
+const BUILD = {v:"12", d:"28 Sep 2026", t:"2026-09-28T21:20:00Z"};
 (function(){
   const v=$("#bv"), d=$("#bd"); if(!v||!d) return;
   v.textContent = BUILD.v; d.textContent = BUILD.d;
