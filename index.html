@@ -440,8 +440,8 @@ const TEAMS = {
   Gold:{name:"Gold", men:[["Kepps",8.2],["Jehls",10.8],["Joyce",17.6],["Ski",31.3]]}
 };
 const MATCHES = [
-  {id:"s1a", s:"S1 · Thu · Ozarks National",  f:"Best Ball", t:"12:30", a:"Heis + Trev", b:"Jehls + Ski"},
-  {id:"s1b", s:"S1 · Thu · Ozarks National",  f:"Best Ball", t:"12:40", a:"Schmidty + Kurtz", b:"Kepps + Joyce"},
+  {id:"s1b", s:"S1 · Thu · Ozarks National",  f:"Best Ball", t:"12:30", a:"Schmidty + Kurtz", b:"Kepps + Joyce"},
+  {id:"s1a", s:"S1 · Thu · Ozarks National",  f:"Best Ball", t:"12:40", a:"Heis + Trev", b:"Jehls + Ski"},
   {id:"s2a", s:"S2 · Fri AM · Cliffhangers",  f:"Pins &amp; Points", t:"9:00",  a:"Heis + Schmidty", b:"Jehls + Joyce"},
   {id:"s2b", s:"S2 · Fri AM · Cliffhangers",  f:"Pins &amp; Points", t:"9:15",  a:"Trev + Kurtz", b:"Kepps + Ski"},
   {id:"s3a", s:"S3 · Fri PM · Buffalo Ridge", f:"Best Ball", t:"1:40",  a:"Heis + Kurtz", b:"Joyce + Ski"},
@@ -497,31 +497,27 @@ const D = (m,d,h,mi)=>new Date(2026,m-1,d,h,mi);
 const DAYS = [
   {id:"thu", label:"Thu 10/1", title:"Thursday, October 1", sub:"Ozarks National &middot; then the cottage", events:[
     {t:"10:08 AM", at:D(10,1,10,8), w:"Land at Springfield", p:"SGF", loc:"sgf", tags:["6 on AA 3584"],
-     d:"<p>Clubs and bags into the rental cars. <b>We go to the lodge first, not the course</b> &mdash; drop the cars and the luggage at registration, then shuttle to Ozarks National.</p><p>That&rsquo;s the whole point: nobody drives back after eighteen holes and a few beers.</p>"},
+     d:"<p>Clubs and bags into the rental cars and <b>straight to registration for the 11:30 shuttle</b>. Bags stay in the locked cars until after golf.</p><p><b>Running behind? Skip the shuttle and drive straight to Ozarks National.</b> We sort the cars out after the round.</p>"},
     {t:"10:30 AM", at:D(10,1,10,30), w:"Schmidty lands", p:"Branson Jet Center", loc:"bkg", key:1, tags:["Schmidty"],
-     d:"<p>Flying himself in, so no rental car and no trip to registration. <b>Making his own way to Ozarks National</b> &mdash; Uber, Lyft or a lift from someone at the FBO. Big Cedar wanted $100 for a four-minute run.</p><p>130 Wright Brothers Rd, Hollister.</p>"},
+     d:"<p>Flying himself in. <b>Courtney picks him up</b> and drops him at Ozarks National, and the bellman takes his bag to the room. Meets everyone at the course.</p><p>130 Wright Brothers Rd, Hollister.</p>"},
     {t:"10:42 AM", at:D(10,1,10,42), w:"Ski lands", p:"SGF &middot; Delta via Atlanta", loc:"sgf", tags:["Ski"],
-     d:"<p>He has his <b>own rental car</b>, and how this goes depends on the clock.</p><p><b>If he&rsquo;s close</b> &mdash; he meets us at registration and jumps on the shuttle with everyone.</p><p><b>If he&rsquo;s behind</b> &mdash; he drives straight to Ozarks National and we sort the car out later. Don&rsquo;t wait at the airport, don&rsquo;t hold the shuttle past the tee.</p><p>Playing this one by ear.</p>"},
+     d:"<p>He has his <b>own rental car</b>. If he can make the 11:30 shuttle at registration, he jumps on with everyone.</p><p><b>If he&rsquo;s running late at all, he drives straight to Ozarks National</b> and someone drives his car back after the round. No biggie. The shuttle doesn&rsquo;t wait.</p>"},
     {t:"10:45 AM", at:D(10,1,10,45), w:"Drive to Big Cedar", p:"SGF &rarr; registration &middot; ~55 min", loc:"reg", tags:["6 guys"],
-     d:"<p><b>Nothing to arrange.</b> Our rides are private and pre-booked through Courtney &mdash; a driver meets us at registration. She can flex the times on the day if we&rsquo;re running behind.</p>"},
-    {t:"11:40 AM", at:D(10,1,11,40), w:"Park at registration", p:"Registration Building", loc:"reg", key:1, tags:["6 guys","NO CHECK-IN YET"],
-     d:"<p><b>We are not checking in.</b> The cottage won&rsquo;t be ready this early, so all that happens here is leaving the cars and getting in the van. <b>Bags stay in the locked cars</b> &mdash; there&rsquo;s nowhere to put them yet.</p><p>Ryan is asking about an early check-in. If it comes through we&rsquo;ll drop everything properly, but plan on not.</p><p>Right at the roundabout on Highway 86, through the grand entrance, then the scenic road down to registration.</p><p><a href='tel:+14173395039'>(417) 339-5039</a></p>"},
-    {t:"11:55 AM", at:D(10,1,11,55), w:"Shuttle to Ozarks National", p:"Registration &rarr; the golf complex", loc:"ozarks", key:1, tags:["~15 min"],
-     d:"<p>Private transport, already arranged. If it hasn&rsquo;t turned up by <b>12:00</b>, call Ryan &mdash; don&rsquo;t stand there being polite about it with a 12:30 tee.</p>"},
+     d:"<p>Right at the roundabout on Highway 86, through the grand entrance, then the scenic road down to registration.</p>"},
+    {t:"11:30 AM", at:D(10,1,11,30), w:"Shuttle to Ozarks National", p:"Registration front desk &rarr; the golf complex", loc:"reg", key:1, tags:["6 guys","DON&rsquo;T MISS IT"],
+     d:"<p><b>The shuttle leaves the registration front desk at 11:30.</b> It&rsquo;s a shared golf shuttle, not private, so be there.</p><p><b>Early check-in is approved.</b> If there&rsquo;s time before the shuttle, check in at the front desk; the Big Cedar app has no mobile check-in. Ryan isn&rsquo;t with this group, so Courtney is confirming one of us can do it. If there isn&rsquo;t time, it waits until after golf. Don&rsquo;t miss the shuttle over it.</p><p><a href='tel:+14173395039'>(417) 339-5039</a></p>"},
     {t:"12:10 PM", at:D(10,1,12,10), w:"Check in for golf", p:"Ozarks National pro shop", loc:"ozarks", key:1, tags:["All 8","No range time"],
-     d:"<p><b>Twenty minutes before the tee.</b> Get your course handicap sorted and roll a few putts. There is <b>no time for the range</b> today &mdash; eat on the course.</p><p>The practice facility here is excellent: two putting greens, a three-green short-game area with bunkers, a range with zoysia and artificial surfaces, and the Tom Watson Putting Course. Save all of it for Friday.</p><p>Pro shop <a href='tel:+14173395420'>(417) 339-5420</a></p>"},
+     d:"<p><b>Twenty minutes before the tee</b>, give or take. Get your course handicap sorted and roll a few putts. There is <b>no time for the range</b> today &mdash; eat on the course.</p><p>The practice facility here is excellent: two putting greens, a three-green short-game area with bunkers, a range with zoysia and artificial surfaces, and the Tom Watson Putting Course. Save all of it for Friday.</p><p>Pro shop <a href='tel:+14173395420'>(417) 339-5420</a></p>"},
     {t:"12:30 PM", at:D(10,1,12,30), w:"TEE &mdash; Ozarks National", p:"Group 1", loc:"ozarks", golf:1, tags:["Best Ball","Session 1"],
-     d:"<p>Coore &amp; Crenshaw, par 71. <b>Heis + Trev vs Jehls + Ski.</b></p><p><b>Forecaddie with each group.</b> $50 plus a $30 tip, cash at the end.</p>"},
+     d:"<p>Coore &amp; Crenshaw, par 71. <b>Schmidty + Kurtz vs Kepps + Joyce.</b></p><p><b>Forecaddie with each group.</b> $50 plus a $30 tip, cash at the end.</p>"},
     {t:"12:40 PM", at:D(10,1,12,40), w:"TEE &mdash; Ozarks National", p:"Group 2", loc:"ozarks", golf:1, tags:["Best Ball","Session 1"],
-     d:"<p><b>Schmidty + Kurtz vs Kepps + Joyce.</b></p>"},
-    {t:"5:15 PM", at:D(10,1,17,15), w:"Finish &amp; shuttle back", p:"Ozarks National &rarr; registration", loc:"reg", tags:["All 8"],
-     d:"<p>Second group in around 5:15. <b>Book this one in the shuttle app</b> from around the 16th &mdash; a scheduled pickup costs money and a requested one doesn&rsquo;t, and we&rsquo;re not on a clock.</p><p>Nobody drives back after eighteen holes. That&rsquo;s the entire reason the cars are at the lodge.</p>"},
-    {t:"6:00 PM", at:D(10,1,18,0), w:"Check in, then cars to the cottage", p:"Registration &rarr; Bass Pro Cottages", loc:"lodge", key:1, tags:["All 8"],
-     d:"<p><b>Now</b> we check in &mdash; the cottage is ready and the cars are already sitting here. Ryan has the reservation number. Use <b>express check-in and the digital key</b> in the Big Cedar app so nobody queues at a desk.</p><p>Then drive the cars the short hop down. <b>They stay parked at the cottage all weekend</b> &mdash; the only time one moves again is Saturday morning&rsquo;s run to the dock.</p><p>Four bedrooms, eight men, covered porch, gas grills, wood-burning fireplace, walking distance to the infinity pool. Sort the rooms out among yourselves.</p>"},
+     d:"<p><b>Heis + Trev vs Jehls + Ski.</b></p><p>Ski&rsquo;s group goes second to give him every minute off his flight.</p>"},
+    {t:"5:15 PM", at:D(10,1,17,15), w:"Finish &amp; shuttle back", p:"Ozarks National &rarr; registration &rarr; the cottage", loc:"lodge", tags:["All 8"],
+     d:"<p>Second group in around 5:15. <b>Request the shuttle in the app</b> when you&rsquo;re done. It takes us back to registration, where the cars are; check in if we didn&rsquo;t this morning, then the short hop down to the cottage. If Ski drove himself, someone brings his car back.</p><p>Four bedrooms, eight men, covered porch, gas grills, wood-burning fireplace, walking distance to the infinity pool. Sort the rooms out among yourselves. Ryan&rsquo;s one request: don&rsquo;t put him with a snorer.</p><p><b>The cars stay parked at the cottage all weekend.</b> The only time one moves again is Saturday morning&rsquo;s run to the dock.</p>"},
     {t:"6:30 PM", at:D(10,1,18,30), w:"Grill at the cottage", p:"Backyard basket &middot; all 8", loc:"lodge", key:1, tags:["All 8","DECIDED"],
-     d:"<p>Big Cedar delivers everything, we cook it on the deck grill. Condiments, salt, pepper and napkins come with it.</p><p><b>The back porch is covered, so Thursday&rsquo;s rain doesn&rsquo;t touch this.</b> Grill under the roof and carry on.</p><p>No cars, no clock, no kitchen shutting at eight. After a travel day and eighteen holes this is the right shape for night one.</p><p><i>Ryan orders it Wednesday 30 September &mdash; baskets need 24 hours&rsquo; notice.</i></p>"},
+     d:"<p>Big Cedar delivers everything, we cook it on the deck grill. Condiments, salt, pepper and napkins come with it.</p><p><b>The back porch is covered, so Thursday&rsquo;s rain doesn&rsquo;t touch this.</b> Grill under the roof and carry on.</p><p>No cars, no clock, no kitchen shutting at eight. After a travel day and eighteen holes this is the right shape for night one.</p><p><i>Ordered through Courtney, charged to the room.</i></p>"},
     {t:"7:15 PM", at:D(10,1,19,15), w:"Steelers at Browns", p:"Thursday Night Football &middot; Prime Video", loc:"lodge", key:1, tags:["Browns"],
-     d:"<p>Our own team, on night one, in the rivalry game. Kickoff <b>7:15 our time</b>.</p><p>It&rsquo;s a Prime Video game, so it isn&rsquo;t on regular cable. Whoever gets to the cottage TV first, sort the login.</p><p>Uncle Buck&rsquo;s closes at 9:00, so watching it there means watching half of it.</p>"},
+     d:"<p>Our own team, on night one, in the rivalry game. Kickoff <b>7:15 our time</b>.</p><p>It&rsquo;s a Prime Video game, so it isn&rsquo;t on regular cable. Whoever gets to the cottage TV first, sort the login.</p>"},
     {t:"7:45 PM", at:D(10,1,19,45), w:"Thunder Ridge &mdash; come and go", p:"Hinder &middot; Hoobastank &middot; Seether &middot; Staind", loc:"thunder", tags:["Optional","ALL EVENING"],
      d:"<p><b>Go whenever you want and leave whenever you want.</b> Four bands, all of them peak 2001&ndash;2006, and Staind&rsquo;s closing the 25th anniversary &lsquo;Break the Cycle&rsquo; tour.</p><p><b>We&rsquo;re VIP</b> &mdash; parking, access inside the venue, food and drink covered. It&rsquo;s on property and under a mile, so we drive ourselves.</p><p><b>Tickets go through Ryan.</b> Tell him as we&rsquo;re heading out.</p><p>Outdoor amphitheatre in October, after dark. Bring the quarter-zip.</p>"},
     {t:"9:00 PM", at:D(10,1,21,0), w:"Porch and fire", p:"For whoever stays", loc:"lodge", tags:[],
@@ -536,7 +532,7 @@ const DAYS = [
       + "<div class='opt'><span class='opth'>7:00 &ndash; 10:30 AM</span><div class='optn'>Mountain Top Grill</div><div class='optd'>Same clubhouse complex as Cliffhangers, so you can eat and walk to the first tee.</div></div>"
       + "</div>"},
     {t:"8:00 AM", at:D(10,2,8,0), w:"Head to Cliffhangers", p:"~20 min to the golf complex", loc:"cliff", tags:["All 8"],
-     d:"<p>Pickup is arranged for <b>thirty minutes before the tee</b>, same as every scheduled ride this weekend. On the ground by 8:30.</p>"},
+     d:"<p><b>Pickup at the cottage at 8:00</b>, booked through Courtney. About twenty minutes, so you&rsquo;re on the ground with forty to spare.</p>"},
     {t:"9:00 AM", at:D(10,2,9,0), w:"TEE &mdash; Cliffhangers", p:"Group 1", loc:"cliff", golf:1, tags:["Pins &amp; Points","Session 2"],
      d:"<p>18 par-3s, par 54, 65&ndash;157 yards. <b>Heis + Schmidty vs Jehls + Joyce.</b></p><p>Hole 3, the &lsquo;Lion&rsquo;s Den&rsquo;, tees from inside a cave behind a waterfall. The cart path drives through a cave on 18.</p><p><b>Pins &amp; Points.</b> Two points a hole &mdash; one for the closest tee shot on the green (gross, no strokes), one for the better net score. Everyone plays their own ball.</p>"},
     {t:"9:15 AM", at:D(10,2,9,15), w:"TEE &mdash; Cliffhangers", p:"Group 2", loc:"cliff", golf:1, tags:["Pins &amp; Points","Session 2"],
@@ -549,8 +545,8 @@ const DAYS = [
      d:"<p>Tom Fazio, par 71. <b>Heis + Kurtz vs Joyce + Ski.</b></p><p><b>Forecaddie with each group.</b> The fescue here eats anything offline &mdash; this is where a spotter pays for itself.</p><p>Native grasses and free-ranging bison. Second 18 of the day, so club up.</p>"},
     {t:"1:50 PM", at:D(10,2,13,50), w:"TEE &mdash; Buffalo Ridge Springs", p:"Group 2", loc:"buffalo", golf:1, tags:["Best Ball","Session 3"],
      d:"<p><b>Schmidty + Trev vs Kepps + Jehls.</b></p>"},
-    {t:"6:20 PM", at:D(10,2,18,20), w:"Finish", p:"4:30 pace", tags:[],
-     d:"<p>Group two walks off around 6:20. <b>Request the ride in the app</b> on the way in &mdash; free, where a scheduled one isn&rsquo;t.</p>"},
+    {t:"6:15 PM", at:D(10,2,18,15), w:"Finish &amp; app shuttle home", p:"Buffalo Ridge &rarr; the cottage", loc:"lodge", tags:["All 8"],
+     d:"<p>Request the shuttle in the app when we walk off &mdash; free, where a scheduled one isn&rsquo;t.</p>"},
     {t:"7:00 PM", at:D(10,2,19,0), w:"Dinner &mdash; your call", p:"Nothing is booked", loc:"lodge", key:1, tags:["All 8","DECIDE TOGETHER"],
      d:"<div class='yourcall'>No set plan. Bourbon tasting is at 8:00 if we want it.</div><div class='opts'>"
       + "<div class='opt'><span class='opth'>2 &ndash; 11 PM</span><div class='optn'>Buzzard Bar &middot; Top of the Rock</div><div class='optd'>Live music from 8:30. Same road as the tasting, so one shuttle leg covers both.</div></div>"
@@ -576,8 +572,8 @@ const DAYS = [
      d:"<p>Gary Player, 13 par-3s, par 39. <b>Walking only &mdash; no carts.</b> About two hours, under two miles.</p><p><b>Heis + Kurtz vs Kepps + Jehls.</b> One point.</p><p><b>Strokes are already settled</b> and they&rsquo;re on the <b>Courses</b> tab. Look yours up before you leave the cottage, not on the first tee.</p><p>Rangefinders free at the shop.</p>"},
     {t:"11:00 AM", at:D(10,3,11,0), w:"Off the water, off the course", p:"Dock / Mountain Top", tags:[],
      d:"<p><b>Anglers:</b> get the guide to confirm the final tally before you step off the boat. Three points ride on it. Then drive back to the cottage.</p><p><b>Golfers:</b> you&rsquo;re already at the clubhouse Payne&rsquo;s Valley shares. <b>Order lunch for all eight now</b> so it&rsquo;s on the table when the fishermen walk in.</p>"},
-    {t:"11:15 AM", at:D(10,3,11,15), w:"Pickup &mdash; anglers to Payne&rsquo;s", p:"Cottage &rarr; Payne&rsquo;s Valley", loc:"paynes", key:1, tags:["Fishing 4","TIGHT"],
-     d:"<p>Twenty minutes at the cottage to get out of fishing clothes and into golf clothes. <b>It&rsquo;s tight</b> &mdash; which is why we asked the guides for 10:45.</p><p>Private transport, so if we&rsquo;re a few minutes late they wait.</p>"},
+    {t:"11:15 AM", at:D(10,3,11,15), w:"Pickup &mdash; anglers to Payne&rsquo;s", p:"Cottage &rarr; Payne&rsquo;s Valley Golf Tent", loc:"paynes", key:1, tags:["Fishing 4","TIGHT"],
+     d:"<p>Twenty minutes at the cottage to get out of fishing clothes and into golf clothes. <b>It&rsquo;s tight</b> &mdash; which is why we asked the guides for 10:45.</p><p>It&rsquo;s a shared shuttle, not private, so <b>be at the door at 11:15</b>.</p>"},
     {t:"11:45 AM", at:D(10,3,11,45), w:"Regroup and eat", p:"Payne&rsquo;s Valley clubhouse", loc:"mtgrill", key:1, tags:["All 8"],
      d:"<p>Food is already ordered. Sit down and eat.</p><p><b>Report the water match here</b> &mdash; three cup points change hands before anyone tees off.</p>"},
     {t:"12:10 PM", at:D(10,3,12,10), w:"TEE &mdash; Payne's Valley", p:"Group 1", loc:"paynes", golf:1, tags:["SINGLES","4 points"],
@@ -585,11 +581,9 @@ const DAYS = [
     {t:"12:20 PM", at:D(10,3,12,20), w:"TEE &mdash; Payne's Valley", p:"Group 2", loc:"paynes", golf:1, tags:["SINGLES","4 points"],
      d:"<p><b>Schmidty v Jehls &middot; Kurtz v Ski.</b></p>"},
     {t:"5:20 PM", at:D(10,3,17,20), w:"Finish &mdash; then play the 19th", p:"The Big Rock", loc:"paynes", key:1, tags:["All 8"],
-     d:"<p>A bonus par-3 into a canyon with a waterfall. 99 yards from the White tee, and it doesn&rsquo;t count toward par.</p><p><b>But the carried skins pot rides on it.</b> One ball each, closest to the pin takes whatever is still riding after 18. And if the Cup is 7&ndash;7, this settles that too.</p><p>Pace here is 5:00 and we&rsquo;re booked off 12:10, so there should be room. The ride home is private &mdash; a few minutes either way is fine.</p>"},
-    {t:"5:30 PM", at:D(10,3,17,30), w:"Back to the cottage", p:"Payne&rsquo;s Valley &rarr; Bass Pro Cottages", loc:"lodge", key:1, tags:["All 8"],
-     d:"<p>Pickup is at the <b>Golf Tent</b>, not the clubhouse. Drop the clubs, clean up, change &mdash; <b>this is the stop that gets your sticks home</b> ahead of Sunday&rsquo;s early departures.</p>"},
-    {t:"6:10 PM", at:D(10,3,18,10), w:"Shuttle to Top of the Rock", p:"Cottage &rarr; Buffalo Bar", loc:"buffbar", key:1, tags:["All 8","SCHEDULED"],
-     d:"<p>Booked by Courtney, so this one leaves on time. <b>Forty minutes at the cottage</b> from the 5:30 drop &mdash; clubs down, quick change, back out the door.</p>"},
+     d:"<p>A bonus par-3 into a canyon with a waterfall. 99 yards from the White tee, and it doesn&rsquo;t count toward par.</p><p><b>But the carried skins pot rides on it.</b> One ball each, closest to the pin takes whatever is still riding after 18. And if the Cup is 7&ndash;7, this settles that too.</p><p>Pace here is 5:00 and we&rsquo;re booked off 12:10, so there should be room. The ride home is booked and waits for us, so a few minutes either way is fine.</p>"},
+    {t:"5:30 PM", at:D(10,3,17,30), w:"Pickup &mdash; cottage, then Top of the Rock", p:"Payne&rsquo;s Valley &rarr; the cottage &rarr; Top of the Rock", loc:"buffbar", key:1, tags:["All 8","BOOKED"],
+     d:"<p><b>Pickup at Payne&rsquo;s Valley at 5:30.</b> <b>The driver waits at the cottage</b> while we drop clubs and change, then takes us straight up to Top of the Rock. Quick change, back out the door.</p><p>This is also the stop that gets your sticks home ahead of Sunday&rsquo;s early departures.</p>"},
     {t:"6:30 PM", at:D(10,3,18,30), w:"Dinner &mdash; Buffalo Bar", p:"Top of the Rock", loc:"buffbar", key:1, tags:["All 8","THE ONE BOOKED DINNER"],
      d:"<p>Lower level of the Osage Restaurant. Stone patio over Table Rock Lake.</p><p><b>6:30 is loose.</b> Sunset, cocktails and apps first &mdash; dinner itself can happen whenever we&rsquo;re ready.</p><p><a href='"+MAP(TOR)+"' target='_blank' rel='noopener'>"+TOR+"</a></p>"},
     {t:"6:43 PM", at:D(10,3,18,43), w:"Sunset Ceremony", p:"Buffalo Bar patio", loc:"buffbar", key:1, tags:["Don't miss it"],
@@ -605,16 +599,16 @@ const DAYS = [
      d:"<p>DL 1680 leaves Springfield at 6:08 AM for Atlanta, then DL 1240 into Detroit at 12:55 PM.</p><p>His car is at the cottage and <b>shuttles don&rsquo;t run until 6 AM</b>, so everything he&rsquo;s leaving with needs to be with him Saturday night.</p><p><b>Say your goodbyes Saturday</b> &mdash; nobody is seeing him off at 4 AM.</p>"},
     {t:"8:00 AM", at:D(10,4,8,0), w:"The five depart", p:"Big Cedar &rarr; SGF", loc:"sgf", tags:["Heis","Kepps","Jehls","Joyce","Kurtz"],
      d:"<p>AA 3584 at 10:38 AM, into O&rsquo;Hare at 12:29 PM.</p><p>Cars are at the cottage, clubs came home Saturday evening. Load up and go.</p>"},
-    {t:"8:45 AM", at:D(10,4,8,45), w:"Arrive Top of the Rock", p:"Forty-five minutes before the tee", loc:"torgolf", tags:["Schmidty + Trev"],
+    {t:"8:30 AM", at:D(10,4,8,30), w:"Pack and check out", p:"The cottage", loc:"lodge", key:1, tags:["Schmidty + Trev","CHECKOUT"],
+     d:"<p><b>Checkout is noon.</b> We won&rsquo;t be back from Top of the Rock in time, so we check out before we leave.</p><p>Everything goes in Trev&rsquo;s car. Last two out, so make sure nothing of anyone&rsquo;s is left behind.</p>"},
+    {t:"9:00 AM", at:D(10,4,9,0), w:"Arrive Top of the Rock", p:"Forty-five minutes before the tee", loc:"torgolf", tags:["Schmidty + Trev"],
      d:"<p>Trev has his own car, so this one doesn&rsquo;t need a shuttle.</p>"},
-    {t:"9:30 AM", at:D(10,4,9,30), w:"TEE &mdash; Top of the Rock", p:"Schmidty + Trev", loc:"torgolf", golf:1, key:1, tags:["Just for fun"],
-     d:"<p><b>Jack Nicklaus, 9 holes, par 27.</b> One of only two par-3 courses ever used in official PGA competition.</p><p>Dramatic elevation, water and bunkers with Table Rock Lake below you. Carts with GPS. Pace is 1:45, so you&rsquo;re done by 11:15.</p><p>150 Top of the Rock Rd &middot; pro shop <a href='tel:+14173395344'>(417) 339-5344</a></p>"},
-    {t:"11:15 AM", at:D(10,4,11,15), w:"Finish, then brunch", p:"Osage &middot; Top of the Rock", loc:"osage", key:1, tags:["Schmidty + Trev"],
+    {t:"9:45 AM", at:D(10,4,9,45), w:"TEE &mdash; Top of the Rock", p:"Schmidty + Trev", loc:"torgolf", golf:1, key:1, tags:["Just for fun"],
+     d:"<p><b>Jack Nicklaus, 9 holes, par 27.</b> One of only two par-3 courses ever used in official PGA competition.</p><p>Dramatic elevation, water and bunkers with Table Rock Lake below you. Carts with GPS. Pace is 1:45, so you&rsquo;re done around 11:30.</p><p>150 Top of the Rock Rd &middot; pro shop <a href='tel:+14173395344'>(417) 339-5344</a></p>"},
+    {t:"11:30 AM", at:D(10,4,11,30), w:"Finish, then brunch", p:"Osage &middot; Top of the Rock", loc:"osage", key:1, tags:["Schmidty + Trev"],
      d:"<p><b>Osage Sunday brunch runs 10:00 to 2:00</b> and it&rsquo;s right there. Last meal of the trip.</p><p><b>Arnie&rsquo;s Barn is closed Sundays</b> &mdash; don&rsquo;t walk over there.</p>"},
-    {t:"12:45 PM", at:D(10,4,12,45), w:"Back to the cottage", p:"Shower, pack, check out", loc:"lodge", key:1, tags:["Schmidty + Trev","CHECKOUT"],
-     d:"<p>We&rsquo;ve asked Courtney for a <b>1:00 PM late checkout</b>. Until that&rsquo;s confirmed, assume standard checkout lands mid-round and <b>load the car before you tee off</b>.</p>"},
     {t:"1:15 PM", at:D(10,4,13,15), w:"Trev runs Schmidty to Branson", p:"&rarr; Branson Jet Center", loc:"bkg", key:1, tags:["Schmidty + Trev"],
-     d:"<p>About twenty minutes. Trev then carries on to Springfield for <b>AA 3544 at 3:41 PM</b>, into O&rsquo;Hare at 5:39 PM &mdash; roughly another fifty minutes north, so he has room.</p><p>He&rsquo;s ticketed under his legal first name rather than Trev, worth knowing if anyone&rsquo;s helping him at a counter.</p>"},
+     d:"<p>Straight from brunch, since the car is already packed. About twenty minutes. Trev then carries on to Springfield for <b>AA 3544 at 3:41 PM</b>, into O&rsquo;Hare at 5:39 PM &mdash; roughly another fifty minutes north, so he has room.</p><p>He&rsquo;s ticketed under his legal first name rather than Trev, worth knowing if anyone&rsquo;s helping him at a counter.</p>"},
     {t:"&mdash;", at:D(10,4,14,0), w:"Schmidty out of Branson", p:"KBBG", loc:"bkg", tags:["Schmidty"],
      d:"<p>Own plane, own schedule. Weather decides, not a departures board.</p>"}
   ]}
@@ -1005,7 +999,7 @@ function moneyPanel(){
   + rowsHTML([["Rental cars","<b>Left open on purpose.</b> We&rsquo;ll work out the split afterwards. Nothing to do now.","34%"],
               ["Backyard basket","If we do Thursday at the cottage: <b>$24&ndash;58 a man</b> depending on the basket, plus $10 delivery and 18% service. Split eight ways after the fact.","34%"],
               ["Fishing permits","<b>$9 each</b>, four of us. Buy your own Missouri daily permit online before we go.","34%"],
-              ["The cottage groceries","Courtney shops before we arrive and fronts the cost. Ryan reimburses her in full and adds a gratuity &mdash; figure <b>$15&ndash;20 a man</b>. <b>Don&rsquo;t Venmo her directly.</b>","34%"],
+              ["The cottage groceries","Courtney shops before we arrive and fronts the cost. Ryan reimburses her in full, plus a thank-you from all of us, and it goes in Splitwise. <b>Don&rsquo;t Venmo her directly.</b>","34%"],
               ["Meals and bar tabs","Splitwise. Whoever fronts it puts it in.","34%"],
               ["Rental clubs","$60 a set, if you&rsquo;re not bringing your own.","34%"],
               ["Bring cash for","<b>$240</b> cash for forecaddies over three rounds, <b>~$40</b> for the fishing guide, plus bag drop, shuttle drivers and bartenders.","34%"]])
@@ -1055,7 +1049,7 @@ function bankPanel(){
 function resortPanel(){
   return '<div class="panel" id="p-resort" role="tabpanel">'
   + '<h2>Eating</h2>'
-  + '<div class="flag"><b>Only one dinner is booked</b>Saturday &mdash; Buffalo Bar at 6:30 for the sunset, then the wine cellar after. <b>Thursday is settled</b> &mdash; backyard basket at the cottage, Ryan orders it Wednesday the 30th. Friday is still open and the options sit on that day&rsquo;s tab. Friday&rsquo;s bourbon tasting at 8:00 is booked, but it isn&rsquo;t dinner.</div>'
+  + '<div class="flag"><b>Only one dinner is booked</b>Saturday &mdash; Buffalo Bar at 6:30 for the sunset, then the wine cellar after. <b>Thursday is settled</b> &mdash; Uncle Buck&rsquo;s backyard basket at the cottage, ordered and charged to the room. Friday is still open and the options sit on that day&rsquo;s tab. Friday&rsquo;s bourbon tasting at 8:00 is booked, but it isn&rsquo;t dinner.</div>'
   + '<div class="box">'
   + rowsHTML([["At the cottage","In-room dining delivers 11 AM&ndash;10 PM, <a href=\'tel:+14173352777\' style=\"color:var(--brass);font-weight:600\">(417) 335-2777</a> or ext. 7666. <b>Backyard baskets</b> &mdash; they prep, we grill &mdash; need <b>24 hours&rsquo; notice</b>.","34%"],
               ["Before golf","<a href=\'"+G(PLACE.truman[1])+"\' target=\"_blank\" rel=\"noopener\" class=\"vlink\">Truman Cafe</a> from 6:30 AM, <a href=\'"+G(PLACE.mtgrill[1])+"\' target=\"_blank\" rel=\"noopener\" class=\"vlink\">Mountain Top Grill</a> from 7:00 at the clubhouse.","34%"],
@@ -1085,15 +1079,15 @@ function resortPanel(){
       +'<div class="cmeta">'+c[1]+'</div></div><div class="chcp" style="font-size:12px;color:var(--brass);white-space:nowrap">'+fmtTel(c[2])+'</div></a>').join("")
   + '</div><p class="note">Each other&rsquo;s numbers are in your phone and the group chat. These are the ones that aren&rsquo;t.</p>'
   + '<h2>Getting around</h2><div class="box">' 
-  + rowsHTML([["Going TO golf &mdash; booked","Ryan has these scheduled with Courtney. <b>One hour before the tee</b>, so you&rsquo;re standing on the course 45 minutes out. A driver comes to you. Don&rsquo;t improvise &mdash; tell Ryan.","38%"],
-              ["Everything else &mdash; use the app","<b>A scheduled pickup costs money. The app doesn&rsquo;t.</b> So every ride home after golf, the run to the bourbon tasting and Saturday night after dinner all go through the <b>Big Cedar Shuttle app</b>. Nothing is on a clock, so it costs us nothing.","38%"],
+  + rowsHTML([["Going TO golf &mdash; booked","Booked through Courtney, pickup times on the Itinerary tab. They&rsquo;re <b>shared golf shuttles</b>, not private, so be at the door on time. Don&rsquo;t improvise &mdash; tell Ryan.","38%"],
+              ["Everything else &mdash; use the app","<b>A scheduled pickup costs money. The app doesn&rsquo;t.</b> So every other ride home after golf, the run to the bourbon tasting and Saturday night after dinner all go through the <b>Big Cedar Shuttle app</b>. Nothing is on a clock, so it costs us nothing.","38%"],
               ["Give it 30 minutes","The app wants about half an hour&rsquo;s notice. <b>The cart will tell you when to request it</b> &mdash; Big Cedar times the alert so it meets you as you walk off. Dispatch <a href='tel:+14173395104' style='color:var(--brass);font-weight:600'>(417) 339-5104</a>, 6 AM to midnight.","38%"],
               ["Your clubs","<b>Stay at the courses.</b> The resort moves them. Don&rsquo;t haul anything back and forth.","38%"],
               ["Our cars","Parked at the cottage from Thursday evening. <b>Nobody drives after golf</b> &mdash; that&rsquo;s the whole reason the shuttle exists.","38%"],
               ["To the golf complex","~20 min. Ozarks National, Cliffhangers, Mountain Top and Payne&rsquo;s Valley all share a clubhouse.","38%"],
               ["To Buffalo Ridge","~20 min &mdash; a <b>different</b> clubhouse on Buffalo Ridge Blvd.","38%"],
               ["To Top of the Rock","~5 min. Buzzard Bar, Osage, Buffalo Bar, the wine cellar and the Grandview Conference Center are all here.","38%"],
-              ["Apps","Big Cedar app for the digital key and directory; Big Cedar Shuttle app for rides.","38%"]])
+              ["Apps","Big Cedar app for hours and the directory; Big Cedar Shuttle app for rides.","38%"]])
   + '</div>'
   + '<h2>Pack this</h2><div class="box">'
   + rowsHTML([["Soft-spike shoes","Metal is banned everywhere","50%"],["5 collared shirts","One per round","50%"],
@@ -1105,8 +1099,8 @@ function resortPanel(){
               ["Battery pack","Friday is ten hours outdoors","50%"],["Advil","36 holes, then a 7 AM start","50%"]])
   + '</div>'
   + '<h2>What we need from you</h2><div class="box">'
-  + rowsHTML([["The grocery list","Ryan will send a sheet. <b>Put what you want in it by Friday 25 September.</b> Courtney shops before we arrive and it doesn&rsquo;t get restocked, so this is your one shot.","36%"],
-              ["Splitwise","Get in before Thursday.","36%"],
+  + rowsHTML([["The grocery list","<b>Done.</b> Courtney has it and stocks the cottage before we arrive. It doesn&rsquo;t get restocked, so pace yourselves.","36%"],
+              ["Splitwise","Get in if you haven&rsquo;t.","36%"],
               ["Photo ID","Bring your licence. The Friday bourbon tasting is 21+ and checks at the door.","36%"]])
   + '</div><p class="note">Everything else &mdash; caddies, fishing guides, tee times, tickets &mdash; Ryan has. Don&rsquo;t chase him.</p></div>';
 }
@@ -1269,7 +1263,7 @@ try{
 
 /* Build stamp. The numbers are baked in when the file is built, so what you see
    is what was published — no clock, no cache, no guessing which copy you have. */
-const BUILD = {v:"15", d:"28 Sep 2026", t:"2026-09-28T22:10:00Z"};
+const BUILD = {v:"18", d:"30 Sep 2026", t:"2026-10-01T01:19:38Z"};
 (function(){
   const v=$("#bv"), d=$("#bd"); if(!v||!d) return;
   v.textContent = BUILD.v; d.textContent = BUILD.d;
