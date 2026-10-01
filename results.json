@@ -1,1 +1,10 @@
-{}
+{"matches": {"s1a": "Halved", "s1b": "Garnet"},
+ "headline": "Thursday: Garnet wins Schmidty + Kurtz vs Kepps + Joyce 5&3. Cup: Garnet 1½, Gold ½.",
+ "skins": [{"round": "Thu · Ozarks National", "pot": 200,
+   "winners": [{"who": "Schmidty", "holes": 6, "amt": 66.67},
+               {"who": "Trev", "holes": 4, "amt": 44.44},
+               {"who": "Joyce", "holes": 3, "amt": 33.33},
+               {"who": "Jehls", "holes": 2, "amt": 22.22},
+               {"who": "Kepps", "holes": 1, "amt": 11.11},
+               {"who": "Heis", "holes": 1, "amt": 11.11}],
+   "note": "Hole 18 tied, so $11.11 carries into Friday."}]}
