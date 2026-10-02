@@ -1,10 +1,17 @@
-{"matches": {"s1a": "Garnet", "s1b": "Garnet"},
- "headline": "Thursday: Garnet sweeps. Schmidty + Kurtz win 5&3, Heis + Trev beat Jehls (playing solo) 4&3. Cup: Garnet 2, Gold 0.",
- "skins": [{"round": "Thu · Ozarks National", "pot": 200,
+{"matches": {"s1a": "Garnet", "s1b": "Garnet", "s2a": "Halved", "s2b": "Gold"},
+ "headline": "Cliffhangers: Heis + Schmidty vs Jehls + Joyce halved, Kepps + Ski beat Trev + Kurtz. Cup: Garnet 2½, Gold 1½.",
+ "skins": [
+  {"round": "Thu · Ozarks National", "pot": 200,
    "winners": [{"who": "Schmidty", "holes": 6, "amt": 66.67},
                {"who": "Trev", "holes": 4, "amt": 44.44},
                {"who": "Joyce", "holes": 3, "amt": 33.33},
                {"who": "Jehls", "holes": 2, "amt": 22.22},
                {"who": "Kepps", "holes": 1, "amt": 11.11},
                {"who": "Heis", "holes": 1, "amt": 11.11}],
-   "note": "Hole 18 tied, so $11.11 carries into Friday."}]}
+   "note": "Hole 18 tied, so $11.11 carried into Cliffhangers."},
+  {"round": "Fri · Cliffhangers (gross)", "pot": 200, "carried": 11.11,
+   "winners": [{"who": "Trev", "holes": 9, "amt": 100.00},
+               {"who": "Jehls", "holes": 3, "amt": 33.33},
+               {"who": "Kepps", "holes": 3, "amt": 33.33},
+               {"who": "Heis", "holes": 1, "amt": 11.11}],
+   "note": "No handicaps at Cliffhangers. Holes 16 to 18 tied, so $33.33 carries into Buffalo Ridge."}]}
