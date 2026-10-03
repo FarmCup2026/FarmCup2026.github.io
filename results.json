@@ -1,17 +1,1 @@
-{"matches": {"s1a": "Garnet", "s1b": "Garnet", "s2a": "Halved", "s2b": "Gold"},
- "headline": "Cliffhangers: Heis + Schmidty vs Jehls + Joyce halved, Kepps + Ski beat Trev + Kurtz. Cup: Garnet 2½, Gold 1½.",
- "skins": [
-  {"round": "Thu · Ozarks National", "pot": 200,
-   "winners": [{"who": "Schmidty", "holes": 6, "amt": 66.67},
-               {"who": "Trev", "holes": 4, "amt": 44.44},
-               {"who": "Joyce", "holes": 3, "amt": 33.33},
-               {"who": "Jehls", "holes": 2, "amt": 22.22},
-               {"who": "Kepps", "holes": 1, "amt": 11.11},
-               {"who": "Heis", "holes": 1, "amt": 11.11}],
-   "note": "Hole 18 tied, so $11.11 carried into Cliffhangers."},
-  {"round": "Fri · Cliffhangers (gross)", "pot": 200, "carried": 11.11,
-   "winners": [{"who": "Trev", "holes": 9, "amt": 100.00},
-               {"who": "Jehls", "holes": 3, "amt": 33.33},
-               {"who": "Kepps", "holes": 3, "amt": 33.33},
-               {"who": "Heis", "holes": 1, "amt": 11.11}],
-   "note": "No handicaps at Cliffhangers. Holes 16 to 18 tied, so $33.33 carries into Buffalo Ridge."}]}
+{"matches":{"s1a":"Garnet","s1b":"Garnet","s2a":"Halved","s2b":"Gold","s3a":"Garnet","s3b":"Garnet"},"headline":"Buffalo Ridge: Heis + Kurtz win 1 UP on 18, Schmidty + Trev win 2&1. Cup: Garnet 4½, Gold 1½.","skins":[{"round":"Thu · Ozarks National","pot":200,"winners":[{"who":"Schmidty","holes":6,"amt":66.67},{"who":"Trev","holes":4,"amt":44.44},{"who":"Joyce","holes":3,"amt":33.33},{"who":"Jehls","holes":2,"amt":22.22},{"who":"Kepps","holes":1,"amt":11.11},{"who":"Heis","holes":1,"amt":11.11}],"note":"Hole 18 tied, so $11.11 carried into Cliffhangers."},{"round":"Fri AM · Cliffhangers (gross)","pot":200,"carried":11.11,"winners":[{"who":"Trev","holes":9,"amt":100.0},{"who":"Jehls","holes":3,"amt":33.33},{"who":"Kepps","holes":3,"amt":33.33},{"who":"Heis","holes":1,"amt":11.11}],"note":"No handicaps at Cliffhangers. $33.33 carried into Buffalo Ridge."},{"round":"Fri PM · Buffalo Ridge","pot":200,"carried":33.33,"winners":[{"who":"Schmidty","holes":8,"amt":88.89},{"who":"Heis","holes":4,"amt":44.44},{"who":"Trev","holes":3,"amt":33.33},{"who":"Ski","holes":2,"amt":22.22},{"who":"Joyce","holes":1,"amt":11.11},{"who":"Jehls","holes":1,"amt":11.11}],"note":"Hole 18 tied, so $22.22 carries into Payne's Valley."}]}
