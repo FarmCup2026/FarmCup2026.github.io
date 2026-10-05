@@ -676,6 +676,10 @@ function cupPanel(){
   + '<div class="sstat" id="sstat">14 points on the table. <b>First to 7&frac12; wins it.</b></div>'
   + '<h2>The matches</h2><div id="matches"></div>'
   + '<div class="livenote" id="livenote">Ryan posts the official results. Taps here only save on your phone.</div>'
+  + '<h2>The scorecards</h2><div class="box">'
+  + rowsHTML([["Every card","<a href=\"FarmCup2026_Scorecards.pdf\" target=\"_blank\" rel=\"noopener\">Open the scanned cards (PDF, 8.7&nbsp;MB)</a>","34%"],
+              ["What&rsquo;s in it","Ozarks National, Cliffhangers, Buffalo Ridge, Payne&rsquo;s Valley and Top of the Rock. Mountain Top&rsquo;s card wasn&rsquo;t kept.","34%"]])
+  + '</div>'
   + '<h2>Scoring</h2><div class="box">'
   + rowsHTML([["Each match","1 point. Halved is &frac12; each.","34%"],
               ["The cup","First to <b>7&frac12;</b> of 14.","34%"],
@@ -1263,7 +1267,7 @@ try{
 
 /* Build stamp. The numbers are baked in when the file is built, so what you see
    is what was published — no clock, no cache, no guessing which copy you have. */
-const BUILD = {v:"18", d:"30 Sep 2026", t:"2026-10-01T01:19:38Z"};
+const BUILD = {v:"19", d:"5 Oct 2026", t:"2026-10-05T13:44:48Z"};
 (function(){
   const v=$("#bv"), d=$("#bd"); if(!v||!d) return;
   v.textContent = BUILD.v; d.textContent = BUILD.d;
